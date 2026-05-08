@@ -219,8 +219,9 @@ function Index() {
                 </p>
               </div>
 
-              <div className="min-w-0 max-w-full pt-2 lg:pt-8">
-                <div className="flex flex-col items-center gap-2 sm:gap-2 lg:gap-3">
+              <div className="min-w-0 max-w-full pt-2 lg:relative lg:h-full lg:pt-0">
+                {/* Mobile: simple stacked layout */}
+                <div className="flex flex-col items-center gap-3 lg:hidden">
                   {[
                     { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -4, x: -22 },
                     { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 3, x: 24 },
@@ -242,6 +243,39 @@ function Index() {
                         style={{
                           fontFamily: "'Caveat', cursive, var(--font-sans)",
                           fontSize: "clamp(13px, 1.6vw, 18px)",
+                          lineHeight: 1.05,
+                          overflowWrap: "anywhere",
+                        }}
+                      >
+                        {p.caption}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Desktop: absolutely-positioned cluster filling column height */}
+                <div className="hidden lg:block">
+                  {[
+                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -5, top: "0%", left: "0%" },
+                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 4, top: "30%", left: "38%" },
+                    { slot: "polaroid-3", src: polaroid3, caption: "bali 26 x", rot: -3, top: "62%", left: "8%" },
+                  ].map((p) => (
+                    <div
+                      key={p.slot}
+                      className="polaroid-tape polaroid-thin absolute w-[58%] max-w-[260px]"
+                      style={{ top: p.top, left: p.left, transform: `rotate(${p.rot}deg)`, transformOrigin: "center" }}
+                    >
+                      <img
+                        data-image-slot={p.slot}
+                        src={p.src}
+                        alt={p.caption}
+                        className="zine-photo aspect-[4/5] w-full object-cover"
+                      />
+                      <p
+                        className="mt-2 text-center text-[var(--ink)]"
+                        style={{
+                          fontFamily: "'Caveat', cursive, var(--font-sans)",
+                          fontSize: "clamp(14px, 1.4vw, 18px)",
                           lineHeight: 1.05,
                           overflowWrap: "anywhere",
                         }}
