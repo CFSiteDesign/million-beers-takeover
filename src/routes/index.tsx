@@ -189,15 +189,15 @@ function Index() {
             </div>
 
             <div className="col-span-12 lg:col-span-5">
-              <div className="flex items-start justify-between gap-2 sm:gap-4">
+              <div className="flex items-start justify-center gap-3 px-2 sm:gap-5">
                 {[
-                  { slot: "polaroid-1", caption: "siem reap, 2am", rot: -6, mt: "mt-4" },
-                  { slot: "polaroid-2", caption: "el nido vibes", rot: 4, mt: "mt-0" },
-                  { slot: "polaroid-3", caption: "bali, definitely", rot: -2, mt: "mt-6" },
+                  { slot: "polaroid-1", caption: "siem reap, 2am", rot: -5, mt: "mt-3" },
+                  { slot: "polaroid-2", caption: "el nido vibes", rot: 3, mt: "mt-0" },
+                  { slot: "polaroid-3", caption: "bali, definitely", rot: -2, mt: "mt-5" },
                 ].map((p) => (
                   <div
                     key={p.slot}
-                    className={`polaroid-tape w-1/3 ${p.mt}`}
+                    className={`polaroid-tape polaroid-thin w-[28%] ${p.mt}`}
                     style={{ transform: `rotate(${p.rot}deg)` }}
                   >
                     <img
@@ -208,7 +208,7 @@ function Index() {
                     />
                     <p
                       className="mt-2 text-center text-[var(--ink)]"
-                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 14 }}
+                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 20, lineHeight: 1.05 }}
                     >
                       {p.caption}
                     </p>
