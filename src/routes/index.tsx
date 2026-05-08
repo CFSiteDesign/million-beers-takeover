@@ -80,13 +80,10 @@ function Index() {
                   THE
                 </span>
                 <span
-                  className="block max-w-full overflow-hidden uppercase"
+                  className="block max-w-full overflow-hidden uppercase text-[var(--ink)]"
                   style={{
                     fontSize: "clamp(54px, 8.4vw, 118px)",
-                    fontFamily: "'Bungee', Impact, sans-serif",
-                    color: "var(--cream)",
-                    WebkitTextStroke: "4px var(--ink)",
-                    paintOrder: "stroke fill",
+                    fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                   }}
                 >
                   TAKEOVER
