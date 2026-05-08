@@ -74,8 +74,10 @@ function Index() {
 
       <main className="relative z-10">
         {/* ============ 01 HERO (amber / beer) ============ */}
-        <section className="relative overflow-hidden bg-[var(--amber)] pt-14 pb-24 text-[var(--ink)] lg:pt-24 lg:pb-36">
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-5 lg:gap-12 lg:px-10">
+        <section className="relative overflow-hidden pt-14 pb-24 text-[var(--ink)] lg:pt-24 lg:pb-36">
+          <div aria-hidden className="pint-pour absolute inset-0 z-0 bg-[var(--amber)]" />
+          <Bubbles density={14} scope="section" />
+          <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-5 lg:gap-12 lg:px-10">
             <div className="col-span-12 lg:col-span-7 xl:col-span-8">
               <h1 className="font-display max-w-[980px] text-[var(--ink)]" style={{ lineHeight: 0.86 }}>
                 <span className="block uppercase" style={{ fontSize: "clamp(40px, 8vw, 108px)" }}>

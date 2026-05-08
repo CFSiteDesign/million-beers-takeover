@@ -150,14 +150,37 @@
   position: absolute;
   bottom: -30px;
   border-radius: 9999px;
-  background: radial-gradient(circle at 30% 30%, rgba(248,241,221,0.45), rgba(245,184,46,0.12) 60%, transparent 70%);
-  box-shadow: inset 0 0 4px rgba(248,241,221,0.4);
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.85), rgba(255,248,224,0.35) 55%, transparent 72%);
+  box-shadow: inset 0 0 4px rgba(255,255,255,0.6), 0 0 6px rgba(255,255,255,0.25);
   will-change: transform, opacity;
   animation: rise linear infinite;
 }
 .bubble-inner {
   width: 100%; height: 100%; border-radius: 9999px;
   animation: wobble ease-in-out infinite;
+}
+
+/* ===== Pint pour animation ===== */
+@keyframes pint-pour {
+  0% { clip-path: inset(0 0 100% 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+.pint-pour {
+  animation: pint-pour 1.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* ===== Foam edge under header (pint head) ===== */
+.foam-head-edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 22px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 60' preserveAspectRatio='none'><path d='M0,0 L1600,0 L1600,18 C1560,42 1530,12 1490,32 C1455,52 1420,18 1385,38 C1350,56 1315,22 1280,40 C1245,58 1210,20 1170,38 C1135,54 1100,22 1065,40 C1030,56 995,18 955,36 C920,52 885,20 850,38 C815,56 780,22 745,40 C710,56 675,18 635,36 C600,52 565,22 530,40 C495,56 460,20 425,38 C390,54 355,22 320,40 C285,56 250,18 210,36 C175,52 140,22 105,40 C70,54 35,22 0,42 Z' fill='%23FFFFFF' stroke='%231F140A' stroke-width='3' stroke-linejoin='round'/></svg>");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,0.05));
 }
 
 @media (prefers-reduced-motion: reduce) {
