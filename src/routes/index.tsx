@@ -13,6 +13,7 @@ import heroImage from "@/assets/mil_beers_hero.png";
 import { BeerButton } from "@/components/BeerButton";
 import { CountUp } from "@/components/CountUp";
 import { DestinationShuffler } from "@/components/DestinationShuffler";
+import { LiveBeerCounter } from "@/components/LiveBeerCounter";
 
 export const Route = createFileRoute("/")({
   head: () => ({
