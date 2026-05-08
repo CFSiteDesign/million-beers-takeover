@@ -222,12 +222,12 @@ function Index() {
 
         {/* ============ 03 COMMUNITY (amber / beer) ============ */}
         <section className={`relative overflow-hidden bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-6 lg:gap-12 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-5 lg:gap-12 lg:px-10">
             <div className="col-span-12">
               <h2
                 className="font-display mx-auto max-w-[1120px] text-center uppercase"
                 style={{
-                  fontSize: "clamp(36px, 5.6vw, 84px)",
+                  fontSize: "clamp(32px, 5.6vw, 84px)",
                   lineHeight: 0.92,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
