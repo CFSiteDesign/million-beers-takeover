@@ -66,8 +66,8 @@ function Index() {
       <main className="relative z-10">
         {/* ============ 01 HERO ============ */}
         <section className="relative overflow-hidden bg-[var(--ink)] pt-16 pb-0">
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-6 pb-24 lg:gap-12 lg:px-10">
-            <div className="col-span-12 lg:col-span-7">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-end gap-8 px-6 pb-24 lg:gap-12 lg:px-10">
+            <div className="col-span-12 lg:col-span-8">
               <div className="flex items-baseline gap-4">
                 <span className="section-num text-[var(--amber)]">01</span>
                 <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--amber)]">
@@ -76,13 +76,13 @@ function Index() {
               </div>
 
               <h1 className="mt-8 font-display text-[var(--cream)]" style={{ lineHeight: 0.82 }}>
-                <span className="block uppercase" style={{ fontSize: "clamp(56px, 12vw, 140px)" }}>
+                <span className="block uppercase" style={{ fontSize: "clamp(48px, 9vw, 120px)" }}>
                   THE
                 </span>
                 <span
                   className="block uppercase text-[var(--amber)] text-shadow-poster"
                   style={{
-                    fontSize: "clamp(80px, 18vw, 220px)",
+                    fontSize: "clamp(64px, 13vw, 170px)",
                     letterSpacing: "-0.02em",
                     fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                   }}
@@ -91,7 +91,7 @@ function Index() {
                 </span>
                 <span
                   className="font-script mt-4 block lowercase text-[var(--amber)]"
-                  style={{ fontSize: "clamp(44px, 8vw, 90px)", lineHeight: 0.9 }}
+                  style={{ fontSize: "clamp(36px, 6vw, 72px)", lineHeight: 0.9 }}
                 >
                   is happening.
                 </span>
@@ -112,18 +112,18 @@ function Index() {
               </div>
             </div>
 
-            <div className="col-span-12 lg:col-span-5">
-              <div className="ml-auto w-full max-w-sm">
+            <div className="col-span-12 lg:col-span-4">
+              <div className="mx-auto w-full max-w-[280px] lg:ml-auto lg:mr-0">
                 <div className="polaroid-tape">
                   <img
                     data-image-slot="hero-bg"
                     src="https://placehold.co/600x800/0A0A0A/F5B82E?text=HERO+POLAROID"
                     alt="Trip 01 placeholder"
-                    className="zine-photo h-80 w-full object-cover"
+                    className="zine-photo h-64 w-full object-cover"
                   />
                   <p
                     className="font-script mt-3 text-center text-[var(--ink)]"
-                    style={{ fontSize: 26 }}
+                    style={{ fontSize: 22 }}
                   >
                     trip 01 · destination tbc
                   </p>
