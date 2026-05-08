@@ -48,9 +48,9 @@ export const Route = createFileRoute("/")({
 
 const TICKER = "NO SPAM   //   NO PAYMENT NOW   //   YOU PICK THE DESTINATION   //   ";
 
-// Section padding allows extra space at top/bottom so the overflowing foam
-// divider doesn't cover any content.
-const SECTION_PY = "py-28 lg:py-36";
+// Foam dividers overlap their neighbours by ~50%, so sections only need a
+// modest internal padding above their content.
+const SECTION_PY = "pt-20 pb-24 lg:pt-24 lg:pb-28";
 
 function Index() {
   useEffect(() => {
@@ -69,7 +69,7 @@ function Index() {
 
       <main className="relative z-10">
         {/* ============ 01 HERO (amber / beer) ============ */}
-        <section className="relative overflow-hidden bg-[var(--amber)] pt-24 pb-44 text-[var(--ink)] lg:pt-32 lg:pb-52">
+        <section className="relative overflow-hidden bg-[var(--amber)] pt-20 pb-32 text-[var(--ink)] lg:pt-24 lg:pb-36">
           <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-10 px-6 lg:gap-12 lg:px-10">
             <div className="col-span-12 lg:col-span-7 xl:col-span-8">
               <h1 className="font-display max-w-[980px] text-[var(--ink)]" style={{ lineHeight: 0.86 }}>
@@ -135,13 +135,13 @@ function Index() {
 
         {/* ============ 02 WHAT IS THE TAKEOVER (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 lg:gap-12 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 lg:gap-14 lg:px-10">
             <Reveal className="col-span-12 lg:col-span-7">
               <h2
-                className="font-display max-w-[780px] uppercase"
+                className="font-display uppercase"
                 style={{
-                  fontSize: "clamp(44px, 7.8vw, 112px)",
-                  lineHeight: 0.85,
+                  fontSize: "clamp(40px, 5.6vw, 84px)",
+                  lineHeight: 0.88,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
               >
@@ -161,34 +161,34 @@ function Index() {
                 </p>
               </div>
               <p
-                className="font-script mt-10 text-[var(--amber)]"
-                style={{ fontSize: "clamp(36px, 7vw, 84px)", lineHeight: 0.95 }}
+                className="font-script mt-8 text-[var(--amber)]"
+                style={{ fontSize: "clamp(28px, 4vw, 56px)", lineHeight: 1.05 }}
               >
                 "that's kinda the whole point."
               </p>
-              <p className="mt-8 max-w-lg text-base">
+              <p className="mt-6 max-w-lg text-base">
                 We don't have a destination yet. We're picking based on who's in and where
                 people want to go. <strong>Register, tell us your vibe, help shape it.</strong>
               </p>
             </Reveal>
 
             <div className="col-span-12 lg:col-span-5">
-              <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-3 lg:ml-auto lg:grid-cols-1">
+              <div className="grid grid-cols-2 gap-5 sm:gap-6">
                 {[
-                  { slot: "polaroid-1", caption: "siem reap, 2am" },
-                  { slot: "polaroid-2", caption: "el nido vibes" },
-                  { slot: "polaroid-3", caption: "bali, definitely" },
+                  { slot: "polaroid-1", caption: "siem reap, 2am", rot: "-rotate-3" },
+                  { slot: "polaroid-2", caption: "el nido vibes", rot: "rotate-2" },
+                  { slot: "polaroid-3", caption: "bali, definitely", rot: "rotate-1 col-span-2 max-w-[280px] mx-auto" },
                 ].map((p) => (
-                  <div key={p.slot} className="polaroid-tape mx-auto w-full max-w-[260px] lg:mx-0 lg:ml-auto">
+                  <div key={p.slot} className={`polaroid-tape w-full ${p.rot}`}>
                     <img
                       data-image-slot={p.slot}
                       src={`https://placehold.co/400x500/0A0A0A/F5B82E?text=${encodeURIComponent(p.caption)}`}
                       alt={p.caption}
-                      className="zine-photo aspect-[4/3] w-full object-cover"
+                      className="zine-photo aspect-[4/5] w-full object-cover"
                     />
                     <p
-                      className="mt-3 text-center text-[var(--ink)]"
-                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 18 }}
+                      className="mt-2 text-center text-[var(--ink)]"
+                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 16 }}
                     >
                       {p.caption}
                     </p>
@@ -208,8 +208,8 @@ function Index() {
               <h2
                 className="font-display mx-auto max-w-[1120px] text-center uppercase"
                 style={{
-                  fontSize: "clamp(38px, 7.6vw, 106px)",
-                  lineHeight: 0.85,
+                  fontSize: "clamp(36px, 5.6vw, 84px)",
+                  lineHeight: 0.92,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
               >
@@ -264,8 +264,8 @@ function Index() {
                     {s.label}
                   </p>
                   <div
-                    className="mt-2 font-display break-words text-[var(--ink)]"
-                    style={{ fontSize: "clamp(42px, 6vw, 78px)", lineHeight: 0.85 }}
+                    className="mt-2 font-display text-[var(--ink)] tabular-nums"
+                    style={{ fontSize: "clamp(28px, 3.6vw, 52px)", lineHeight: 1, whiteSpace: "nowrap" }}
                   >
                     <Counter to={s.n} />
                   </div>
@@ -284,14 +284,13 @@ function Index() {
               <h2
                 className="font-display max-w-[560px] uppercase"
                 style={{
-                  fontSize: "clamp(52px, 7.6vw, 112px)",
-                  lineHeight: 0.85,
+                  fontSize: "clamp(40px, 4.6vw, 68px)",
+                  lineHeight: 0.95,
                   fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                 }}
               >
-                <span className="block">GET</span>
-                <span className="block">ON THE</span>
-                <span className="block text-[var(--amber)]">LIST.</span>
+                <span className="block">GET ON</span>
+                <span className="block">THE <span className="text-[var(--amber)]">LIST.</span></span>
               </h2>
               <p className="mt-8 max-w-sm text-base text-[var(--cream)]">
                 No commitment. No payment. Once we see who's in, we'll share destination
@@ -307,21 +306,17 @@ function Index() {
           </div>
         </section>
 
-        <FoamOverflowDivider />
-
-        {/* ============ 05 TICKER (amber) ============ */}
+        {/* ============ 05 TICKER (amber) — hard amber strip, no foam ============ */}
         <section
           aria-label="Trip terms"
-          className="relative overflow-hidden bg-[var(--amber)] text-[var(--ink)]"
+          className="relative overflow-hidden border-y-[3px] border-[var(--ink)] bg-[var(--amber)] text-[var(--ink)]"
         >
-          <div className="ticker-track flex w-max whitespace-nowrap py-5 font-mono text-base font-bold uppercase tracking-[0.25em] sm:text-lg">
+          <div className="ticker-track flex w-max whitespace-nowrap py-6 font-mono text-base font-bold uppercase tracking-[0.25em] sm:text-lg">
             {Array.from({ length: 8 }).map((_, i) => (
               <span key={i} className="px-4">{TICKER}</span>
             ))}
           </div>
         </section>
-
-        <FoamOverflowDivider />
 
         {/* ============ 06 PRE-FOOTER CTA (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
