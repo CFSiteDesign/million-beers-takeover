@@ -279,12 +279,12 @@ function Index() {
 
         {/* ============ 04 FORM (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-6 lg:gap-12 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 lg:gap-12 lg:px-10">
             <div className="col-span-12 lg:col-span-5">
               <h2
-                className="font-display uppercase"
+                className="font-display max-w-[560px] uppercase"
                 style={{
-                  fontSize: "clamp(56px, 11vw, 150px)",
+                  fontSize: "clamp(52px, 7.6vw, 112px)",
                   lineHeight: 0.85,
                   fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                 }}
@@ -327,9 +327,9 @@ function Index() {
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
           <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-6 lg:gap-12 lg:px-10">
             <h2
-              className="col-span-12 font-display uppercase lg:col-span-8"
+              className="col-span-12 font-display max-w-[760px] uppercase lg:col-span-8"
               style={{
-                fontSize: "clamp(44px, 8vw, 110px)",
+                fontSize: "clamp(42px, 6.8vw, 92px)",
                 lineHeight: 0.85,
                 fontFamily: "'Bungee', Impact, sans-serif",
               }}
