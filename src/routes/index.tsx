@@ -306,7 +306,6 @@ function Index() {
         <FoamOverflowDivider />
 
         {/* PRE-FOOTER CTA */}
-        <FoamOverflowDivider />
         <section
           className="relative px-4 py-16 text-center"
           style={{ background: "var(--gradient-amber)" }}
@@ -321,7 +320,6 @@ function Index() {
             I'M IN
           </button>
         </section>
-        <FoamOverflowDivider />
       </main>
 
       <MMFooter />
