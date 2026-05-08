@@ -135,13 +135,13 @@ function Index() {
 
         {/* ============ 02 WHAT IS THE TAKEOVER (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 lg:gap-12 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 lg:gap-14 lg:px-10">
             <Reveal className="col-span-12 lg:col-span-7">
               <h2
-                className="font-display max-w-[780px] uppercase"
+                className="font-display uppercase"
                 style={{
-                  fontSize: "clamp(44px, 7.8vw, 112px)",
-                  lineHeight: 0.85,
+                  fontSize: "clamp(40px, 5.6vw, 84px)",
+                  lineHeight: 0.88,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
               >
@@ -161,34 +161,34 @@ function Index() {
                 </p>
               </div>
               <p
-                className="font-script mt-10 text-[var(--amber)]"
-                style={{ fontSize: "clamp(36px, 7vw, 84px)", lineHeight: 0.95 }}
+                className="font-script mt-8 text-[var(--amber)]"
+                style={{ fontSize: "clamp(28px, 4vw, 56px)", lineHeight: 1.05 }}
               >
                 "that's kinda the whole point."
               </p>
-              <p className="mt-8 max-w-lg text-base">
+              <p className="mt-6 max-w-lg text-base">
                 We don't have a destination yet. We're picking based on who's in and where
                 people want to go. <strong>Register, tell us your vibe, help shape it.</strong>
               </p>
             </Reveal>
 
             <div className="col-span-12 lg:col-span-5">
-              <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-3 lg:ml-auto lg:grid-cols-1">
+              <div className="grid grid-cols-2 gap-5 sm:gap-6">
                 {[
-                  { slot: "polaroid-1", caption: "siem reap, 2am" },
-                  { slot: "polaroid-2", caption: "el nido vibes" },
-                  { slot: "polaroid-3", caption: "bali, definitely" },
+                  { slot: "polaroid-1", caption: "siem reap, 2am", rot: "-rotate-3" },
+                  { slot: "polaroid-2", caption: "el nido vibes", rot: "rotate-2" },
+                  { slot: "polaroid-3", caption: "bali, definitely", rot: "rotate-1 col-span-2 max-w-[280px] mx-auto" },
                 ].map((p) => (
-                  <div key={p.slot} className="polaroid-tape mx-auto w-full max-w-[260px] lg:mx-0 lg:ml-auto">
+                  <div key={p.slot} className={`polaroid-tape w-full ${p.rot}`}>
                     <img
                       data-image-slot={p.slot}
                       src={`https://placehold.co/400x500/0A0A0A/F5B82E?text=${encodeURIComponent(p.caption)}`}
                       alt={p.caption}
-                      className="zine-photo aspect-[4/3] w-full object-cover"
+                      className="zine-photo aspect-[4/5] w-full object-cover"
                     />
                     <p
-                      className="mt-3 text-center text-[var(--ink)]"
-                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 18 }}
+                      className="mt-2 text-center text-[var(--ink)]"
+                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 16 }}
                     >
                       {p.caption}
                     </p>
