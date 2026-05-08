@@ -414,23 +414,22 @@ function Index() {
                 and pricing. <strong className="text-[var(--amber)]">You'll get a vote.</strong>
               </p>
 
-              <ul className="mt-8 max-w-md space-y-4 text-[var(--cream)]/85 lg:mt-10 lg:max-w-none lg:space-y-0 lg:divide-y lg:divide-[var(--cream)]/10 lg:border-y lg:border-[var(--cream)]/10">
+              <ul className="mt-8 max-w-md space-y-4 text-[var(--cream)]/85 lg:mt-10 lg:max-w-[42ch] lg:space-y-6">
                 {[
                   { t: "No spam.", d: "Just trip updates when there's something to say." },
                   { t: "No payment now.", d: "You commit when you're ready." },
                   { t: "You help pick the destination.", d: "Your vote counts." },
                 ].map((item) => (
-                  <li
-                    key={item.t}
-                    className="flex gap-3 lg:items-baseline lg:gap-5 lg:py-4"
-                  >
-                    <span className="mt-1 text-[var(--amber)] lg:mt-0 lg:font-mono lg:text-xs lg:font-bold lg:tracking-[0.25em]">✓</span>
-                    <span className="lg:flex lg:flex-1 lg:items-baseline lg:justify-between lg:gap-6">
-                      <strong className="text-[var(--cream)] lg:text-[1.05rem] lg:uppercase lg:tracking-[0.04em]">
+                  <li key={item.t} className="flex gap-3 lg:gap-4">
+                    <span className="mt-1 text-[var(--amber)] lg:mt-[2px] lg:text-lg">✓</span>
+                    <div className="min-w-0 flex-1">
+                      <div className="text-[var(--cream)] font-semibold lg:uppercase lg:tracking-[0.06em] lg:text-[0.95rem]">
                         {item.t}
-                      </strong>{" "}
-                      <span className="lg:text-[var(--cream)]/65 lg:text-right lg:text-[0.95rem]">{item.d}</span>
-                    </span>
+                      </div>
+                      <div className="mt-0.5 text-[var(--cream)]/70 lg:mt-1 lg:text-[1rem] lg:leading-snug">
+                        {item.d}
+                      </div>
+                    </div>
                   </li>
                 ))}
               </ul>
