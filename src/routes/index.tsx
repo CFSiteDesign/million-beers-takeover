@@ -192,8 +192,8 @@ function Index() {
               </p>
             </div>
 
-            <div className="col-span-12 lg:col-span-5">
-              <div className="flex w-full items-start justify-center gap-2 px-1 sm:gap-5">
+            <div className="col-span-12 lg:col-span-5 min-w-0 w-full">
+              <div className="flex w-full items-start justify-center gap-2 px-1 sm:gap-5 overflow-hidden">
                 {[
                   { slot: "polaroid-1", caption: "siem reap, 2am", rot: -5, mt: "mt-3" },
                   { slot: "polaroid-2", caption: "el nido vibes", rot: 3, mt: "mt-0" },
