@@ -302,7 +302,7 @@ function Index() {
 
         {/* ============ 04 FORM (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 lg:gap-16 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-8 px-5 lg:gap-16 lg:px-10">
             <div className="col-span-12 lg:col-span-5 lg:sticky lg:top-24">
               <h2
                 className="font-display uppercase"
