@@ -12,7 +12,7 @@ import { FoamOverflowDivider } from "@/components/Dividers";
 import heroImage from "@/assets/mil_beers_hero.png";
 import { BeerButton } from "@/components/BeerButton";
 import { CountUp } from "@/components/CountUp";
-import { DestinationShuffler } from "@/components/DestinationShuffler";
+
 import { LiveBeerCounter } from "@/components/LiveBeerCounter";
 import polaroid1 from "@/assets/polaroid-1.png";
 import polaroid2 from "@/assets/polaroid-2.png";
