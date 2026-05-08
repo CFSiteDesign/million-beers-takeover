@@ -202,13 +202,13 @@ function Index() {
         <FoamOverflowDivider />
 
         {/* ============ 03 COMMUNITY (amber / beer) ============ */}
-        <section className={`relative bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
+        <section className={`relative overflow-hidden bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
           <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-6 lg:gap-12 lg:px-10">
             <Reveal className="col-span-12">
               <h2
-                className="font-display uppercase"
+                className="font-display mx-auto max-w-[1120px] text-center uppercase"
                 style={{
-                  fontSize: "clamp(40px, 9vw, 130px)",
+                  fontSize: "clamp(38px, 7.6vw, 106px)",
                   lineHeight: 0.85,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
@@ -226,14 +226,14 @@ function Index() {
           </div>
 
           {/* Marquee */}
-          <div className="relative mt-12 overflow-hidden border-y-2 border-[var(--ink)]">
+          <div className="relative mt-14 overflow-hidden border-y-2 border-[var(--ink)]">
             <div className="marquee-track flex w-max">
               {Array.from({ length: 24 }).map((_, i) => {
                 const n = (i % 12) + 1;
                 return (
                   <div
                     key={i}
-                    className="h-40 w-40 flex-shrink-0 overflow-hidden border-2 border-[var(--ink)] sm:h-48 sm:w-48"
+                    className="h-36 w-36 flex-shrink-0 overflow-hidden border-2 border-[var(--ink)] sm:h-44 sm:w-44"
                   >
                     <img
                       data-image-slot={`marquee-${n}`}
@@ -249,7 +249,7 @@ function Index() {
           </div>
 
           {/* Stats panel */}
-          <Reveal className="mx-auto mt-16 max-w-5xl px-6 lg:px-10">
+          <Reveal className="mx-auto mt-14 max-w-5xl px-6 lg:px-10">
             <div className="grid grid-cols-1 border-2 border-[var(--ink)] sm:grid-cols-3">
               {[
                 { n: 20847, label: "beers logged" },
