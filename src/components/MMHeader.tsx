@@ -83,7 +83,7 @@ export function MMHeader() {
               </a>
               <a
                 href="https://madmonkeyhostels.com/booking"
-                className="mt-4 rounded-full bg-[var(--mm-teal)] px-5 py-3 text-center text-base font-semibold text-white"
+                className="mt-4 rounded-full bg-black px-5 py-3 text-center text-base font-semibold text-white"
               >
                 Book Now
               </a>
