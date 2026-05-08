@@ -69,7 +69,7 @@ function Index() {
 
       <main className="relative z-10">
         {/* ============ 01 HERO (amber / beer) ============ */}
-        <section className="relative overflow-hidden bg-[var(--amber)] pt-24 pb-44 text-[var(--ink)] lg:pt-32 lg:pb-52">
+        <section className="relative overflow-hidden bg-[var(--amber)] pt-20 pb-32 text-[var(--ink)] lg:pt-24 lg:pb-36">
           <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-10 px-6 lg:gap-12 lg:px-10">
             <div className="col-span-12 lg:col-span-7 xl:col-span-8">
               <h1 className="font-display max-w-[980px] text-[var(--ink)]" style={{ lineHeight: 0.86 }}>
