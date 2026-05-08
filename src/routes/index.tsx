@@ -207,7 +207,7 @@ function Index() {
                     />
                     <p
                       className="mt-2 text-center text-[var(--ink)]"
-                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 24 }}
+                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 20 }}
                     >
                       {p.caption}
                     </p>
