@@ -120,8 +120,8 @@ function Index() {
                     className="zine-photo aspect-[4/3] w-full object-cover"
                   />
                   <p
-                    className="font-script mt-3 text-center text-[var(--ink)]"
-                    style={{ fontSize: 22 }}
+                    className="mt-3 text-center text-[var(--ink)]"
+                    style={{ fontFamily: "'Caveat', 'Kalam', cursive", fontSize: 28, transform: "rotate(-2deg)" }}
                   >
                     team mad monkey xox
                   </p>
