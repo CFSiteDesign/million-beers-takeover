@@ -257,7 +257,7 @@ function Index() {
               {[
                 { n: 20847, label: "beers logged" },
                 { n: 47, label: "countries" },
-                { n: 1_000_000, label: "to go" },
+                { n: 1_000_000 - 20847, label: "to go" },
               ].map((s, i) => (
                 <div
                   key={s.label}
@@ -268,7 +268,7 @@ function Index() {
                   </p>
                   <div
                     className="mt-2 font-display text-[var(--ink)] tabular-nums"
-                    style={{ fontSize: "clamp(28px, 3.6vw, 52px)", lineHeight: 1, whiteSpace: "nowrap" }}
+                    style={{ fontSize: "clamp(24px, 2.8vw, 44px)", lineHeight: 1, whiteSpace: "nowrap" }}
                   >
                     <Counter to={s.n} />
                   </div>
