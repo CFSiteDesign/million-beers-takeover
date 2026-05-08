@@ -219,17 +219,17 @@ function Index() {
                 </p>
               </div>
 
-              <div className="min-w-0 max-w-full overflow-hidden pt-2 lg:pt-8">
-                <div className="grid w-full grid-cols-3 items-start gap-2 sm:gap-4">
+              <div className="min-w-0 max-w-full pt-2 lg:pt-8">
+                <div className="flex flex-col items-center gap-8 sm:gap-10 lg:gap-16">
                   {[
-                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -4, mt: "mt-0" },
-                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 3, mt: "mt-8 sm:mt-12" },
-                    { slot: "polaroid-3", src: polaroid3, caption: "bali 26 x", rot: -2, mt: "mt-16 sm:mt-24" },
+                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -4, x: 8 },
+                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 3, x: 18 },
+                    { slot: "polaroid-3", src: polaroid3, caption: "bali 26 x", rot: -3, x: -14 },
                   ].map((p) => (
                     <div
                       key={p.slot}
-                      className={`polaroid-tape polaroid-thin min-w-0 ${p.mt}`}
-                      style={{ transform: `rotate(${p.rot}deg)`, transformOrigin: "center" }}
+                      className="polaroid-tape polaroid-thin w-[55%] max-w-[240px]"
+                      style={{ transform: `translateX(${p.x}%) rotate(${p.rot}deg)`, transformOrigin: "center" }}
                     >
                       <img
                         data-image-slot={p.slot}
@@ -241,7 +241,7 @@ function Index() {
                         className="mt-2 text-center text-[var(--ink)]"
                         style={{
                           fontFamily: "'Caveat', cursive, var(--font-sans)",
-                          fontSize: "clamp(12px, 3.4vw, 18px)",
+                          fontSize: "clamp(13px, 1.6vw, 18px)",
                           lineHeight: 1.05,
                           overflowWrap: "anywhere",
                         }}
