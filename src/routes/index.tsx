@@ -213,6 +213,8 @@ function Index() {
           </div>
         </section>
 
+        <FoamOverflowDivider />
+
         {/* ============ 03 COMMUNITY (black, right-aligned headline) ============ */}
         <section className="relative bg-[var(--ink)] text-[var(--cream)]">
           <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 pt-20 lg:gap-10 lg:px-10 lg:pt-28">
