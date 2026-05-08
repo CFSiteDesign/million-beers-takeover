@@ -196,9 +196,7 @@ function Index() {
                 </p>
 
                 <p className="mt-5 max-w-[58ch] text-[16px] leading-relaxed sm:mt-7 sm:text-xl">
-                  We don't have a destination yet. We're picking based on who's in and where people want to go.
-                  <br />
-                  Register, tell us your vibe, help shape it.
+                  We don't have a destination yet. We're picking based on who's in and where people want to go. Register, tell us your vibe, help shape it.
                 </p>
               </div>
 
