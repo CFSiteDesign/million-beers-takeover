@@ -281,23 +281,43 @@ function Index() {
           {/* Marquee */}
           <div className="relative mt-14 overflow-hidden border-y-2 border-[var(--ink)]">
             <div className="marquee-track flex w-max">
-              {Array.from({ length: 24 }).map((_, i) => {
-                const n = (i % 12) + 1;
-                return (
+              {(() => {
+                const real = [marquee1, marquee2, marquee3, marquee4, marquee5, marquee6];
+                const tiles: Array<{ src?: string; placeholder?: boolean; key: string }> = [];
+                for (let i = 0; i < 6; i++) tiles.push({ src: real[i], key: `r${i}` });
+                for (let i = 0; i < 6; i++) tiles.push({ placeholder: true, key: `p${i}` });
+                // duplicate for seamless loop
+                return [...tiles, ...tiles].map((t, i) => (
                   <div
-                    key={i}
-                    className="h-36 w-36 flex-shrink-0 overflow-hidden border-2 border-[var(--ink)] sm:h-44 sm:w-44"
+                    key={`${t.key}-${i}`}
+                    className="relative h-36 w-36 flex-shrink-0 overflow-hidden border-2 border-[var(--ink)] sm:h-44 sm:w-44"
                   >
-                    <img
-                      data-image-slot={`marquee-${n}`}
-                      src={`https://placehold.co/300x300/0A0A0A/F5B82E?text=BEER+${n}`}
-                      alt=""
-                      className="zine-photo h-full w-full object-cover"
-                      style={{ filter: "contrast(1.1) saturate(0.7) sepia(0.15)" }}
-                    />
+                    {t.src ? (
+                      <img
+                        src={t.src}
+                        alt=""
+                        className="zine-photo h-full w-full object-cover"
+                        style={{ filter: "contrast(1.05) saturate(0.85)" }}
+                      />
+                    ) : (
+                      <div className="flex h-full w-full flex-col items-center justify-center bg-[var(--ink)] p-3 text-center">
+                        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--amber)]/70">
+                          coming
+                        </span>
+                        <span
+                          className="mt-1 font-display uppercase leading-none text-[var(--cream)]"
+                          style={{ fontSize: "clamp(22px, 3.6vw, 30px)" }}
+                        >
+                          soon
+                        </span>
+                        <span className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--cream)]/40">
+                          ▼ ▼ ▼
+                        </span>
+                      </div>
+                    )}
                   </div>
-                );
-              })}
+                ));
+              })()}
             </div>
           </div>
 
