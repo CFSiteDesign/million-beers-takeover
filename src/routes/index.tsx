@@ -103,9 +103,9 @@ function Index() {
                 <span className="bg-[var(--ink)] px-2 text-[var(--amber)]">And we want you in.</span>
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-5">
+              <div className="mt-8 flex flex-wrap items-end gap-5">
                 <BeerButton onClick={() => scrollTo("form")}>I'm in</BeerButton>
-                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--ink)]/70">
+                <span className="pb-1 font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--ink)]/70">
                   no commitment<br />no payment
                 </span>
               </div>
