@@ -306,21 +306,17 @@ function Index() {
           </div>
         </section>
 
-        <FoamOverflowDivider />
-
-        {/* ============ 05 TICKER (amber) ============ */}
+        {/* ============ 05 TICKER (amber) — hard amber strip, no foam ============ */}
         <section
           aria-label="Trip terms"
-          className="relative overflow-hidden bg-[var(--amber)] text-[var(--ink)]"
+          className="relative overflow-hidden border-y-[3px] border-[var(--ink)] bg-[var(--amber)] text-[var(--ink)]"
         >
-          <div className="ticker-track flex w-max whitespace-nowrap py-5 font-mono text-base font-bold uppercase tracking-[0.25em] sm:text-lg">
+          <div className="ticker-track flex w-max whitespace-nowrap py-6 font-mono text-base font-bold uppercase tracking-[0.25em] sm:text-lg">
             {Array.from({ length: 8 }).map((_, i) => (
               <span key={i} className="px-4">{TICKER}</span>
             ))}
           </div>
         </section>
-
-        <FoamOverflowDivider />
 
         {/* ============ 06 PRE-FOOTER CTA (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
