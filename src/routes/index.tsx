@@ -265,7 +265,7 @@ function Index() {
                   </p>
                   <div
                     className="mt-2 font-display text-[var(--ink)] tabular-nums"
-                    style={{ fontSize: "clamp(36px, 4.6vw, 64px)", lineHeight: 0.95, whiteSpace: "nowrap" }}
+                    style={{ fontSize: "clamp(28px, 3.6vw, 52px)", lineHeight: 1, whiteSpace: "nowrap" }}
                   >
                     <Counter to={s.n} />
                   </div>
