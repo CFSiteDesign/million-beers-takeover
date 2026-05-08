@@ -61,13 +61,8 @@ export function MMHeader() {
       {open && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white p-6 shadow-2xl">
-            <div className="flex items-center justify-between">
-              <img
-                src="https://madmonkeyhostels.com/images/madmonkey_logo.svg"
-                alt="Mad Monkey"
-                className="h-8 w-auto"
-              />
+          <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white/95 backdrop-blur-sm p-6 shadow-2xl">
+            <div className="flex items-center justify-end">
               <button onClick={() => setOpen(false)} aria-label="Close menu">
                 <X className="h-6 w-6 text-neutral-800" />
               </button>
