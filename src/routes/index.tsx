@@ -237,16 +237,23 @@ function Index() {
               <span className="section-num text-[var(--cream)]">03</span>
             </div>
             <Reveal className="col-span-12 text-right lg:col-span-10">
-              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--amber)]">
-                Twenty thousand and counting
-              </p>
+              <span className="sticker electric tilt-r text-sm">▸ the army</span>
               <h2
-                className="mt-3 font-display uppercase"
-                style={{ fontSize: "clamp(40px, 7.5vw, 100px)", lineHeight: 0.9 }}
+                className="mt-5 font-display uppercase"
+                style={{
+                  fontSize: "clamp(44px, 9vw, 130px)",
+                  lineHeight: 0.85,
+                  fontFamily: "'Bungee', Impact, sans-serif",
+                }}
               >
-                20,000+ photos.<br />
-                hundreds of people.<br />
-                <span className="text-[var(--amber)]">one ridiculous goal.</span>
+                <span className="block tilt-r">20,000+ photos.</span>
+                <span className="block text-[var(--lime)] tilt-l">hundreds of legends.</span>
+                <span
+                  className="block text-[var(--amber)] text-shadow-poster-electric tilt-r"
+                  style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}
+                >
+                  ONE STUPID GOAL.
+                </span>
               </h2>
             </Reveal>
           </div>
