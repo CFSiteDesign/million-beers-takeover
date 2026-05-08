@@ -100,12 +100,6 @@ export function InterestForm() {
     );
   }
 
-  const fields: Array<{ k: keyof typeof form; label: string; placeholder: string; type?: string }> = [
-    { k: "name", label: "Your name", placeholder: "Name or chat nickname" },
-    { k: "whatsapp", label: "WhatsApp", placeholder: "+1 555 123 4567", type: "tel" },
-    { k: "location", label: "Where you're based", placeholder: "City or country" },
-  ];
-
   return (
     <form onSubmit={submit} className="flex h-full w-full flex-col bg-[var(--cream)] p-6 md:p-10" style={{ border: "4px solid var(--ink)" }}>
       <div className="space-y-7">
