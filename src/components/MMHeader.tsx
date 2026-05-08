@@ -12,7 +12,7 @@ const NAV = [
 export function MMHeader() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#FFF8E0]/95 backdrop-blur-sm shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-[var(--amber)] shadow-sm">
       <span aria-hidden className="foam-head-edge" />
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
         <a href="https://madmonkeyhostels.com" className="flex items-center">
@@ -61,7 +61,7 @@ export function MMHeader() {
       {open && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white/95 backdrop-blur-sm p-6 shadow-2xl">
+          <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-[var(--amber)] p-6 shadow-2xl">
             <div className="flex items-center justify-end">
               <button onClick={() => setOpen(false)} aria-label="Close menu">
                 <X className="h-6 w-6 text-neutral-800" />
