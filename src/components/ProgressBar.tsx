@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { Counter } from "./Counter";
 
-export function ProgressBar() {
+export function ProgressBar({ variant = "inline" }: { variant?: "inline" | "status" }) {
   const start = 20847;
   const goal = 1_000_000;
   const [count, setCount] = useState(start);
@@ -9,39 +8,33 @@ export function ProgressBar() {
     const id = setInterval(() => setCount((c) => c + 1), 4000);
     return () => clearInterval(id);
   }, []);
-  const pct = useMemo(() => Math.max(2.5, (count / goal) * 100), [count]);
+  const pct = useMemo(() => Math.max(2.1, (count / goal) * 100), [count]);
 
-  return (
-    <div className="w-full max-w-xl">
-      <div className="mb-2 flex items-baseline justify-between font-display text-sm tracking-widest text-[var(--cream)]">
-        <span className="text-[var(--amber)]">
-          <Counter to={count} duration={800} /> 
-        </span>
-        <span className="text-[var(--cream)]/70">/ 1,000,000 BEERS</span>
-      </div>
-      <div className="relative h-5 w-full overflow-hidden rounded-full border border-[var(--amber)]/40 bg-black/50 shadow-inner">
-        <div
-          className="absolute inset-y-0 left-0 transition-[width] duration-1000 ease-out"
-          style={{
-            width: `${pct}%`,
-            background:
-              "linear-gradient(to right, var(--amber-deep), var(--amber))",
-          }}
-        >
-          {/* foam top */}
+  if (variant === "status") {
+    return (
+      <div className="w-full">
+        <div className="flex items-center justify-between border-t-2 border-[var(--ink)] bg-[var(--ink)] px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--cream)]">
+          <span className="text-[var(--amber)]">{count.toLocaleString()} logged</span>
+          <span className="opacity-70">target / 1,000,000</span>
+        </div>
+        <div className="relative h-2 w-full bg-[var(--ink)]">
           <div
-            className="liquid-top absolute -top-1 left-0 h-2 w-[150%]"
-            style={{
-              background:
-                "radial-gradient(circle at 10% 50%, var(--foam) 2px, transparent 3px)," +
-                "radial-gradient(circle at 30% 60%, var(--cream) 2px, transparent 3px)," +
-                "radial-gradient(circle at 55% 40%, var(--foam) 1.5px, transparent 2.5px)," +
-                "radial-gradient(circle at 80% 50%, var(--cream) 2px, transparent 3px)",
-              backgroundColor: "var(--cream)",
-              borderRadius: "9999px",
-            }}
+            className="status-bar-fill transition-[width] duration-1000 ease-out"
+            style={{ width: `${pct}%` }}
           />
         </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full">
+      <div className="mb-1 flex items-baseline justify-between font-mono text-[11px] uppercase tracking-[0.2em]">
+        <span className="text-[var(--amber)]">{count.toLocaleString()}</span>
+        <span className="text-[var(--cream)]/70">/ 1,000,000</span>
+      </div>
+      <div className="relative h-2 w-full border border-[var(--ink)] bg-[var(--ink)]">
+        <div className="status-bar-fill" style={{ width: `${pct}%` }} />
       </div>
     </div>
   );

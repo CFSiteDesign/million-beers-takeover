@@ -31,7 +31,7 @@ export function Reveal({
   return (
     <div
       ref={ref}
-      className={`reveal ${shown ? "in" : ""} ${className}`}
+      className={`reveal-wipe ${shown ? "in" : ""} ${className}`}
       style={{ animationDelay: `${delay}ms` }}
     >
       {children}
