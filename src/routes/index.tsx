@@ -156,20 +156,24 @@ function Index() {
               <h2
                 className="font-display uppercase"
                 style={{
-                  fontSize: "clamp(34px, 5.6vw, 84px)",
-                  lineHeight: 0.95,
+                  fontSize: "clamp(38px, 7vw, 84px)",
+                  lineHeight: 1.05,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
               >
                 <span className="block">What's a</span>
                 <span
-                  className="mt-1 block text-[var(--amber)]"
-                  style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif", lineHeight: 1.05 }}
+                  className="mt-2 block text-[var(--amber)] sm:mt-3"
+                  style={{
+                    fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
+                    lineHeight: 1.15,
+                    fontSize: "clamp(34px, 6.4vw, 80px)",
+                  }}
                 >
                   TAKEOVER?
                 </span>
               </h2>
-              <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed sm:mt-8 sm:space-y-5 sm:text-lg">
+              <div className="mt-7 max-w-xl space-y-4 text-lg leading-relaxed sm:mt-9 sm:space-y-5 sm:text-xl">
                 <p>A Takeover is simple. A group of MM people go somewhere new together.</p>
                 <p>
                   New city. <span className="bg-[var(--amber)] px-1 text-[var(--ink)]">New beers.</span>{" "}
@@ -177,12 +181,12 @@ function Index() {
                 </p>
               </div>
               <p
-                className="font-script mt-6 text-[var(--amber)] sm:mt-8"
-                style={{ fontSize: "clamp(26px, 4vw, 56px)", lineHeight: 1.05 }}
+                className="font-script mt-7 text-[var(--amber)] sm:mt-9"
+                style={{ fontSize: "clamp(28px, 5.4vw, 56px)", lineHeight: 1.1 }}
               >
                 "that's kinda the whole point."
               </p>
-              <p className="mt-5 max-w-lg text-base sm:mt-6">
+              <p className="mt-6 max-w-lg text-lg leading-relaxed sm:mt-7 sm:text-xl">
                 We don't have a destination yet. We're picking based on who's in and where
                 people want to go. <strong>Register, tell us your vibe, help shape it.</strong>
               </p>
