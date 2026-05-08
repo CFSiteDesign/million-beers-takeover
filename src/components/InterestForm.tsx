@@ -40,9 +40,9 @@ export function InterestForm() {
   const set = <K extends keyof typeof form>(k: K, v: string) =>
     setForm((f) => ({ ...f, [k]: v }));
 
-  const validateField = (k: string, v: string) => {
-    const partial = schema.pick({ [k]: true } as Record<string, true>);
-    const r = partial.safeParse({ [k]: v });
+  const validateField = (k: keyof typeof form, v: string) => {
+    const shape = schema.shape[k];
+    const r = shape.safeParse(v);
     setErrors((e) => ({ ...e, [k]: r.success ? "" : r.error.issues[0].message }));
   };
 
