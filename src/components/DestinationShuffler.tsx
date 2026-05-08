@@ -89,9 +89,6 @@ export function DestinationShuffler() {
   return (
     <div className="hidden lg:block">
       <div className="relative overflow-hidden rounded-sm border-2 border-[var(--cream)]/15 bg-gradient-to-b from-[var(--cream)]/[0.04] to-transparent p-5">
-        <div className="border-b border-[var(--cream)]/10 pb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--cream)]/60">
-          spin · the · bottle
-        </div>
 
         <div
           className="relative mx-auto mt-4 select-none"
