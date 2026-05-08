@@ -293,7 +293,7 @@ function Index() {
             <div className="grid grid-cols-1 border-2 border-[var(--ink)] sm:grid-cols-3">
               {[
                 { n: 20847, label: "beers logged" },
-                { n: 47, label: "countries" },
+                { n: 11, label: "countries" },
                 { n: 1_000_000 - 20847, label: "to go" },
               ].map((s, i) => (
                 <div
