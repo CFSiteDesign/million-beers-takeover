@@ -222,14 +222,14 @@ function Index() {
               <div className="min-w-0 max-w-full pt-2 lg:pt-8">
                 <div className="flex flex-col items-center gap-10 sm:gap-14">
                   {[
-                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -5, shift: "-translate-x-6 sm:-translate-x-12" },
-                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 4, shift: "translate-x-6 sm:translate-x-12" },
-                    { slot: "polaroid-3", src: polaroid3, caption: "bali", rot: -3, shift: "-translate-x-4 sm:-translate-x-10" },
+                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -5, x: -8 },
+                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 4, x: 10 },
+                    { slot: "polaroid-3", src: polaroid3, caption: "bali", rot: -3, x: -6 },
                   ].map((p) => (
                     <div
                       key={p.slot}
-                      className={`polaroid-tape polaroid-thin w-[58%] max-w-[260px] ${p.shift}`}
-                      style={{ transform: `rotate(${p.rot}deg)`, transformOrigin: "center" }}
+                      className="polaroid-tape polaroid-thin w-[58%] max-w-[260px]"
+                      style={{ transform: `translateX(${p.x}%) rotate(${p.rot}deg)`, transformOrigin: "center" }}
                     >
                       <img
                         data-image-slot={p.slot}
