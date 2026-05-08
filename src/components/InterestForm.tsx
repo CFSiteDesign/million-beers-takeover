@@ -2,6 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { COUNTRIES } from "@/lib/countries";
 
 const VIBES = ["Beach", "City", "Mountains", "Festival"];
 const BUDGETS = ["Under $300", "$300–600", "$600–1,000", "$1,000+"];
