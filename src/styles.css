@@ -417,9 +417,11 @@
   transform: translateY(110%);
   transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.beer-btn:hover .beer-liquid { transform: translateY(0); }
+.beer-btn:hover .beer-liquid,
+.beer-btn.is-inview .beer-liquid { transform: translateY(0); }
 .beer-inner { position: absolute; inset: 0; overflow: hidden; }
-.beer-btn:hover .beer-inner { animation: beer-slosh 5s ease-in-out 1.4s infinite; }
+.beer-btn:hover .beer-inner,
+.beer-btn.is-inview .beer-inner { animation: beer-slosh 5s ease-in-out 1.4s infinite; }
 @keyframes beer-slosh {
   0%, 100% { transform: translateX(-1.2px) rotate(-0.14deg); }
   50%      { transform: translateX(1.2px)  rotate(0.14deg); }
