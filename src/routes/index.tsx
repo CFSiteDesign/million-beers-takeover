@@ -14,6 +14,9 @@ import { BeerButton } from "@/components/BeerButton";
 import { CountUp } from "@/components/CountUp";
 import { DestinationShuffler } from "@/components/DestinationShuffler";
 import { LiveBeerCounter } from "@/components/LiveBeerCounter";
+import polaroid1 from "@/assets/polaroid-1.png";
+import polaroid2 from "@/assets/polaroid-2.png";
+import polaroid3 from "@/assets/polaroid-3.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
