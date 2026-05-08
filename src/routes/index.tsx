@@ -110,8 +110,20 @@ function Index() {
                 </span>
               </div>
 
-              <div className="mt-10">
-                <LiveBeerCounter />
+              <div className="mt-10 max-w-md">
+                <div className="mb-2 flex items-baseline justify-between font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--ink)]">
+                  <span className="font-bold">20,847 beers logged</span>
+                  <span className="text-[var(--ink)]/60">/ 1,000,000</span>
+                </div>
+                <div className="relative h-2 w-full overflow-hidden rounded-full bg-[var(--ink)]/15">
+                  <div
+                    className="h-full rounded-full bg-[var(--ink)] transition-[width] duration-1000 ease-out"
+                    style={{ width: "2.1%" }}
+                  />
+                </div>
+                <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--ink)]/60">
+                  2.1% to the million
+                </div>
               </div>
             </div>
 
