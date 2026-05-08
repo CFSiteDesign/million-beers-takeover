@@ -10,6 +10,7 @@ import { MMHeader } from "@/components/MMHeader";
 import { MMFooter } from "@/components/MMFooter";
 import { FoamOverflowDivider } from "@/components/Dividers";
 import heroImage from "@/assets/mil_beers_hero.png";
+import { BeerButton } from "@/components/BeerButton";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -100,9 +101,7 @@ function Index() {
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-5">
-                <button onClick={() => scrollTo("form")} className="btn-stamp btn-dark text-xl sm:text-2xl">
-                  I'M IN ✦ COUNT ME
-                </button>
+                <BeerButton onClick={() => scrollTo("form")}>I'm in</BeerButton>
                 <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--ink)]/70">
                   no commitment · no payment
                 </span>
@@ -339,9 +338,7 @@ function Index() {
               </span>
             </h2>
             <div className="col-span-12 flex justify-start lg:col-span-4 lg:justify-end">
-              <button onClick={() => scrollTo("form")} className="btn-stamp text-2xl">
-                🍻 I'M IN
-              </button>
+              <BeerButton onClick={() => scrollTo("form")}>I'm in</BeerButton>
             </div>
           </div>
         </section>
