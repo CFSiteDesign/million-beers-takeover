@@ -9,13 +9,7 @@ import { ProgressBar } from "@/components/ProgressBar";
 import { InterestForm } from "@/components/InterestForm";
 import { MMHeader } from "@/components/MMHeader";
 import { MMFooter } from "@/components/MMFooter";
-import {
-  FoamWaveDivider,
-  BottleCapDivider,
-  PullTabDivider,
-  PourDivider,
-  CoasterRingsDivider,
-} from "@/components/Dividers";
+import { FoamOverflowDivider } from "@/components/Dividers";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -147,7 +141,7 @@ function Index() {
           </button>
         </section>
 
-        <FoamWaveDivider />
+        <FoamOverflowDivider />
 
         {/* WHAT IS THE TAKEOVER */}
         <section id="about" className="relative px-4 py-20 lg:py-28">
@@ -211,7 +205,7 @@ function Index() {
           </div>
         </section>
 
-        <BottleCapDivider />
+        <FoamOverflowDivider />
 
         {/* COMMUNITY */}
         <section className="relative px-4 py-20">
@@ -264,7 +258,7 @@ function Index() {
           </Reveal>
         </section>
 
-        <PullTabDivider />
+        <FoamOverflowDivider />
 
         {/* FORM */}
         <section id="form" className="relative px-4 py-20">
@@ -286,7 +280,7 @@ function Index() {
           </div>
         </section>
 
-        <PourDivider />
+        <FoamOverflowDivider />
 
         {/* TRUST STRIP */}
         <section className="relative px-4 py-16">
@@ -309,10 +303,10 @@ function Index() {
           </div>
         </section>
 
-        <CoasterRingsDivider />
+        <FoamOverflowDivider />
 
         {/* PRE-FOOTER CTA */}
-        <BottleCapDivider />
+        <FoamOverflowDivider />
         <section
           className="relative px-4 py-16 text-center"
           style={{ background: "var(--gradient-amber)" }}
@@ -327,7 +321,7 @@ function Index() {
             I'M IN
           </button>
         </section>
-        <BottleCapDivider />
+        <FoamOverflowDivider />
       </main>
 
       <MMFooter />
