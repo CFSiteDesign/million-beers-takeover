@@ -180,7 +180,9 @@ function Index() {
                 <div className="mt-6 max-w-[62ch] space-y-4 text-[16px] leading-relaxed sm:mt-9 sm:space-y-5 sm:text-xl">
                   <p>A Takeover is simple. A group of MM people go somewhere new together.</p>
                   <p>
-                    New city. New beers. New stories. Some of you know each other already. Most of you don't.
+                    New city. New beers. New stories.
+                    <br />
+                    Some of you know each other already. Most of you don't.
                   </p>
                 </div>
 
