@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { Toaster } from "sonner";
-import { Beer, ChevronDown, Mail, Wallet, Vote } from "lucide-react";
 import { Bubbles } from "@/components/Bubbles";
 import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
@@ -26,59 +25,28 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:image",
-        content:
-          "https://placehold.co/1200x630/0A0A0A/F5B82E?text=Million+Beer+Mission",
+        content: "https://placehold.co/1200x630/0A0A0A/F5B82E?text=Million+Beer+Mission",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      {
-        rel: "preconnect",
-        href: "https://fonts.googleapis.com",
-      },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap",
       },
       {
         rel: "icon",
-        href:
-          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0A0A'/%3E%3Ctext x='50' y='72' font-size='72' text-anchor='middle' fill='%23F5B82E'%3E%F0%9F%8D%BA%3C/text%3E%3C/svg%3E",
+        href: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0A0A'/%3E%3Ctext x='50' y='72' font-size='72' text-anchor='middle' fill='%23F5B82E'%3E%F0%9F%8D%BA%3C/text%3E%3C/svg%3E",
       },
     ],
   }),
   component: Index,
 });
 
-const HERO_HEADLINE = "THE TAKEOVER IS HAPPENING.";
-
-function HeroHeadline() {
-  const words = HERO_HEADLINE.split(" ");
-  let idx = 0;
-  return (
-    <h1 className="font-display text-5xl leading-[0.95] text-[var(--cream)] sm:text-6xl md:text-7xl lg:text-8xl text-balance">
-      {words.map((word, wi) => (
-        <span key={wi} className="inline-block whitespace-nowrap">
-          {word.split("").map((ch) => {
-            const i = idx++;
-            return (
-              <span
-                key={i}
-                className="hero-letter inline-block"
-                style={{ animationDelay: `${i * 35 + 200}ms` }}
-              >
-                {ch}
-              </span>
-            );
-          })}
-          {wi < words.length - 1 && " "}
-        </span>
-      ))}
-    </h1>
-  );
-}
+const TICKER = "NO SPAM   //   NO PAYMENT NOW   //   YOU PICK THE DESTINATION   //   ";
 
 function Index() {
   useEffect(() => {
@@ -90,167 +58,227 @@ function Index() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[var(--background)] text-[var(--foreground)]">
+    <div className="paper-grain relative min-h-screen overflow-x-hidden bg-[var(--ink)] text-[var(--cream)]">
       <MMHeader />
-      <Bubbles density={16} />
+      <Bubbles density={7} />
       <Toaster position="top-center" theme="dark" richColors />
 
       <main className="relative z-10">
-        {/* HERO */}
-        <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-4 pt-10 pb-24 text-center">
-          <img
-            data-image-slot="hero-bg"
-            src="https://placehold.co/1920x1080/0A0A0A/F5B82E?text=HERO+IMAGE"
-            alt=""
-            aria-hidden
-            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-luminosity"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0"
-            style={{ background: "var(--gradient-hero)" }}
-          />
-          <div className="relative z-10 flex max-w-3xl flex-col items-center gap-6">
-            <span className="rounded-full border border-[var(--amber)]/40 bg-black/40 px-4 py-1 font-display text-sm tracking-[0.25em] text-[var(--amber)]">
-              MILLION BEER MISSION
-            </span>
-            <HeroHeadline />
-            <p className="max-w-xl text-lg text-[var(--cream)]/90 sm:text-xl">
-              We're picking a place. We're going there. And we want you in.
-            </p>
-            <ProgressBar />
-            <button
-              onClick={() => scrollTo("form")}
-              className="foam-btn w-full max-w-md rounded-full bg-[var(--amber)] px-8 py-4 font-display text-2xl tracking-widest text-[var(--primary-foreground)] shadow-[var(--shadow-amber)]"
-            >
-              I'M IN, COUNT ME
-            </button>
-            <p className="text-sm text-[var(--cream)]/60">
-              No commitment. No payment. Just tell us you're keen.
-            </p>
-          </div>
-          <button
-            onClick={() => scrollTo("about")}
-            aria-label="Scroll down"
-            className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[var(--amber)]"
-          >
-            <div className="animate-bob flex flex-col items-center gap-1">
-              <Beer className="h-7 w-7" />
-              <ChevronDown className="h-4 w-4" />
+        {/* ============ 01 HERO ============ */}
+        <section className="relative bg-[var(--ink)] pt-10 pb-0">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 pb-16 lg:gap-10 lg:px-10">
+            <div className="col-span-12 flex items-start lg:col-span-1">
+              <span className="section-num text-[var(--amber)]">01</span>
             </div>
-          </button>
-        </section>
 
-        <FoamOverflowDivider />
+            <div className="col-span-12 lg:col-span-7">
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--amber)]">
+                Million Beer Mission · Takeover #01
+              </p>
+              <h1 className="mt-6 font-display text-[var(--cream)]" style={{ lineHeight: 0.85 }}>
+                <span className="block uppercase tracking-tight" style={{ fontSize: "clamp(56px, 12vw, 140px)" }}>
+                  THE
+                </span>
+                <span
+                  className="block uppercase text-[var(--amber)]"
+                  style={{ fontSize: "clamp(96px, 22vw, 260px)", letterSpacing: "-0.02em" }}
+                >
+                  TAKEOVER
+                </span>
+                <span
+                  className="block lowercase"
+                  style={{ fontSize: "clamp(40px, 8vw, 96px)", letterSpacing: "0.05em" }}
+                >
+                  is happening.
+                </span>
+              </h1>
 
-        {/* WHAT IS THE TAKEOVER */}
-        <section id="about" className="relative px-4 py-20 lg:py-28">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
-            <Reveal>
-              <h2 className="font-display text-4xl text-[var(--cream)] sm:text-5xl lg:text-6xl">
-                What's a Takeover?
-              </h2>
-              <div className="mt-6 space-y-4 text-lg text-[var(--cream)]/85">
-                <p>
-                  A Takeover is simple. A group of MM people go somewhere new together.
-                </p>
-                <p>
-                  New city. New beers. New stories. Some of you know each other already.
-                  Most of you don't. That's kind of the whole point.
-                </p>
-                <p>
-                  We don't have a destination yet. We're picking based on who's in and
-                  where people want to go. Register below, tell us your vibe, and you'll
-                  help shape the whole thing.
+              <p className="mt-8 max-w-md text-lg text-[var(--cream)]">
+                We're picking a place. We're going there. And we want you in.
+              </p>
+
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <button onClick={() => scrollTo("form")} className="btn-stamp text-xl">
+                  I'M IN, COUNT ME
+                </button>
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--cream)]/70">
+                  no commitment · no payment
+                </span>
+              </div>
+            </div>
+
+            <div className="col-span-12 lg:col-span-4">
+              <div className="relative ml-auto w-full max-w-xs" style={{ transform: "rotate(3deg)" }}>
+                <div className="polaroid-tape">
+                  <img
+                    data-image-slot="hero-bg"
+                    src="https://placehold.co/600x800/0A0A0A/F5B82E?text=HERO+POLAROID"
+                    alt="Trip 01 placeholder"
+                    className="zine-photo h-72 w-full object-cover"
+                  />
+                  <p
+                    className="mt-3 text-center text-[var(--ink)]"
+                    style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 22 }}
+                  >
+                    trip 01 · destination tbc
+                  </p>
+                </div>
+                <p
+                  className="mt-6 -rotate-2 text-[var(--stamp-red)]"
+                  style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 26 }}
+                >
+                  trip 01. destination: tbc.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Status bar full-bleed */}
+          <ProgressBar variant="status" />
+        </section>
+
+        <FoamOverflowDivider fillFrom="var(--ink)" foamColor="var(--cream)" />
+
+        {/* ============ 02 WHAT IS THE TAKEOVER (cream) ============ */}
+        <section className="relative bg-[var(--cream)] text-[var(--ink)]">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 py-20 lg:gap-10 lg:px-10 lg:py-28">
+            <div className="col-span-12 lg:col-span-1">
+              <span className="section-num text-[var(--ink)]">02</span>
+            </div>
+
+            <Reveal className="col-span-12 lg:col-span-7">
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--stamp-red)]">
+                What you're signing up for
+              </p>
+              <h2
+                className="mt-3 font-display uppercase"
+                style={{ fontSize: "clamp(48px, 8vw, 110px)", lineHeight: 0.9 }}
+              >
+                What's a<br />Takeover?
+              </h2>
+              <div className="mt-8 max-w-xl space-y-5 text-lg leading-relaxed">
+                <p>A Takeover is simple. A group of MM people go somewhere new together.</p>
+                <p>
+                  New city. New beers. New stories. Some of you know each other already.
+                  Most of you don't.
+                </p>
+              </div>
+              <p
+                className="mt-10 -ml-2 font-display uppercase text-[var(--amber)]"
+                style={{
+                  fontSize: "clamp(40px, 7vw, 88px)",
+                  lineHeight: 0.95,
+                  textShadow: "3px 3px 0 var(--ink)",
+                }}
+              >
+                "That's kind of the whole point."
+              </p>
+              <p className="mt-8 max-w-lg text-base">
+                We don't have a destination yet. We're picking based on who's in and where
+                people want to go. Register, tell us your vibe, help shape it.
+              </p>
             </Reveal>
-            <Reveal delay={150}>
-              <div className="relative mx-auto h-[480px] w-full max-w-md">
+
+            <div className="col-span-12 lg:col-span-4">
+              <div className="relative mx-auto h-[520px] w-full max-w-sm">
                 {[
-                  { slot: "polaroid-1", url: "https://placehold.co/400x500/1A1A1A/F5B82E?text=GROUP+SHOT+1", caption: "siem reap, 2am", rot: -8, x: -40, y: 0, hoverRot: -12 },
-                  { slot: "polaroid-2", url: "https://placehold.co/400x500/1A1A1A/F5B82E?text=GROUP+SHOT+2", caption: "el nido vibes", rot: 4, x: 30, y: 60, hoverRot: 8 },
-                  { slot: "polaroid-3", url: "https://placehold.co/400x500/1A1A1A/F5B82E?text=GROUP+SHOT+3", caption: "bali, definitely", rot: -2, x: -10, y: 140, hoverRot: -5 },
+                  { slot: "polaroid-1", caption: "siem reap, 2am", rot: -6, x: -20, y: 0 },
+                  { slot: "polaroid-2", caption: "el nido vibes", rot: 4, x: 30, y: 140 },
+                  { slot: "polaroid-3", caption: "bali, definitely", rot: -2, x: -10, y: 280 },
                 ].map((p, i) => (
                   <div
                     key={p.slot}
-                    className="polaroid group absolute left-1/2 top-0 w-60 -translate-x-1/2 rounded-sm bg-[var(--cream)] p-3 pb-10 shadow-2xl hover:z-10"
+                    className="polaroid-tape absolute left-1/2 top-0 w-56"
                     style={{
                       transform: `translate(calc(-50% + ${p.x}px), ${p.y}px) rotate(${p.rot}deg)`,
                       zIndex: i,
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = `translate(calc(-50% + ${p.x}px), ${p.y - 10}px) rotate(${p.hoverRot}deg)`;
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = `translate(calc(-50% + ${p.x}px), ${p.y}px) rotate(${p.rot}deg)`;
-                    }}
                   >
                     <img
                       data-image-slot={p.slot}
-                      src={p.url}
+                      src={`https://placehold.co/400x500/0A0A0A/F5B82E?text=${encodeURIComponent(p.caption)}`}
                       alt={p.caption}
-                      className="h-56 w-full object-cover"
+                      className="zine-photo h-48 w-full object-cover"
                     />
                     <p
-                      className="mt-3 text-center text-[var(--amber-deep)]"
-                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)" }}
+                      className="mt-3 text-center text-[var(--ink)]"
+                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 18 }}
                     >
                       {p.caption}
                     </p>
                   </div>
                 ))}
               </div>
-            </Reveal>
+            </div>
           </div>
         </section>
 
-        <FoamOverflowDivider />
-
-        {/* COMMUNITY */}
-        <section className="relative px-4 py-20">
-          <div className="mx-auto max-w-5xl text-center">
-            <Reveal>
-              <h2 className="font-display text-4xl text-[var(--cream)] sm:text-5xl lg:text-6xl">
-                20,000+ Photos. Hundreds of People. <br className="hidden sm:block" />
-                One Ridiculous Goal.
+        {/* ============ 03 COMMUNITY (black, right-aligned headline) ============ */}
+        <section className="relative bg-[var(--ink)] text-[var(--cream)]">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 pt-20 lg:gap-10 lg:px-10 lg:pt-28">
+            <div className="col-span-6 lg:col-span-2">
+              <span className="section-num text-[var(--cream)]">03</span>
+            </div>
+            <Reveal className="col-span-12 text-right lg:col-span-10">
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--amber)]">
+                Twenty thousand and counting
+              </p>
+              <h2
+                className="mt-3 font-display uppercase"
+                style={{ fontSize: "clamp(40px, 7.5vw, 100px)", lineHeight: 0.9 }}
+              >
+                20,000+ photos.<br />
+                hundreds of people.<br />
+                <span className="text-[var(--amber)]">one ridiculous goal.</span>
               </h2>
             </Reveal>
           </div>
-          <div className="relative mt-12 overflow-hidden">
-            <div className="marquee-track flex w-max gap-4">
+
+          {/* Marquee — tight, no gaps, hard borders */}
+          <div className="relative mt-12 overflow-hidden border-y-2 border-[var(--cream)]">
+            <div className="marquee-track flex w-max">
               {Array.from({ length: 24 }).map((_, i) => {
                 const n = (i % 12) + 1;
+                const rot = i % 2 === 0 ? -1 : 1;
                 return (
                   <div
                     key={i}
-                    className="h-40 w-40 flex-shrink-0 overflow-hidden rounded-lg border border-[var(--amber)]/20 sm:h-48 sm:w-48"
+                    className="h-40 w-40 flex-shrink-0 overflow-hidden border-2 border-[var(--cream)] sm:h-48 sm:w-48"
+                    style={{ transform: `rotate(${rot * 0.6}deg)` }}
                   >
                     <img
                       data-image-slot={`marquee-${n}`}
                       src={`https://placehold.co/300x300/0A0A0A/F5B82E?text=BEER+${n}`}
                       alt=""
-                      className="h-full w-full object-cover"
-                      style={{ filter: "sepia(0.3) hue-rotate(-10deg) saturate(1.1)" }}
+                      className="zine-photo h-full w-full object-cover"
+                      style={{ filter: "contrast(1.1) saturate(0.7) sepia(0.15)" }}
                     />
                   </div>
                 );
               })}
             </div>
           </div>
-          <Reveal>
-            <div className="mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-8 text-center sm:grid-cols-3">
+
+          {/* Magazine fact panel */}
+          <Reveal className="mx-auto mt-16 max-w-5xl px-6 pb-20 lg:px-10 lg:pb-28">
+            <div className="grid grid-cols-1 border-2 border-[var(--cream)] sm:grid-cols-3">
               {[
                 { n: 20847, label: "beers logged" },
                 { n: 47, label: "countries" },
                 { n: 1_000_000, label: "to go" },
-              ].map((s) => (
-                <div key={s.label}>
-                  <div className="font-display text-5xl text-[var(--amber)] sm:text-6xl">
-                    <Counter to={s.n} />
-                  </div>
-                  <div className="mt-2 text-sm uppercase tracking-widest text-[var(--cream)]/70">
+              ].map((s, i) => (
+                <div
+                  key={s.label}
+                  className={`p-8 ${i < 2 ? "sm:border-r-2 sm:border-[var(--cream)]" : ""} ${i < 2 ? "border-b-2 border-[var(--cream)] sm:border-b-0" : ""}`}
+                >
+                  <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--amber)]">
                     {s.label}
+                  </p>
+                  <div
+                    className="mt-2 font-display text-[var(--cream)]"
+                    style={{ fontSize: "clamp(56px, 9vw, 110px)", lineHeight: 0.85 }}
+                  >
+                    <Counter to={s.n} />
                   </div>
                 </div>
               ))}
@@ -258,67 +286,70 @@ function Index() {
           </Reveal>
         </section>
 
-        <FoamOverflowDivider />
+        {/* ============ 04 FORM (amber band into cream panel) ============ */}
+        <section className="relative bg-[var(--amber)] text-[var(--ink)]">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 py-20 lg:gap-10 lg:px-10 lg:py-28">
+            <div className="col-span-12 lg:col-span-1">
+              <span className="section-num text-[var(--ink)]">04</span>
+            </div>
 
-        {/* FORM */}
-        <section id="form" className="relative px-4 py-20">
-          <div className="mx-auto max-w-2xl">
-            <Reveal>
-              <div className="mb-8 text-center">
-                <h2 className="font-display text-4xl text-[var(--cream)] sm:text-5xl lg:text-6xl">
-                  Tell Us You're In.
-                </h2>
-                <p className="mx-auto mt-4 max-w-lg text-[var(--cream)]/80">
-                  No commitment. No payment. Once we see who's in, we'll share destination
-                  options, rough dates, and pricing. You'll get a vote.
-                </p>
-              </div>
-            </Reveal>
-            <Reveal delay={120}>
-              <InterestForm />
-            </Reveal>
+            <div className="col-span-12 lg:col-span-5">
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--ink)]">
+                Tell us you're in
+              </p>
+              <h2
+                className="mt-3 font-display uppercase"
+                style={{ fontSize: "clamp(48px, 8vw, 110px)", lineHeight: 0.9 }}
+              >
+                <span className="marker-underline">Get</span><br />
+                on the<br />
+                list.
+              </h2>
+              <p className="mt-8 max-w-sm text-base text-[var(--ink)]">
+                No commitment. No payment. Once we see who's in, we'll share destination
+                options, rough dates, and pricing. You'll get a vote.
+              </p>
+            </div>
+
+            <div id="form" className="col-span-12 lg:col-span-6">
+              <Reveal>
+                <InterestForm />
+              </Reveal>
+            </div>
           </div>
         </section>
 
-        <FoamOverflowDivider />
-
-        {/* TRUST STRIP */}
-        <section className="relative px-4 py-16">
-          <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-3">
-            {[
-              { Icon: Mail, t: "No spam. Just trip updates when there's something to say." },
-              { Icon: Wallet, t: "No payment now. You commit when you're ready." },
-              { Icon: Vote, t: "You help pick the destination. Your vote counts." },
-            ].map(({ Icon, t }, i) => (
-              <Reveal key={i} delay={i * 100}>
-                <div className="flex flex-col items-center text-center">
-                  <Icon
-                    className="mb-3 h-8 w-8 text-[var(--amber)]"
-                    strokeWidth={1.5}
-                  />
-                  <p className="text-[var(--cream)]/85">{t}</p>
-                </div>
-              </Reveal>
+        {/* ============ 05 TICKER ============ */}
+        <section
+          aria-label="Trip terms"
+          className="relative overflow-hidden border-y-2 border-[var(--ink)] bg-[var(--amber)] text-[var(--ink)]"
+        >
+          <div className="ticker-track flex w-max whitespace-nowrap py-5 font-mono text-base font-bold uppercase tracking-[0.25em] sm:text-lg">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <span key={i} className="px-4">{TICKER}</span>
             ))}
           </div>
         </section>
 
-        <FoamOverflowDivider />
-
-        {/* PRE-FOOTER CTA */}
-        <section
-          className="relative px-4 py-16 text-center"
-          style={{ background: "var(--gradient-amber)" }}
-        >
-          <h2 className="font-display text-4xl tracking-wide text-[#1a0f02] sm:text-5xl lg:text-6xl">
-            STILL READING? GET ON THE LIST.
-          </h2>
-          <button
-            onClick={() => scrollTo("form")}
-            className="foam-btn mt-6 inline-block rounded-full bg-[#1a0f02] px-12 py-4 font-display text-xl tracking-widest text-[var(--amber)] shadow-2xl"
-          >
-            I'M IN
-          </button>
+        {/* ============ 06 PRE-FOOTER CTA (full bleed black) ============ */}
+        <section className="relative bg-[var(--ink)] text-[var(--cream)]">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-6 px-6 py-20 lg:gap-10 lg:px-10 lg:py-28">
+            <div className="col-span-12 lg:col-span-2">
+              <span className="section-num text-[var(--amber)]">06</span>
+            </div>
+            <h2
+              className="col-span-12 font-display uppercase lg:col-span-7"
+              style={{ fontSize: "clamp(40px, 7vw, 96px)", lineHeight: 0.9 }}
+            >
+              Still reading?<br />
+              <span className="text-[var(--amber)]">Get on the list.</span>
+            </h2>
+            <div className="col-span-12 flex justify-start lg:col-span-3 lg:justify-end">
+              <button onClick={() => scrollTo("form")} className="btn-stamp btn-dark text-xl">
+                I'M IN
+              </button>
+            </div>
+          </div>
         </section>
       </main>
 

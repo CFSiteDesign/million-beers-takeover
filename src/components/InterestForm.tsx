@@ -2,16 +2,10 @@ import { useState } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { Waves, Building2, Mountain, Music, MessageCircle } from "lucide-react";
 
-const VIBES = [
-  { v: "Beach", Icon: Waves },
-  { v: "City", Icon: Building2 },
-  { v: "Mountains", Icon: Mountain },
-  { v: "Festival", Icon: Music },
-];
-const BUDGETS = ["Under $300", "$300 to $600", "$600 to $1,000", "$1,000 plus, let's go big"];
-const TIMINGS = ["Jan to Mar", "Apr to Jun", "Jul to Sep", "Oct to Dec", "Flexible, just tell me when"];
+const VIBES = ["Beach", "City", "Mountains", "Festival"];
+const BUDGETS = ["Under $300", "$300–600", "$600–1,000", "$1,000+"];
+const TIMINGS = ["Jan–Mar", "Apr–Jun", "Jul–Sep", "Oct–Dec", "Flexible"];
 
 const schema = z.object({
   name: z.string().trim().min(1, "What do we call you?").max(80),
@@ -23,6 +17,8 @@ const schema = z.object({
 });
 
 const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/invite/placeholder";
+
+const ROTS = [-3, 2, -2, 3, -4, 2, -3, 3, -2];
 
 export function InterestForm() {
   const [form, setForm] = useState({
@@ -39,12 +35,6 @@ export function InterestForm() {
 
   const set = <K extends keyof typeof form>(k: K, v: string) =>
     setForm((f) => ({ ...f, [k]: v }));
-
-  const validateField = (k: keyof typeof form, v: string) => {
-    const shape = schema.shape[k];
-    const r = shape.safeParse(v);
-    setErrors((e) => ({ ...e, [k]: r.success ? "" : r.error.issues[0].message }));
-  };
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -67,185 +57,134 @@ export function InterestForm() {
   };
 
   if (done) {
+    const today = new Date().toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    }).toUpperCase();
     return (
-      <div className="relative overflow-hidden rounded-2xl border border-[var(--amber)]/40 bg-[var(--card)] p-8 text-center shadow-[var(--shadow-amber)]">
-        <div className="pointer-events-none absolute inset-0">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <span
-              key={i}
-              className="absolute block rounded-full bg-[var(--foam)]"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                width: 4 + Math.random() * 10,
-                height: 4 + Math.random() * 10,
-                opacity: 0.6,
-                animation: `pop ${0.6 + Math.random()}s ease-out forwards`,
-                animationDelay: `${Math.random() * 0.6}s`,
-              }}
-            />
-          ))}
+      <div className="relative bg-[var(--ink)] p-10 text-center" style={{ border: "4px solid var(--ink)", boxShadow: "10px 10px 0 0 var(--amber)" }}>
+        <div
+          className="mx-auto inline-block px-10 py-8"
+          style={{
+            border: "4px double var(--stamp-red)",
+            transform: "rotate(-8deg)",
+            color: "var(--stamp-red)",
+          }}
+        >
+          <div className="font-display text-5xl tracking-wider">ON THE LIST</div>
+          <div className="mt-2 font-mono text-xs tracking-[0.3em]">MM TAKEOVER · {today}</div>
         </div>
-        <h3 className="font-display text-3xl text-[var(--cream)]">YOU'RE ON THE LIST.</h3>
-        <p className="mx-auto mt-4 max-w-md text-[var(--cream)]/80">
-          We'll be in touch when there's something worth saying. In the meantime, get back in
-          the chat.
+        <p className="mx-auto mt-8 max-w-md text-[var(--cream)]/80">
+          We'll be in touch when there's something worth saying.
         </p>
         <a
           href={WHATSAPP_GROUP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="foam-btn mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--amber)] px-7 py-3 font-display text-lg tracking-wider text-[var(--primary-foreground)] shadow-[var(--shadow-amber)]"
+          className="btn-stamp mt-6"
         >
-          <MessageCircle className="h-5 w-5" /> OPEN WHATSAPP GROUP
+          OPEN WHATSAPP GROUP
         </a>
       </div>
     );
   }
 
-  const inputCls =
-    "w-full rounded-lg border border-[var(--border)] bg-black/40 px-4 py-3 text-[var(--cream)] placeholder:text-[var(--cream)]/40 transition focus:border-[var(--amber)] focus:outline-none focus:ring-4 focus:ring-[var(--amber)]/30";
-  const errCls = "mt-1 text-sm text-[var(--destructive)]";
+  const fields: Array<{ k: keyof typeof form; label: string; placeholder: string; type?: string }> = [
+    { k: "name", label: "01 / Your name", placeholder: "Name or chat nickname" },
+    { k: "whatsapp", label: "02 / WhatsApp", placeholder: "+1 555 123 4567", type: "tel" },
+    { k: "location", label: "03 / Where you're based", placeholder: "City or country" },
+  ];
 
   return (
-    <form
-      onSubmit={submit}
-      className="relative rounded-2xl border border-[var(--amber)]/30 bg-[var(--card)]/80 p-6 shadow-[var(--shadow-amber)] backdrop-blur-md md:p-10"
-    >
-      <div className="space-y-6">
-        <Field label="What do we call you?" error={errors.name}>
-          <input
-            className={inputCls}
-            placeholder="Name or chat nickname"
-            value={form.name}
-            onChange={(e) => set("name", e.target.value)}
-            onBlur={(e) => validateField("name", e.target.value)}
-          />
-        </Field>
-
-        <Field label="Drop your WhatsApp number" error={errors.whatsapp}>
-          <input
-            type="tel"
-            className={inputCls}
-            placeholder="+1 555 123 4567"
-            value={form.whatsapp}
-            onChange={(e) => set("whatsapp", e.target.value)}
-            onBlur={(e) => validateField("whatsapp", e.target.value)}
-          />
-        </Field>
-
-        <Field label="Where in the world are you?" error={errors.location}>
-          <input
-            className={inputCls}
-            placeholder="City or country"
-            value={form.location}
-            onChange={(e) => set("location", e.target.value)}
-            onBlur={(e) => validateField("location", e.target.value)}
-          />
-        </Field>
-
-        <Field label="Pick your vibe" error={errors.vibe}>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {VIBES.map(({ v, Icon }) => (
-              <button
-                type="button"
-                key={v}
-                onClick={() => {
-                  set("vibe", v);
-                  validateField("vibe", v);
-                }}
-                className={`flex flex-col items-center gap-2 rounded-xl border-2 p-4 transition ${
-                  form.vibe === v
-                    ? "border-[var(--amber)] bg-[var(--amber)]/15 text-[var(--cream)]"
-                    : "border-[var(--border)] bg-black/30 text-[var(--cream)]/80 hover:border-[var(--amber)]/50"
-                }`}
-              >
-                <Icon className="h-6 w-6" />
-                <span className="text-sm font-semibold">{v}</span>
-              </button>
-            ))}
+    <form onSubmit={submit} className="bg-[var(--cream)] p-6 md:p-10" style={{ border: "4px solid var(--ink)" }}>
+      <div className="space-y-7">
+        {fields.map(({ k, label, placeholder, type }) => (
+          <div key={k}>
+            <span className="zine-label">{label}</span>
+            <input
+              type={type ?? "text"}
+              className="zine-input"
+              placeholder={placeholder}
+              value={form[k]}
+              onChange={(e) => set(k, e.target.value)}
+            />
+            {errors[k] && (
+              <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[var(--stamp-red)]">{errors[k]}</p>
+            )}
           </div>
-        </Field>
+        ))}
 
-        <Field label="Rough budget per person, flights aside" error={errors.budget}>
-          <Segmented
-            options={BUDGETS}
-            value={form.budget}
-            onChange={(v) => {
-              set("budget", v);
-              validateField("budget", v);
-            }}
-          />
-        </Field>
+        <StampGroup
+          label="04 / Pick your vibe"
+          options={VIBES}
+          value={form.vibe}
+          onChange={(v) => set("vibe", v)}
+          error={errors.vibe}
+          onCream
+        />
+        <StampGroup
+          label="05 / Rough budget per person"
+          options={BUDGETS}
+          value={form.budget}
+          onChange={(v) => set("budget", v)}
+          error={errors.budget}
+          onCream
+        />
+        <StampGroup
+          label="06 / Best time of year"
+          options={TIMINGS}
+          value={form.timing}
+          onChange={(v) => set("timing", v)}
+          error={errors.timing}
+          onCream
+        />
 
-        <Field label="Best time of year" error={errors.timing}>
-          <Segmented
-            options={TIMINGS}
-            value={form.timing}
-            onChange={(v) => {
-              set("timing", v);
-              validateField("timing", v);
-            }}
-          />
-        </Field>
-
-        <button
-          type="submit"
-          disabled={loading}
-          className="foam-btn relative w-full rounded-full bg-[var(--amber)] px-8 py-4 font-display text-xl tracking-widest text-[var(--primary-foreground)] shadow-[var(--shadow-amber)] transition disabled:opacity-60"
-        >
-          {loading ? "ADDING…" : "ADD ME TO THE LIST"}
+        <button type="submit" disabled={loading} className="btn-stamp btn-on-cream w-full text-2xl">
+          {loading ? "ADDING…" : "STAMP ME IN"}
         </button>
       </div>
     </form>
   );
 }
 
-function Field({
+function StampGroup({
   label,
-  error,
-  children,
-}: {
-  label: string;
-  error?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <label className="block">
-      <span className="mb-2 block text-sm font-semibold tracking-wide text-[var(--cream)]">
-        {label}
-      </span>
-      {children}
-      {error && <p className="mt-1 text-sm text-[var(--destructive)]">{error}</p>}
-    </label>
-  );
-}
-
-function Segmented({
   options,
   value,
   onChange,
+  error,
+  onCream,
 }: {
+  label: string;
   options: string[];
   value: string;
   onChange: (v: string) => void;
+  error?: string;
+  onCream?: boolean;
 }) {
   return (
-    <div className="flex flex-wrap gap-2">
-      {options.map((o) => (
-        <button
-          type="button"
-          key={o}
-          onClick={() => onChange(o)}
-          className={`rounded-full border-2 px-4 py-2 text-sm font-medium transition ${
-            value === o
-              ? "border-[var(--amber)] bg-[var(--amber)]/15 text-[var(--cream)]"
-              : "border-[var(--border)] bg-black/30 text-[var(--cream)]/80 hover:border-[var(--amber)]/50"
-          }`}
-        >
-          {o}
-        </button>
-      ))}
+    <div>
+      <span className="zine-label">{label}</span>
+      <div className="flex flex-wrap gap-3 pt-2">
+        {options.map((o, i) => {
+          const selected = value === o;
+          return (
+            <button
+              key={o}
+              type="button"
+              onClick={() => onChange(o)}
+              className={`stamp-pill ${onCream ? "on-cream" : ""} ${selected ? "selected" : "idle"}`}
+              style={{ ["--rot" as never]: `${ROTS[i % ROTS.length]}deg` }}
+            >
+              {o}
+            </button>
+          );
+        })}
+      </div>
+      {error && (
+        <p className="mt-2 font-mono text-xs uppercase tracking-widest text-[var(--stamp-red)]">{error}</p>
+      )}
     </div>
   );
 }

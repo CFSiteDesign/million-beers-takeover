@@ -10,9 +10,11 @@ type Bubble = {
   wob: number;
 };
 
-export function Bubbles({ density = 14 }: { density?: number }) {
+export function Bubbles({ density = 7 }: { density?: number }) {
+  const [mounted, setMounted] = useState(false);
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
+    setMounted(true);
     const m = window.matchMedia("(max-width: 640px)");
     const onChange = () => setMobile(m.matches);
     onChange();
@@ -20,22 +22,25 @@ export function Bubbles({ density = 14 }: { density?: number }) {
     return () => m.removeEventListener("change", onChange);
   }, []);
 
-  const count = mobile ? Math.max(6, Math.round(density * 0.55)) : density;
+  const count = mobile ? Math.max(4, Math.round(density * 0.6)) : density;
 
   const bubbles = useMemo<Bubble[]>(() => {
+    if (!mounted) return [];
     return Array.from({ length: count }, (_, i) => {
-      const size = 4 + Math.random() * 14;
+      const size = 5 + Math.random() * 12;
       return {
         id: i,
         size,
         left: Math.random() * 100,
-        duration: 8 + Math.random() * 14,
-        delay: -Math.random() * 22,
-        drift: (Math.random() - 0.5) * 80,
-        wob: 6 + Math.random() * 18,
+        duration: 18 + Math.random() * 22,
+        delay: -Math.random() * 30,
+        drift: (Math.random() - 0.5) * 60,
+        wob: 6 + Math.random() * 14,
       };
     });
-  }, [count]);
+  }, [count, mounted]);
+
+  if (!mounted) return null;
 
   return (
     <div
