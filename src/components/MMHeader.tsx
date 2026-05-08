@@ -13,6 +13,7 @@ export function MMHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm shadow-sm">
+      <span aria-hidden className="foam-head-edge" />
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
         <a href="https://madmonkeyhostels.com" className="flex items-center">
           <img
