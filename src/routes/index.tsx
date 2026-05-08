@@ -11,6 +11,7 @@ import { MMFooter } from "@/components/MMFooter";
 import { FoamOverflowDivider } from "@/components/Dividers";
 import heroImage from "@/assets/mil_beers_hero.png";
 import { BeerButton } from "@/components/BeerButton";
+import { CountUp } from "@/components/CountUp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
