@@ -55,7 +55,7 @@ const TICKER = "NO SPAM   //   NO PAYMENT NOW   //   YOU PICK THE DESTINATION   
 
 // Foam dividers overlap their neighbours by ~50%, so sections only need a
 // modest internal padding above their content.
-const SECTION_PY = "pt-20 pb-24 lg:pt-24 lg:pb-28";
+const SECTION_PY = "pt-14 pb-16 lg:pt-24 lg:pb-28";
 
 function Index() {
   useEffect(() => {
