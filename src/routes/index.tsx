@@ -322,7 +322,7 @@ function Index() {
         {/* ============ 05 TICKER ============ */}
         <section
           aria-label="Trip terms"
-          className="relative overflow-hidden border-y-2 border-[var(--ink)] bg-[var(--amber)] text-[var(--ink)]"
+          className="relative overflow-hidden bg-[var(--amber)] text-[var(--ink)]"
         >
           <div className="ticker-track flex w-max whitespace-nowrap py-5 font-mono text-base font-bold uppercase tracking-[0.25em] sm:text-lg">
             {Array.from({ length: 8 }).map((_, i) => (
