@@ -39,18 +39,9 @@ export function MMHeader() {
               {item.dropdown && <ChevronDown className="h-4 w-4" />}
             </a>
           ))}
-          <button className="flex items-center gap-1 text-sm font-medium text-neutral-800">
-            USD | $ <ChevronDown className="h-4 w-4" />
-          </button>
-          <a
-            href="https://madmonkeyhostels.com/login"
-            className="text-sm font-medium text-neutral-800 hover:text-[var(--mm-teal)]"
-          >
-            Login
-          </a>
           <a
             href="https://madmonkeyhostels.com/booking"
-            className="flex items-center gap-1 rounded-full bg-[var(--mm-teal)] px-5 py-2 text-sm font-semibold text-white transition hover:opacity-90"
+            className="flex items-center gap-1 rounded-full bg-black px-5 py-2 text-sm font-semibold text-white transition hover:opacity-90"
           >
             Book Now <ChevronDown className="h-4 w-4" />
           </a>
