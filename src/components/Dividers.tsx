@@ -11,7 +11,11 @@ export function FoamOverflowDivider({
   void fillFrom;
   void foamColor;
   return (
-    <div aria-hidden className="relative w-full overflow-visible leading-[0]" style={{ marginTop: -40, marginBottom: -40, pointerEvents: "none" }}>
+    <div
+      aria-hidden
+      className="relative z-30 w-full overflow-visible leading-[0]"
+      style={{ marginTop: "-6vw", marginBottom: "-6vw", pointerEvents: "none" }}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1600 400"
