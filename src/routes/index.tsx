@@ -48,6 +48,10 @@ export const Route = createFileRoute("/")({
 
 const TICKER = "NO SPAM   //   NO PAYMENT NOW   //   YOU PICK THE DESTINATION   //   ";
 
+// Section padding allows extra space at top/bottom so the overflowing foam
+// divider doesn't cover any content.
+const SECTION_PY = "py-24 pt-[14vw] pb-[14vw] lg:py-32";
+
 function Index() {
   useEffect(() => {
     document.documentElement.classList.add("dark");
@@ -64,25 +68,18 @@ function Index() {
       <Toaster position="top-center" theme="dark" richColors />
 
       <main className="relative z-10">
-        {/* ============ 01 HERO ============ */}
-        <section className="relative overflow-hidden bg-[var(--ink)] pt-16 pb-0">
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-end gap-8 px-6 pb-24 lg:gap-12 lg:px-10">
-            <div className="col-span-12 lg:col-span-8">
-              <div className="flex items-baseline gap-4">
-                <span className="section-num text-[var(--amber)]">01</span>
-                <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--amber)]">
-                  Million Beer Mission · Takeover #01
-                </p>
-              </div>
-
-              <h1 className="mt-8 font-display text-[var(--cream)]" style={{ lineHeight: 0.82 }}>
-                <span className="block uppercase" style={{ fontSize: "clamp(48px, 9vw, 120px)" }}>
+        {/* ============ 01 HERO (amber / beer) ============ */}
+        <section className={`relative overflow-hidden bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-6 lg:gap-12 lg:px-10">
+            <div className="col-span-12 lg:col-span-7">
+              <h1 className="font-display text-[var(--ink)]" style={{ lineHeight: 0.85 }}>
+                <span className="block uppercase" style={{ fontSize: "clamp(44px, 9vw, 120px)" }}>
                   THE
                 </span>
                 <span
-                  className="block uppercase text-[var(--amber)] text-shadow-poster"
+                  className="block uppercase text-[var(--ink)]"
                   style={{
-                    fontSize: "clamp(64px, 13vw, 170px)",
+                    fontSize: "clamp(56px, 13vw, 170px)",
                     letterSpacing: "-0.02em",
                     fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                   }}
@@ -90,36 +87,36 @@ function Index() {
                   TAKEOVER
                 </span>
                 <span
-                  className="font-script mt-4 block lowercase text-[var(--amber)]"
-                  style={{ fontSize: "clamp(36px, 6vw, 72px)", lineHeight: 0.9 }}
+                  className="font-script mt-3 block lowercase text-[var(--ink)]"
+                  style={{ fontSize: "clamp(32px, 6vw, 72px)", lineHeight: 0.9 }}
                 >
                   is happening.
                 </span>
               </h1>
 
-              <p className="mt-10 max-w-md text-xl font-semibold text-[var(--cream)]">
+              <p className="mt-8 max-w-md text-lg font-semibold text-[var(--ink)] sm:text-xl">
                 We're picking a place. We're going there.{" "}
-                <span className="bg-[var(--amber)] px-2 text-[var(--ink)]">And we want you in.</span>
+                <span className="bg-[var(--ink)] px-2 text-[var(--amber)]">And we want you in.</span>
               </p>
 
-              <div className="mt-10 flex flex-wrap items-center gap-5">
-                <button onClick={() => scrollTo("form")} className="btn-stamp text-2xl">
+              <div className="mt-8 flex flex-wrap items-center gap-5">
+                <button onClick={() => scrollTo("form")} className="btn-stamp btn-dark text-xl sm:text-2xl">
                   I'M IN ✦ COUNT ME
                 </button>
-                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--cream)]/70">
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--ink)]/70">
                   no commitment · no payment
                 </span>
               </div>
             </div>
 
-            <div className="col-span-12 lg:col-span-4">
-              <div className="mx-auto w-full max-w-[280px] lg:ml-auto lg:mr-0">
+            <div className="col-span-12 lg:col-span-5">
+              <div className="mx-auto w-full max-w-[300px] lg:ml-auto lg:mr-0">
                 <div className="polaroid-tape">
                   <img
                     data-image-slot="hero-bg"
                     src="https://placehold.co/600x800/0A0A0A/F5B82E?text=HERO+POLAROID"
                     alt="Trip 01 placeholder"
-                    className="zine-photo h-64 w-full object-cover"
+                    className="zine-photo h-72 w-full object-cover"
                   />
                   <p
                     className="font-script mt-3 text-center text-[var(--ink)]"
@@ -137,56 +134,53 @@ function Index() {
 
         <FoamOverflowDivider />
 
-        {/* ============ 02 WHAT IS THE TAKEOVER (cream) ============ */}
-        <section className="relative bg-[var(--cream)] text-[var(--ink)]">
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 py-20 lg:gap-10 lg:px-10 lg:py-28">
-            <div className="col-span-12 lg:col-span-1">
-              <span className="section-num text-[var(--ink)]">02</span>
-            </div>
-
+        {/* ============ 02 WHAT IS THE TAKEOVER (ink) ============ */}
+        <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
+          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-6 lg:gap-12 lg:px-10">
             <Reveal className="col-span-12 lg:col-span-7">
-              <span className="sticker pink tilt-l text-sm">▸ what's the deal</span>
               <h2
-                className="mt-5 font-display uppercase"
+                className="font-display uppercase"
                 style={{
-                  fontSize: "clamp(56px, 10vw, 140px)",
+                  fontSize: "clamp(48px, 10vw, 140px)",
                   lineHeight: 0.85,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
               >
-                <span className="block tilt-l">What's a</span>
-                <span className="block text-[var(--hot-pink)] text-shadow-poster-amber tilt-r" style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}>
+                <span className="block">What's a</span>
+                <span
+                  className="block text-[var(--amber)]"
+                  style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}
+                >
                   TAKEOVER?
                 </span>
               </h2>
-              <div className="mt-10 max-w-xl space-y-5 text-lg leading-relaxed">
+              <div className="mt-8 max-w-xl space-y-5 text-base leading-relaxed sm:text-lg">
                 <p>A Takeover is simple. A group of MM people go somewhere new together.</p>
                 <p>
-                  New city. <span className="bg-[var(--lime)] px-1">New beers.</span>{" "}
-                  New stories. Some of you know each other already.
-                  Most of you don't.
+                  New city. <span className="bg-[var(--amber)] px-1 text-[var(--ink)]">New beers.</span>{" "}
+                  New stories. Some of you know each other already. Most of you don't.
                 </p>
               </div>
               <p
-                className="font-script mt-12 -ml-2 text-[var(--stamp-red)] tilt-lg-l"
-                style={{ fontSize: "clamp(44px, 8vw, 96px)", lineHeight: 0.95 }}
+                className="font-script mt-10 text-[var(--amber)]"
+                style={{ fontSize: "clamp(36px, 7vw, 84px)", lineHeight: 0.95 }}
               >
                 "that's kinda the whole point."
               </p>
-              <p className="mt-10 max-w-lg text-base">
+              <p className="mt-8 max-w-lg text-base">
                 We don't have a destination yet. We're picking based on who's in and where
                 people want to go. <strong>Register, tell us your vibe, help shape it.</strong>
               </p>
             </Reveal>
 
-            <div className="col-span-12 lg:col-span-4">
+            <div className="col-span-12 lg:col-span-5">
               <div className="flex flex-col gap-6">
                 {[
                   { slot: "polaroid-1", caption: "siem reap, 2am" },
                   { slot: "polaroid-2", caption: "el nido vibes" },
                   { slot: "polaroid-3", caption: "bali, definitely" },
                 ].map((p) => (
-                  <div key={p.slot} className="polaroid-tape w-full max-w-xs">
+                  <div key={p.slot} className="polaroid-tape mx-auto w-full max-w-xs lg:mx-0 lg:ml-auto">
                     <img
                       data-image-slot={p.slot}
                       src={`https://placehold.co/400x500/0A0A0A/F5B82E?text=${encodeURIComponent(p.caption)}`}
@@ -208,26 +202,22 @@ function Index() {
 
         <FoamOverflowDivider />
 
-        {/* ============ 03 COMMUNITY (black, right-aligned headline) ============ */}
-        <section className="relative bg-[var(--ink)] text-[var(--cream)]">
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 pt-20 lg:gap-10 lg:px-10 lg:pt-28">
-            <div className="col-span-6 lg:col-span-2">
-              <span className="section-num text-[var(--cream)]">03</span>
-            </div>
-            <Reveal className="col-span-12 text-right lg:col-span-10">
-              <span className="sticker electric tilt-r text-sm">▸ the army</span>
+        {/* ============ 03 COMMUNITY (amber / beer) ============ */}
+        <section className={`relative bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
+          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-6 lg:gap-12 lg:px-10">
+            <Reveal className="col-span-12">
               <h2
-                className="mt-5 font-display uppercase"
+                className="font-display uppercase"
                 style={{
-                  fontSize: "clamp(44px, 9vw, 130px)",
+                  fontSize: "clamp(40px, 9vw, 130px)",
                   lineHeight: 0.85,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
               >
-                <span className="block tilt-r">20,000+ photos.</span>
-                <span className="block text-[var(--lime)] tilt-l">hundreds of legends.</span>
+                <span className="block">20,000+ photos.</span>
+                <span className="block">hundreds of legends.</span>
                 <span
-                  className="block text-[var(--amber)] text-shadow-poster-electric tilt-r"
+                  className="block text-[var(--ink)]"
                   style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}
                 >
                   ONE STUPID GOAL.
@@ -236,17 +226,15 @@ function Index() {
             </Reveal>
           </div>
 
-          {/* Marquee — tight, no gaps, hard borders */}
-          <div className="relative mt-12 overflow-hidden border-y-2 border-[var(--cream)]">
+          {/* Marquee */}
+          <div className="relative mt-12 overflow-hidden border-y-2 border-[var(--ink)]">
             <div className="marquee-track flex w-max">
               {Array.from({ length: 24 }).map((_, i) => {
                 const n = (i % 12) + 1;
-                const rot = i % 2 === 0 ? -1 : 1;
                 return (
                   <div
                     key={i}
-                    className="h-40 w-40 flex-shrink-0 overflow-hidden border-2 border-[var(--cream)] sm:h-48 sm:w-48"
-                    style={{ transform: `rotate(${rot * 0.6}deg)` }}
+                    className="h-40 w-40 flex-shrink-0 overflow-hidden border-2 border-[var(--ink)] sm:h-48 sm:w-48"
                   >
                     <img
                       data-image-slot={`marquee-${n}`}
@@ -261,9 +249,9 @@ function Index() {
             </div>
           </div>
 
-          {/* Magazine fact panel */}
-          <Reveal className="mx-auto mt-16 max-w-5xl px-6 pb-20 lg:px-10 lg:pb-28">
-            <div className="grid grid-cols-1 border-2 border-[var(--cream)] sm:grid-cols-3">
+          {/* Stats panel */}
+          <Reveal className="mx-auto mt-16 max-w-5xl px-6 lg:px-10">
+            <div className="grid grid-cols-1 border-2 border-[var(--ink)] sm:grid-cols-3">
               {[
                 { n: 20847, label: "beers logged" },
                 { n: 47, label: "countries" },
@@ -271,14 +259,14 @@ function Index() {
               ].map((s, i) => (
                 <div
                   key={s.label}
-                  className={`p-8 ${i < 2 ? "sm:border-r-2 sm:border-[var(--cream)]" : ""} ${i < 2 ? "border-b-2 border-[var(--cream)] sm:border-b-0" : ""}`}
+                  className={`bg-[var(--cream)] p-8 ${i < 2 ? "sm:border-r-2 sm:border-[var(--ink)]" : ""} ${i < 2 ? "border-b-2 border-[var(--ink)] sm:border-b-0" : ""}`}
                 >
-                  <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--amber)]">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--ink)]/70">
                     {s.label}
                   </p>
                   <div
-                    className="mt-2 font-display text-[var(--cream)]"
-                    style={{ fontSize: "clamp(56px, 9vw, 110px)", lineHeight: 0.85 }}
+                    className="mt-2 font-display text-[var(--ink)]"
+                    style={{ fontSize: "clamp(48px, 8vw, 96px)", lineHeight: 0.85 }}
                   >
                     <Counter to={s.n} />
                   </div>
@@ -290,34 +278,29 @@ function Index() {
 
         <FoamOverflowDivider />
 
-        {/* ============ 04 FORM (amber band into cream panel) ============ */}
-        <section className="relative bg-[var(--amber)] text-[var(--ink)]">
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 py-20 lg:gap-10 lg:px-10 lg:py-28">
-            <div className="col-span-12 lg:col-span-1">
-              <span className="section-num text-[var(--ink)]">04</span>
-            </div>
-
+        {/* ============ 04 FORM (ink) ============ */}
+        <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
+          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-6 lg:gap-12 lg:px-10">
             <div className="col-span-12 lg:col-span-5">
-              <span className="sticker pink tilt-l text-sm">▸ tell us you're in</span>
               <h2
-                className="mt-5 font-display uppercase"
+                className="font-display uppercase"
                 style={{
-                  fontSize: "clamp(64px, 11vw, 150px)",
-                  lineHeight: 0.82,
+                  fontSize: "clamp(56px, 11vw, 150px)",
+                  lineHeight: 0.85,
                   fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                 }}
               >
-                <span className="block tilt-l">GET</span>
-                <span className="block tilt-r">ON THE</span>
-                <span className="block text-[var(--stamp-red)] tilt-lg-l">LIST.</span>
+                <span className="block">GET</span>
+                <span className="block">ON THE</span>
+                <span className="block text-[var(--amber)]">LIST.</span>
               </h2>
-              <p className="mt-8 max-w-sm text-base text-[var(--ink)]">
+              <p className="mt-8 max-w-sm text-base text-[var(--cream)]">
                 No commitment. No payment. Once we see who's in, we'll share destination
                 options, rough dates, and pricing. <strong>You'll get a vote.</strong>
               </p>
             </div>
 
-            <div id="form" className="col-span-12 lg:col-span-6">
+            <div id="form" className="col-span-12 lg:col-span-7">
               <Reveal>
                 <InterestForm />
               </Reveal>
@@ -325,7 +308,9 @@ function Index() {
           </div>
         </section>
 
-        {/* ============ 05 TICKER ============ */}
+        <FoamOverflowDivider />
+
+        {/* ============ 05 TICKER (amber) ============ */}
         <section
           aria-label="Trip terms"
           className="relative overflow-hidden bg-[var(--amber)] text-[var(--ink)]"
@@ -337,30 +322,29 @@ function Index() {
           </div>
         </section>
 
-        {/* ============ 06 PRE-FOOTER CTA (full bleed black) ============ */}
-        <section className="relative bg-[var(--ink)] text-[var(--cream)]">
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-6 px-6 py-20 lg:gap-10 lg:px-10 lg:py-28">
-            <div className="col-span-12 lg:col-span-2">
-              <span className="section-num text-[var(--amber)]">06</span>
-            </div>
+        <FoamOverflowDivider />
+
+        {/* ============ 06 PRE-FOOTER CTA (ink) ============ */}
+        <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-6 lg:gap-12 lg:px-10">
             <h2
-              className="col-span-12 font-display uppercase lg:col-span-7"
+              className="col-span-12 font-display uppercase lg:col-span-8"
               style={{
-                fontSize: "clamp(48px, 8vw, 110px)",
+                fontSize: "clamp(44px, 8vw, 110px)",
                 lineHeight: 0.85,
                 fontFamily: "'Bungee', Impact, sans-serif",
               }}
             >
-              <span className="block tilt-l">Still here?</span>
+              <span className="block">Still here?</span>
               <span
-                className="block text-[var(--lime)] text-shadow-poster tilt-r"
+                className="block text-[var(--amber)]"
                 style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}
               >
                 GET IN.
               </span>
             </h2>
-            <div className="col-span-12 flex justify-start lg:col-span-3 lg:justify-end">
-              <button onClick={() => scrollTo("form")} className="btn-stamp btn-dark text-2xl tilt-r">
+            <div className="col-span-12 flex justify-start lg:col-span-4 lg:justify-end">
+              <button onClick={() => scrollTo("form")} className="btn-stamp text-2xl">
                 🍻 I'M IN
               </button>
             </div>
