@@ -23,6 +23,12 @@ import marquee3 from "@/assets/marquee-3.png";
 import marquee4 from "@/assets/marquee-4.png";
 import marquee5 from "@/assets/marquee-5.png";
 import marquee6 from "@/assets/marquee-6.png";
+import marquee7 from "@/assets/marquee-7.png";
+import marquee8 from "@/assets/marquee-8.png";
+import marquee9 from "@/assets/marquee-9.png";
+import marquee10 from "@/assets/marquee-10.png";
+import marquee11 from "@/assets/marquee-11.png";
+import marquee12 from "@/assets/marquee-12.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -282,10 +288,9 @@ function Index() {
           <div className="relative mt-14 overflow-hidden border-y-2 border-[var(--ink)]">
             <div className="marquee-track flex w-max">
               {(() => {
-                const real = [marquee1, marquee2, marquee3, marquee4, marquee5, marquee6];
+                const real = [marquee1, marquee2, marquee3, marquee4, marquee5, marquee6, marquee7, marquee8, marquee9, marquee10, marquee11, marquee12];
                 const tiles: Array<{ src?: string; placeholder?: boolean; key: string }> = [];
-                for (let i = 0; i < 6; i++) tiles.push({ src: real[i], key: `r${i}` });
-                for (let i = 0; i < 6; i++) tiles.push({ placeholder: true, key: `p${i}` });
+                for (let i = 0; i < real.length; i++) tiles.push({ src: real[i], key: `r${i}` });
                 // duplicate for seamless loop
                 return [...tiles, ...tiles].map((t, i) => (
                   <div
