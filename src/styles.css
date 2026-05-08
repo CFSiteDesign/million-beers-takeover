@@ -162,13 +162,15 @@
 }
 .btn-stamp.btn-dark:hover { box-shadow: 2px 2px 0 0 var(--amber); }
 
-/* ===== Hard reveal (mask wipe left to right) ===== */
-@keyframes wipe {
-  from { clip-path: inset(0 100% 0 0); }
-  to { clip-path: inset(0 0 0 0); }
+/* ===== Beer-pour reveal (top-down fill with foam settle) ===== */
+@keyframes pour {
+  0%   { clip-path: inset(0 0 100% 0); transform: translateY(-6px); }
+  60%  { clip-path: inset(0 0 0 0);    transform: translateY(2px); }
+  80%  { transform: translateY(-1px); }
+  100% { clip-path: inset(0 0 0 0);    transform: translateY(0); }
 }
-.reveal-wipe { clip-path: inset(0 100% 0 0); }
-.reveal-wipe.in { animation: wipe 0.45s steps(8, end) forwards; }
+.reveal-wipe { clip-path: inset(0 0 100% 0); will-change: clip-path, transform; }
+.reveal-wipe.in { animation: pour 1.1s cubic-bezier(.4,.1,.3,1) forwards; }
 
 /* ===== Marquee ===== */
 @keyframes marquee {
