@@ -208,8 +208,8 @@ function Index() {
               <h2
                 className="font-display mx-auto max-w-[1120px] text-center uppercase"
                 style={{
-                  fontSize: "clamp(38px, 7.6vw, 106px)",
-                  lineHeight: 0.85,
+                  fontSize: "clamp(36px, 5.6vw, 84px)",
+                  lineHeight: 0.92,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
               >
