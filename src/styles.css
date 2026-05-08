@@ -415,7 +415,7 @@
   height: calc(100% + 20px);
   overflow: hidden; clip-path: inset(0);
   transform: translateY(110%);
-  transition: transform 2.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 4.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .beer-btn:hover .beer-liquid,
 .beer-btn.is-inview .beer-liquid { transform: translateY(0); }
