@@ -2,6 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { COUNTRIES } from "@/lib/countries";
 
 const VIBES = ["Beach", "City", "Mountains", "Festival"];
 const BUDGETS = ["Under $300", "$300–600", "$600–1,000", "$1,000+"];
@@ -23,6 +24,7 @@ const ROTS = [-3, 2, -2, 3, -4, 2, -3, 3, -2];
 export function InterestForm() {
   const [form, setForm] = useState({
     name: "",
+    dialCode: "+1",
     whatsapp: "",
     location: "",
     vibe: "",
@@ -38,7 +40,15 @@ export function InterestForm() {
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const r = schema.safeParse(form);
+    const payload = {
+      name: form.name,
+      whatsapp: `${form.dialCode} ${form.whatsapp}`.trim(),
+      location: form.location,
+      vibe: form.vibe,
+      budget: form.budget,
+      timing: form.timing,
+    };
+    const r = schema.safeParse(payload);
     if (!r.success) {
       const fieldErrs: Record<string, string> = {};
       r.error.issues.forEach((i) => (fieldErrs[i.path[0] as string] = i.message));
@@ -90,30 +100,71 @@ export function InterestForm() {
     );
   }
 
-  const fields: Array<{ k: keyof typeof form; label: string; placeholder: string; type?: string }> = [
-    { k: "name", label: "Your name", placeholder: "Name or chat nickname" },
-    { k: "whatsapp", label: "WhatsApp", placeholder: "+1 555 123 4567", type: "tel" },
-    { k: "location", label: "Where you're based", placeholder: "City or country" },
-  ];
-
   return (
     <form onSubmit={submit} className="flex h-full w-full flex-col bg-[var(--cream)] p-6 md:p-10" style={{ border: "4px solid var(--ink)" }}>
       <div className="space-y-7">
-        {fields.map(({ k, label, placeholder, type }) => (
-          <div key={k}>
-            <span className="zine-label">{label}</span>
+        <div>
+          <span className="zine-label">Your name</span>
+          <input
+            type="text"
+            className="zine-input"
+            placeholder="Name or chat nickname"
+            value={form.name}
+            onChange={(e) => set("name", e.target.value)}
+          />
+          {errors.name && (
+            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[var(--stamp-red)]">{errors.name}</p>
+          )}
+        </div>
+
+        <div>
+          <span className="zine-label">WhatsApp</span>
+          <div className="flex gap-2">
+            <select
+              className="zine-input shrink-0 basis-[7.5rem] pr-2"
+              value={form.dialCode}
+              onChange={(e) => set("dialCode", e.target.value)}
+              aria-label="Country code"
+            >
+              {COUNTRIES.map((c) => (
+                <option key={c.code} value={c.dial}>
+                  {c.flag} {c.dial} {c.name}
+                </option>
+              ))}
+            </select>
             <input
-              type={type ?? "text"}
-              className="zine-input"
-              placeholder={placeholder}
-              value={form[k]}
-              onChange={(e) => set(k, e.target.value)}
+              type="tel"
+              inputMode="tel"
+              className="zine-input flex-1 min-w-0"
+              placeholder="555 123 4567"
+              value={form.whatsapp}
+              onChange={(e) => set("whatsapp", e.target.value)}
             />
-            {errors[k] && (
-              <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[var(--stamp-red)]">{errors[k]}</p>
-            )}
           </div>
-        ))}
+          {errors.whatsapp && (
+            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[var(--stamp-red)]">{errors.whatsapp}</p>
+          )}
+        </div>
+
+        <div>
+          <span className="zine-label">Where you're based</span>
+          <select
+            className="zine-input"
+            value={form.location}
+            onChange={(e) => set("location", e.target.value)}
+            aria-label="Country"
+          >
+            <option value="">Pick your country…</option>
+            {COUNTRIES.map((c) => (
+              <option key={c.code} value={c.name}>
+                {c.flag} {c.name}
+              </option>
+            ))}
+          </select>
+          {errors.location && (
+            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[var(--stamp-red)]">{errors.location}</p>
+          )}
+        </div>
 
         <StampGroup
           label="Pick your vibe"
