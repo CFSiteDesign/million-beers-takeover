@@ -103,31 +103,12 @@ function Index() {
                 <span className="bg-[var(--ink)] px-2 text-[var(--amber)]">And we want you in.</span>
               </p>
 
-              <div className="mt-7 flex flex-wrap items-end gap-4 sm:gap-5">
+              <div className="mt-7">
                 <BeerButton onClick={() => scrollTo("form")}>I'm in</BeerButton>
-                <span className="pb-1 font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--ink)]/70 sm:text-[11px]">
-                  no commitment<br />no payment
-                </span>
-              </div>
-
-              <div className="mt-10 max-w-md">
-                <div className="mb-2 flex items-baseline justify-between font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--ink)]">
-                  <span className="font-bold">20,847 beers logged</span>
-                  <span className="text-[var(--ink)]/60">/ 1,000,000</span>
-                </div>
-                <div className="relative h-2 w-full overflow-hidden rounded-full bg-[var(--ink)]/15">
-                  <div
-                    className="h-full rounded-full bg-[var(--ink)] transition-[width] duration-1000 ease-out"
-                    style={{ width: "2.1%" }}
-                  />
-                </div>
-                <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--ink)]/60">
-                  2.1% to the million
-                </div>
               </div>
             </div>
 
-            <div className="col-span-12 flex justify-center self-start lg:col-span-5 lg:-mt-6 lg:justify-end xl:col-span-4">
+            <div className="col-span-12 flex flex-col items-center self-start lg:col-span-5 lg:-mt-6 lg:items-end xl:col-span-4">
               <div className="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]" style={{ transform: "rotate(-4deg)" }}>
                 <div className="polaroid-tape">
                   <img
@@ -142,6 +123,22 @@ function Index() {
                   >
                     team mad monkey xox
                   </p>
+                </div>
+              </div>
+
+              <div className="mt-8 w-full max-w-[360px] lg:max-w-[400px]">
+                <div className="mb-2 flex items-baseline justify-between font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--ink)]">
+                  <span className="font-bold">20,847 beers logged</span>
+                  <span className="text-[var(--ink)]/60">/ 1,000,000</span>
+                </div>
+                <div className="relative h-2 w-full overflow-hidden rounded-full bg-[var(--ink)]/15">
+                  <div
+                    className="h-full rounded-full bg-[var(--ink)] transition-[width] duration-1000 ease-out"
+                    style={{ width: "2.1%" }}
+                  />
+                </div>
+                <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--ink)]/60">
+                  2.1% to the million
                 </div>
               </div>
             </div>
