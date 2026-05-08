@@ -180,20 +180,13 @@ function Index() {
             </Reveal>
 
             <div className="col-span-12 lg:col-span-4">
-              <div className="relative mx-auto h-[900px] w-full max-w-sm">
+              <div className="flex flex-col gap-6">
                 {[
-                  { slot: "polaroid-1", caption: "siem reap, 2am", rot: -6, x: -20, y: 0 },
-                  { slot: "polaroid-2", caption: "el nido vibes", rot: 4, x: 30, y: 300 },
-                  { slot: "polaroid-3", caption: "bali, definitely", rot: -2, x: -10, y: 600 },
-                ].map((p, i) => (
-                  <div
-                    key={p.slot}
-                    className="polaroid-tape absolute left-1/2 top-0 w-56"
-                    style={{
-                      transform: `translate(calc(-50% + ${p.x}px), ${p.y}px) rotate(${p.rot}deg)`,
-                      zIndex: i,
-                    }}
-                  >
+                  { slot: "polaroid-1", caption: "siem reap, 2am" },
+                  { slot: "polaroid-2", caption: "el nido vibes" },
+                  { slot: "polaroid-3", caption: "bali, definitely" },
+                ].map((p) => (
+                  <div key={p.slot} className="polaroid-tape w-full max-w-xs">
                     <img
                       data-image-slot={p.slot}
                       src={`https://placehold.co/400x500/0A0A0A/F5B82E?text=${encodeURIComponent(p.caption)}`}
