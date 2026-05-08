@@ -123,7 +123,7 @@ function Index() {
                     className="font-script mt-3 text-center text-[var(--ink)]"
                     style={{ fontSize: 22 }}
                   >
-                    trip 01 · destination tbc
+                    team mad monkey xox
                   </p>
                 </div>
               </div>
