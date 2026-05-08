@@ -50,7 +50,7 @@ const TICKER = "NO SPAM   //   NO PAYMENT NOW   //   YOU PICK THE DESTINATION   
 
 // Section padding allows extra space at top/bottom so the overflowing foam
 // divider doesn't cover any content.
-const SECTION_PY = "py-24 pt-[14vw] pb-[14vw] lg:py-32";
+const SECTION_PY = "py-28 lg:py-36";
 
 function Index() {
   useEffect(() => {
@@ -69,18 +69,17 @@ function Index() {
 
       <main className="relative z-10">
         {/* ============ 01 HERO (amber / beer) ============ */}
-        <section className={`relative overflow-hidden bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-6 lg:gap-12 lg:px-10">
-            <div className="col-span-12 lg:col-span-7">
-              <h1 className="font-display text-[var(--ink)]" style={{ lineHeight: 0.85 }}>
-                <span className="block uppercase" style={{ fontSize: "clamp(44px, 9vw, 120px)" }}>
+        <section className="relative overflow-hidden bg-[var(--amber)] pt-24 pb-44 text-[var(--ink)] lg:pt-32 lg:pb-52">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-10 px-6 lg:gap-12 lg:px-10">
+            <div className="col-span-12 lg:col-span-7 xl:col-span-8">
+              <h1 className="font-display max-w-[980px] text-[var(--ink)]" style={{ lineHeight: 0.86 }}>
+                <span className="block uppercase" style={{ fontSize: "clamp(44px, 8vw, 108px)" }}>
                   THE
                 </span>
                 <span
-                  className="block uppercase text-[var(--ink)]"
+                  className="block max-w-full overflow-hidden uppercase text-[var(--ink)]"
                   style={{
-                    fontSize: "clamp(56px, 13vw, 170px)",
-                    letterSpacing: "-0.02em",
+                    fontSize: "clamp(54px, 8.4vw, 118px)",
                     fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                   }}
                 >
@@ -109,14 +108,14 @@ function Index() {
               </div>
             </div>
 
-            <div className="col-span-12 lg:col-span-5">
-              <div className="mx-auto w-full max-w-[300px] lg:ml-auto lg:mr-0">
+            <div className="col-span-12 flex justify-center self-center lg:col-span-5 lg:justify-end xl:col-span-4">
+              <div className="w-full max-w-[300px] lg:max-w-[320px]">
                 <div className="polaroid-tape">
                   <img
                     data-image-slot="hero-bg"
                     src="https://placehold.co/600x800/0A0A0A/F5B82E?text=HERO+POLAROID"
                     alt="Trip 01 placeholder"
-                    className="zine-photo h-72 w-full object-cover"
+                    className="zine-photo aspect-[4/3] w-full object-cover lg:aspect-[3/4]"
                   />
                   <p
                     className="font-script mt-3 text-center text-[var(--ink)]"
@@ -136,12 +135,12 @@ function Index() {
 
         {/* ============ 02 WHAT IS THE TAKEOVER (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-6 lg:gap-12 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 lg:gap-12 lg:px-10">
             <Reveal className="col-span-12 lg:col-span-7">
               <h2
-                className="font-display uppercase"
+                className="font-display max-w-[780px] uppercase"
                 style={{
-                  fontSize: "clamp(48px, 10vw, 140px)",
+                  fontSize: "clamp(44px, 7.8vw, 112px)",
                   lineHeight: 0.85,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
@@ -174,18 +173,18 @@ function Index() {
             </Reveal>
 
             <div className="col-span-12 lg:col-span-5">
-              <div className="flex flex-col gap-6">
+              <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-3 lg:ml-auto lg:grid-cols-1">
                 {[
                   { slot: "polaroid-1", caption: "siem reap, 2am" },
                   { slot: "polaroid-2", caption: "el nido vibes" },
                   { slot: "polaroid-3", caption: "bali, definitely" },
                 ].map((p) => (
-                  <div key={p.slot} className="polaroid-tape mx-auto w-full max-w-xs lg:mx-0 lg:ml-auto">
+                  <div key={p.slot} className="polaroid-tape mx-auto w-full max-w-[260px] lg:mx-0 lg:ml-auto">
                     <img
                       data-image-slot={p.slot}
                       src={`https://placehold.co/400x500/0A0A0A/F5B82E?text=${encodeURIComponent(p.caption)}`}
                       alt={p.caption}
-                      className="zine-photo h-48 w-full object-cover"
+                      className="zine-photo aspect-[4/3] w-full object-cover"
                     />
                     <p
                       className="mt-3 text-center text-[var(--ink)]"
@@ -203,13 +202,13 @@ function Index() {
         <FoamOverflowDivider />
 
         {/* ============ 03 COMMUNITY (amber / beer) ============ */}
-        <section className={`relative bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
+        <section className={`relative overflow-hidden bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
           <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-6 lg:gap-12 lg:px-10">
             <Reveal className="col-span-12">
               <h2
-                className="font-display uppercase"
+                className="font-display mx-auto max-w-[1120px] text-center uppercase"
                 style={{
-                  fontSize: "clamp(40px, 9vw, 130px)",
+                  fontSize: "clamp(38px, 7.6vw, 106px)",
                   lineHeight: 0.85,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
@@ -227,14 +226,14 @@ function Index() {
           </div>
 
           {/* Marquee */}
-          <div className="relative mt-12 overflow-hidden border-y-2 border-[var(--ink)]">
+          <div className="relative mt-14 overflow-hidden border-y-2 border-[var(--ink)]">
             <div className="marquee-track flex w-max">
               {Array.from({ length: 24 }).map((_, i) => {
                 const n = (i % 12) + 1;
                 return (
                   <div
                     key={i}
-                    className="h-40 w-40 flex-shrink-0 overflow-hidden border-2 border-[var(--ink)] sm:h-48 sm:w-48"
+                    className="h-36 w-36 flex-shrink-0 overflow-hidden border-2 border-[var(--ink)] sm:h-44 sm:w-44"
                   >
                     <img
                       data-image-slot={`marquee-${n}`}
@@ -250,7 +249,7 @@ function Index() {
           </div>
 
           {/* Stats panel */}
-          <Reveal className="mx-auto mt-16 max-w-5xl px-6 lg:px-10">
+          <Reveal className="mx-auto mt-14 max-w-5xl px-6 lg:px-10">
             <div className="grid grid-cols-1 border-2 border-[var(--ink)] sm:grid-cols-3">
               {[
                 { n: 20847, label: "beers logged" },
@@ -259,14 +258,14 @@ function Index() {
               ].map((s, i) => (
                 <div
                   key={s.label}
-                  className={`bg-[var(--cream)] p-8 ${i < 2 ? "sm:border-r-2 sm:border-[var(--ink)]" : ""} ${i < 2 ? "border-b-2 border-[var(--ink)] sm:border-b-0" : ""}`}
+                  className={`min-w-0 bg-[var(--cream)] p-6 sm:p-8 ${i < 2 ? "sm:border-r-2 sm:border-[var(--ink)]" : ""} ${i < 2 ? "border-b-2 border-[var(--ink)] sm:border-b-0" : ""}`}
                 >
                   <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--ink)]/70">
                     {s.label}
                   </p>
                   <div
-                    className="mt-2 font-display text-[var(--ink)]"
-                    style={{ fontSize: "clamp(48px, 8vw, 96px)", lineHeight: 0.85 }}
+                    className="mt-2 font-display break-words text-[var(--ink)]"
+                    style={{ fontSize: "clamp(42px, 6vw, 78px)", lineHeight: 0.85 }}
                   >
                     <Counter to={s.n} />
                   </div>
@@ -280,12 +279,12 @@ function Index() {
 
         {/* ============ 04 FORM (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-6 lg:gap-12 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 lg:gap-12 lg:px-10">
             <div className="col-span-12 lg:col-span-5">
               <h2
-                className="font-display uppercase"
+                className="font-display max-w-[560px] uppercase"
                 style={{
-                  fontSize: "clamp(56px, 11vw, 150px)",
+                  fontSize: "clamp(52px, 7.6vw, 112px)",
                   lineHeight: 0.85,
                   fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                 }}
@@ -328,9 +327,9 @@ function Index() {
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
           <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-6 lg:gap-12 lg:px-10">
             <h2
-              className="col-span-12 font-display uppercase lg:col-span-8"
+              className="col-span-12 font-display max-w-[760px] uppercase lg:col-span-8"
               style={{
-                fontSize: "clamp(44px, 8vw, 110px)",
+                fontSize: "clamp(42px, 6.8vw, 92px)",
                 lineHeight: 0.85,
                 fontFamily: "'Bungee', Impact, sans-serif",
               }}

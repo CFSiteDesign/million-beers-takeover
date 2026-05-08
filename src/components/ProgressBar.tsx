@@ -12,7 +12,7 @@ export function ProgressBar({ variant = "inline" }: { variant?: "inline" | "stat
 
   if (variant === "status") {
     return (
-      <div className="w-full">
+      <div className="absolute inset-x-0 bottom-0 z-20 w-full">
         <div className="flex items-center justify-between border-t-2 border-[var(--ink)] bg-[var(--ink)] px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--cream)]">
           <span className="text-[var(--amber)]">{count.toLocaleString()} logged</span>
           <span className="opacity-70">target / 1,000,000</span>
