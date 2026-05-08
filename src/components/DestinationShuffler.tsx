@@ -1,14 +1,10 @@
 import { useRef, useState } from "react";
 
 const DESTINATIONS = [
-  { city: "Siem Reap", country: "Cambodia", note: "$0.50 draft beers" },
-  { city: "Phnom Penh", country: "Cambodia", note: "rooftop riverside" },
-  { city: "Koh Rong", country: "Cambodia", note: "plankton beaches" },
-  { city: "Vang Vieng", country: "Laos", note: "tubing reborn" },
-  { city: "El Nido", country: "Philippines", note: "island hop city" },
-  { city: "Boracay", country: "Philippines", note: "white sand chaos" },
-  { city: "Bali", country: "Indonesia", note: "rooftops + rice fields" },
-  { city: "Gili T", country: "Indonesia", note: "no cars, all parties" },
+  { city: "Cambodia", country: "Cambodia", note: "Siem Reap · Phnom Penh · Koh Rong" },
+  { city: "Laos", country: "Laos", note: "Vang Vieng tubing reborn" },
+  { city: "Philippines", country: "Philippines", note: "El Nido · Boracay" },
+  { city: "Indonesia", country: "Indonesia", note: "Bali · Gili T" },
 ];
 
 const COUNTRY_PHRASES: Record<string, string> = {
@@ -124,7 +120,7 @@ export function DestinationShuffler() {
                     x={lx}
                     y={ly}
                     fill="var(--ink)"
-                    fontSize="8"
+                    fontSize="13"
                     fontFamily="'Bungee', Impact, sans-serif"
                     textAnchor="middle"
                     dominantBaseline="middle"
@@ -153,16 +149,16 @@ export function DestinationShuffler() {
                 className="text-[var(--cream)]"
                 style={{
                   fontFamily: "'Bungee', Impact, sans-serif",
-                  fontSize: 18,
+                  fontSize: 20,
                   lineHeight: 1,
                 }}
               >
-                {result.city.toUpperCase()}
-                <span className="ml-2 font-mono text-[10px] tracking-[0.25em] text-[var(--amber)]">
-                  {result.country.toUpperCase()}
-                </span>
+                {result.country.toUpperCase()}
               </div>
-              <p className="mt-2 text-sm leading-snug text-[var(--cream)]/85">
+              <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--amber)]">
+                {result.note}
+              </div>
+              <p className="mt-3 text-sm leading-snug text-[var(--cream)]/85">
                 {COUNTRY_PHRASES[result.country] ?? "Down to go?"}
               </p>
               <div className="mt-3 flex gap-2">
