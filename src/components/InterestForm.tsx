@@ -3,7 +3,6 @@ import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { COUNTRIES } from "@/lib/countries";
-import { DialCodeSelect } from "@/components/DialCodeSelect";
 
 const VIBES = ["Beach", "City", "Mountains", "Festival"];
 const BUDGETS = ["Under $300", "$300–600", "$600–1,000", "$1,000+"];
@@ -121,7 +120,19 @@ export function InterestForm() {
         <div>
           <span className="zine-label">WhatsApp</span>
           <div className="flex gap-2">
-            <DialCodeSelect value={form.dialCode} onChange={(v) => set("dialCode", v)} />
+            <select
+              className="zine-input shrink-0 basis-[8.5rem] pr-2"
+              style={{ color: "var(--ink)" }}
+              value={form.dialCode}
+              onChange={(e) => set("dialCode", e.target.value)}
+              aria-label="Country code"
+            >
+              {COUNTRIES.map((c) => (
+                <option key={c.code} value={c.dial} style={{ color: "#0a0a0a" }}>
+                  {c.flag} {c.dial} {c.name}
+                </option>
+              ))}
+            </select>
             <input
               type="tel"
               inputMode="tel"
@@ -140,13 +151,14 @@ export function InterestForm() {
           <span className="zine-label">Where you're based</span>
           <select
             className="zine-input"
+            style={{ color: "var(--ink)" }}
             value={form.location}
             onChange={(e) => set("location", e.target.value)}
             aria-label="Country"
           >
-            <option value="">Pick your country…</option>
+            <option value="" style={{ color: "#0a0a0a" }}>Pick your country…</option>
             {COUNTRIES.map((c) => (
-              <option key={c.code} value={c.name}>
+              <option key={c.code} value={c.name} style={{ color: "#0a0a0a" }}>
                 {c.flag} {c.name}
               </option>
             ))}
