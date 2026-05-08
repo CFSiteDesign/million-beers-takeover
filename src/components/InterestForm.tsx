@@ -156,9 +156,9 @@ export function InterestForm() {
             onChange={(e) => set("location", e.target.value)}
             aria-label="Country"
           >
-            <option value="">Pick your country…</option>
+            <option value="" style={{ color: "#0a0a0a" }}>Pick your country…</option>
             {COUNTRIES.map((c) => (
-              <option key={c.code} value={c.name}>
+              <option key={c.code} value={c.name} style={{ color: "#0a0a0a" }}>
                 {c.flag} {c.name}
               </option>
             ))}
