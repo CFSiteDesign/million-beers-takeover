@@ -12,6 +12,7 @@ import { FoamOverflowDivider } from "@/components/Dividers";
 import heroImage from "@/assets/mil_beers_hero.png";
 import { BeerButton } from "@/components/BeerButton";
 import { CountUp } from "@/components/CountUp";
+import { DestinationShuffler } from "@/components/DestinationShuffler";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -314,6 +315,10 @@ function Index() {
                   <span className="text-[var(--amber)]">✓</span> First dibs on the trip
                 </li>
               </ul>
+
+              <div className="mt-10 max-w-md">
+                <DestinationShuffler />
+              </div>
             </div>
 
             <div id="form" className="col-span-12 lg:col-span-7">
