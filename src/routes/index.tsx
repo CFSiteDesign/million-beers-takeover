@@ -286,6 +286,8 @@ function Index() {
           </Reveal>
         </section>
 
+        <FoamOverflowDivider />
+
         {/* ============ 04 FORM (amber band into cream panel) ============ */}
         <section className="relative bg-[var(--amber)] text-[var(--ink)]">
           <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 py-20 lg:gap-10 lg:px-10 lg:py-28">
