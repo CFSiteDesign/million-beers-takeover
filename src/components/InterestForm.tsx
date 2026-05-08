@@ -232,3 +232,48 @@ function StampGroup({
     </div>
   );
 }
+
+function DialCodePicker({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const onDoc = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, []);
+  const selected = COUNTRIES.find((c) => c.dial === value);
+  return (
+    <div ref={ref} className="relative shrink-0">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="zine-input flex items-center justify-between gap-2 pr-3 text-left"
+        style={{ color: "var(--ink)", minWidth: "5.5rem" }}
+        aria-label="Country code"
+      >
+        <span>{selected ? `${selected.flag} ${selected.dial}` : value}</span>
+        <span aria-hidden className="text-xs">▾</span>
+      </button>
+      {open && (
+        <ul
+          className="absolute left-0 top-full z-50 mt-1 max-h-64 w-64 overflow-auto bg-[var(--cream)] py-1"
+          style={{ border: "2px solid var(--ink)", color: "var(--ink)" }}
+        >
+          {COUNTRIES.map((c) => (
+            <li key={c.code}>
+              <button
+                type="button"
+                onClick={() => { onChange(c.dial); setOpen(false); }}
+                className="block w-full px-3 py-2 text-left font-mono text-sm hover:bg-[var(--ink)] hover:text-[var(--cream)]"
+              >
+                {c.flag} {c.dial} {c.name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
