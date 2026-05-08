@@ -321,7 +321,6 @@
 .zine-input::placeholder { color: rgba(10,10,10,0.4); }
 .zine-input:focus { border-bottom-color: var(--amber); }
 
-.font-display,
 .btn-stamp,
 .sticker {
   overflow-wrap: anywhere;
