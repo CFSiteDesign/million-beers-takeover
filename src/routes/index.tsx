@@ -65,41 +65,54 @@ function Index() {
 
       <main className="relative z-10">
         {/* ============ 01 HERO ============ */}
-        <section className="relative bg-[var(--ink)] pt-10 pb-0">
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 pb-16 lg:gap-10 lg:px-10">
+        <section className="relative overflow-hidden bg-[var(--ink)] pt-10 pb-0">
+          {/* Floating party stickers */}
+          <span className="sticker pink absolute right-4 top-24 z-20 tilt-r text-sm sm:right-12 sm:text-base">🍻 cheers loser</span>
+          <span className="sticker electric absolute left-4 top-72 z-20 tilt-lg-l text-sm sm:left-10">est. forever</span>
+          <span className="sticker absolute right-8 top-[420px] z-20 tilt-l hidden text-sm sm:block">FREE BEER LIES*</span>
+
+          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 pb-20 lg:gap-10 lg:px-10">
             <div className="col-span-12 flex items-start lg:col-span-1">
-              <span className="section-num text-[var(--amber)]">01</span>
+              <span className="section-num text-[var(--amber)] tilt-l">01</span>
             </div>
 
             <div className="col-span-12 lg:col-span-7">
-              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--amber)]">
-                Million Beer Mission · Takeover #01
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--hot-pink)]">
+                ▸ Million Beer Mission · Takeover #01 ◂
               </p>
-              <h1 className="mt-6 font-display text-[var(--cream)]" style={{ lineHeight: 0.85 }}>
-                <span className="block uppercase tracking-tight" style={{ fontSize: "clamp(56px, 12vw, 140px)" }}>
+              <h1 className="mt-6 font-display text-[var(--cream)]" style={{ lineHeight: 0.78 }}>
+                <span
+                  className="block uppercase tilt-l"
+                  style={{ fontSize: "clamp(56px, 13vw, 150px)" }}
+                >
                   THE
                 </span>
                 <span
-                  className="block uppercase text-[var(--amber)]"
-                  style={{ fontSize: "clamp(96px, 22vw, 260px)", letterSpacing: "-0.02em" }}
+                  className="block uppercase text-[var(--amber)] text-shadow-poster"
+                  style={{
+                    fontSize: "clamp(88px, 22vw, 260px)",
+                    letterSpacing: "-0.02em",
+                    fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
+                  }}
                 >
                   TAKEOVER
                 </span>
                 <span
-                  className="block lowercase"
-                  style={{ fontSize: "clamp(40px, 8vw, 96px)", letterSpacing: "0.05em" }}
+                  className="font-script mt-4 block lowercase text-[var(--lime)] tilt-r"
+                  style={{ fontSize: "clamp(48px, 10vw, 110px)", lineHeight: 0.9 }}
                 >
                   is happening.
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-md text-lg text-[var(--cream)]">
-                We're picking a place. We're going there. And we want you in.
+              <p className="mt-10 max-w-md text-xl font-semibold text-[var(--cream)]">
+                We're picking a place. We're going there.{" "}
+                <span className="bg-[var(--hot-pink)] px-2 text-[var(--cream)]">And we want you in.</span>
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <button onClick={() => scrollTo("form")} className="btn-stamp text-xl">
-                  I'M IN, COUNT ME
+              <div className="mt-10 flex flex-wrap items-center gap-5">
+                <button onClick={() => scrollTo("form")} className="btn-stamp text-2xl tilt-r">
+                  I'M IN ✦ COUNT ME
                 </button>
                 <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--cream)]/70">
                   no commitment · no payment
@@ -108,7 +121,7 @@ function Index() {
             </div>
 
             <div className="col-span-12 lg:col-span-4">
-              <div className="relative ml-auto w-full max-w-xs" style={{ transform: "rotate(3deg)" }}>
+              <div className="relative ml-auto w-full max-w-xs tilt-r">
                 <div className="polaroid-tape">
                   <img
                     data-image-slot="hero-bg"
@@ -117,17 +130,17 @@ function Index() {
                     className="zine-photo h-72 w-full object-cover"
                   />
                   <p
-                    className="mt-3 text-center text-[var(--ink)]"
-                    style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 22 }}
+                    className="font-script mt-3 text-center text-[var(--ink)]"
+                    style={{ fontSize: 26 }}
                   >
                     trip 01 · destination tbc
                   </p>
                 </div>
                 <p
-                  className="mt-6 -rotate-2 text-[var(--stamp-red)]"
-                  style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 26 }}
+                  className="font-script mt-8 -rotate-3 text-[var(--hot-pink)]"
+                  style={{ fontSize: 34 }}
                 >
-                  trip 01. destination: tbc.
+                  somewhere wild →
                 </p>
               </div>
             </div>
@@ -137,7 +150,7 @@ function Index() {
           <ProgressBar variant="status" />
         </section>
 
-        <FoamOverflowDivider fillFrom="var(--ink)" foamColor="var(--cream)" />
+        <FoamOverflowDivider />
 
         {/* ============ 02 WHAT IS THE TAKEOVER (cream) ============ */}
         <section className="relative bg-[var(--cream)] text-[var(--ink)]">
