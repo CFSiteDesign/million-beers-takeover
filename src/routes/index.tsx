@@ -204,7 +204,7 @@ function Index() {
         {/* ============ 03 COMMUNITY (amber / beer) ============ */}
         <section className={`relative overflow-hidden bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
           <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-6 lg:gap-12 lg:px-10">
-            <Reveal className="col-span-12">
+            <div className="col-span-12">
               <h2
                 className="font-display mx-auto max-w-[1120px] text-center uppercase"
                 style={{
@@ -213,7 +213,9 @@ function Index() {
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
               >
-                <span className="block">20,000+ photos.</span>
+                <span className="block">
+                  <CountUp to={20000} duration={1600} />+ photos.
+                </span>
                 <span className="block">hundreds of legends.</span>
                 <span
                   className="block text-[var(--ink)]"
@@ -222,7 +224,7 @@ function Index() {
                   ONE STUPID GOAL.
                 </span>
               </h2>
-            </Reveal>
+            </div>
           </div>
 
           {/* Marquee */}
