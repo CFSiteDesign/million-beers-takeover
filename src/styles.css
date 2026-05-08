@@ -40,10 +40,13 @@
 
 :root {
   --radius: 0.625rem;
-  /* Reduced editorial palette */
+  /* High-energy party palette */
   --ink: #0A0A0A;                     /* near-black */
-  --cream: #F8F1DD;                   /* paper cream */
-  --amber: #F5B82E;                   /* one amber */
+  --cream: #FFF6DE;                   /* paper cream */
+  --amber: #F5B82E;                   /* beer amber */
+  --hot-pink: #FF2E88;                /* neon pink */
+  --electric: #2EC4FF;                /* electric blue */
+  --lime: #C6F432;                    /* lime party */
   --stamp-red: #E53935;               /* warning stripe red */
 
   --background: var(--ink);
