@@ -121,18 +121,7 @@ export function InterestForm() {
         <div>
           <span className="zine-label">WhatsApp</span>
           <div className="flex gap-2">
-            <select
-              className="zine-input shrink-0 basis-[7.5rem] pr-2"
-              value={form.dialCode}
-              onChange={(e) => set("dialCode", e.target.value)}
-              aria-label="Country code"
-            >
-              {COUNTRIES.map((c) => (
-                <option key={c.code} value={c.dial}>
-                  {c.flag} {c.dial} {c.name}
-                </option>
-              ))}
-            </select>
+            <DialCodeSelect value={form.dialCode} onChange={(v) => set("dialCode", v)} />
             <input
               type="tel"
               inputMode="tel"
