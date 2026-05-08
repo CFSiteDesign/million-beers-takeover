@@ -14,7 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      takeover_interest: {
+        Row: {
+          budget: string
+          created_at: string
+          id: string
+          location: string
+          name: string
+          timing: string
+          vibe: string
+          whatsapp: string
+        }
+        Insert: {
+          budget: string
+          created_at?: string
+          id?: string
+          location: string
+          name: string
+          timing: string
+          vibe: string
+          whatsapp: string
+        }
+        Update: {
+          budget?: string
+          created_at?: string
+          id?: string
+          location?: string
+          name?: string
+          timing?: string
+          vibe?: string
+          whatsapp?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
