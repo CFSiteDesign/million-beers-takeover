@@ -151,6 +151,7 @@ export function InterestForm() {
           <span className="zine-label">Where you're based</span>
           <select
             className="zine-input"
+            style={{ color: "var(--ink)" }}
             value={form.location}
             onChange={(e) => set("location", e.target.value)}
             aria-label="Country"
