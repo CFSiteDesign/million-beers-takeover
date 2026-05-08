@@ -12,7 +12,7 @@ import { FoamOverflowDivider } from "@/components/Dividers";
 import heroImage from "@/assets/mil_beers_hero.png";
 import { BeerButton } from "@/components/BeerButton";
 import { CountUp } from "@/components/CountUp";
-import { DestinationShuffler } from "@/components/DestinationShuffler";
+
 import { LiveBeerCounter } from "@/components/LiveBeerCounter";
 import polaroid1 from "@/assets/polaroid-1.png";
 import polaroid2 from "@/assets/polaroid-2.png";
@@ -401,9 +401,6 @@ function Index() {
                 ))}
               </ul>
 
-              <div className="mt-10 max-w-md lg:mt-12">
-                <DestinationShuffler />
-              </div>
             </div>
 
             <div id="form" className="col-span-12 lg:col-span-7 lg:flex">
