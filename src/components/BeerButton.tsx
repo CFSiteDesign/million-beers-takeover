@@ -53,7 +53,7 @@ export function BeerButton({ children, className = "", ...rest }: BeerButtonProp
   });
 
   return (
-    <button type="button" className={`beer-btn ${className}`} {...rest}>
+    <button ref={btnRef} type="button" className={`beer-btn ${inView ? "is-inview" : ""} ${className}`} {...rest}>
       <span className="beer-mask" aria-hidden>
         <span className="beer-liquid">
           <span className="beer-inner">
