@@ -345,3 +345,136 @@
 /* ===== Polaroid hover shift (sharp, not soft) ===== */
 .polaroid-tape { transition: transform 200ms ease; }
 .polaroid-tape:hover { transform: translate(-2px, -2px) rotate(0deg); }
+
+/* ===== Beer-pour CTA button ===== */
+.beer-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 88px;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Bungee", "Anton", Impact, sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  border: 4px solid var(--ink);
+  overflow: hidden;
+  box-shadow: 10px 10px 0 var(--ink);
+  transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  isolation: isolate;
+  contain: paint;
+  border-radius: 0;
+  padding: 0;
+}
+.beer-btn:hover { transform: translate(5px, 5px); box-shadow: 5px 5px 0 var(--ink); }
+.beer-btn:active { transform: translate(10px, 10px); box-shadow: 0 0 0 var(--ink); }
+.beer-btn:focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; }
+
+.beer-mask {
+  position: absolute; inset: 0; overflow: hidden;
+  clip-path: inset(0); z-index: 1; pointer-events: none;
+}
+.beer-liquid {
+  position: absolute; left: -8px; right: -8px; bottom: -20px;
+  height: calc(100% + 20px);
+  overflow: hidden; clip-path: inset(0);
+  transform: translateY(110%);
+  transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.beer-btn:hover .beer-liquid { transform: translateY(0); }
+.beer-inner { position: absolute; inset: 0; overflow: hidden; }
+.beer-btn:hover .beer-inner { animation: beer-slosh 5s ease-in-out 1.4s infinite; }
+@keyframes beer-slosh {
+  0%, 100% { transform: translateX(-1.2px) rotate(-0.14deg); }
+  50%      { transform: translateX(1.2px)  rotate(0.14deg); }
+}
+
+.beer-body {
+  position: absolute; left: 0; right: 0; top: 14px; bottom: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 28% 32%, rgba(255,240,170,0.55) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 65% at 78% 75%, rgba(80,40,5,0.55) 0%, transparent 65%),
+    linear-gradient(180deg, #fcd34d 0%, #f4b942 12%, #e89719 30%, #c47012 55%, #8a4a08 85%, #5c3204 100%);
+  box-shadow: inset 0 8px 16px rgba(255,240,170,0.4), inset 0 -32px 28px rgba(40,20,5,0.4);
+  overflow: hidden;
+}
+.beer-body::before {
+  content: ''; position: absolute;
+  left: 8%; top: 6%; bottom: 18%; width: 14%;
+  background: linear-gradient(180deg, transparent 0%, rgba(255,245,195,0.22) 30%, rgba(255,245,195,0.32) 50%, rgba(255,245,195,0.18) 70%, transparent 100%);
+  filter: blur(8px); pointer-events: none; z-index: 1;
+}
+.beer-body::after {
+  content: ''; position: absolute;
+  right: 6%; top: 14%; bottom: 22%; width: 6%;
+  background: linear-gradient(180deg, transparent 0%, rgba(255,240,180,0.16) 50%, transparent 100%);
+  filter: blur(5px); pointer-events: none; z-index: 1;
+}
+
+.beer-foam {
+  position: absolute; left: -4%; right: -4%; top: -12px; height: 22px;
+  background:
+    radial-gradient(circle 5px at 4% 60%, #fffef5 95%, transparent 96%),
+    radial-gradient(circle 7px at 11% 35%, #fff 95%, transparent 96%),
+    radial-gradient(circle 5px at 18% 65%, #fffaea 95%, transparent 96%),
+    radial-gradient(circle 8px at 25% 30%, #fff 95%, transparent 96%),
+    radial-gradient(circle 5px at 32% 60%, #fffef5 95%, transparent 96%),
+    radial-gradient(circle 7px at 39% 35%, #fff 95%, transparent 96%),
+    radial-gradient(circle 4px at 46% 65%, #fff8e0 95%, transparent 96%),
+    radial-gradient(circle 8px at 54% 30%, #fff 95%, transparent 96%),
+    radial-gradient(circle 5px at 61% 60%, #fffef5 95%, transparent 96%),
+    radial-gradient(circle 7px at 68% 35%, #fff 95%, transparent 96%),
+    radial-gradient(circle 5px at 75% 65%, #fffaea 95%, transparent 96%),
+    radial-gradient(circle 8px at 82% 30%, #fff 95%, transparent 96%),
+    radial-gradient(circle 5px at 89% 60%, #fffef5 95%, transparent 96%),
+    radial-gradient(circle 7px at 96% 35%, #fff 95%, transparent 96%),
+    linear-gradient(180deg, #fff 0%, #fffaea 35%, #f0d9a4 70%, transparent 100%);
+  filter: drop-shadow(0 -1px 2px rgba(255,255,255,0.5));
+  z-index: 3;
+}
+.beer-btn:hover .beer-foam { animation: beer-bob 4.5s ease-in-out infinite; }
+@keyframes beer-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-1.5px); }
+}
+
+.beer-bubble {
+  position: absolute; bottom: 0; border-radius: 50%;
+  opacity: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.95) 0%, rgba(255,240,200,0.5) 40%, transparent 100%);
+  box-shadow: inset 0 0 1px rgba(255,255,255,0.6);
+}
+.beer-btn:hover .beer-bubble {
+  animation: beer-rise var(--dur, 2.6s) cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes beer-rise {
+  0%   { transform: translate(0, 0) scale(0.5); opacity: 0; }
+  8%   { opacity: 0.9; transform: translate(0, -4px) scale(0.7); }
+  50%  { transform: translate(var(--drift, 3px), -38px) scale(1); opacity: 0.85; }
+  90%  { opacity: 0.4; }
+  100% { transform: translate(var(--drift2, -3px), -78px) scale(1.05); opacity: 0; }
+}
+
+.beer-text {
+  position: relative;
+  z-index: 4;
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beer-btn:hover .beer-liquid,
+  .beer-btn:hover .beer-foam,
+  .beer-btn:hover .beer-inner,
+  .beer-btn:hover .beer-bubble { animation: none !important; transition: none !important; }
+}
