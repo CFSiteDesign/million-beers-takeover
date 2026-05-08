@@ -149,16 +149,16 @@ export function DestinationShuffler() {
                 className="text-[var(--cream)]"
                 style={{
                   fontFamily: "'Bungee', Impact, sans-serif",
-                  fontSize: 18,
+                  fontSize: 20,
                   lineHeight: 1,
                 }}
               >
-                {result.city.toUpperCase()}
-                <span className="ml-2 font-mono text-[10px] tracking-[0.25em] text-[var(--amber)]">
-                  {result.country.toUpperCase()}
-                </span>
+                {result.country.toUpperCase()}
               </div>
-              <p className="mt-2 text-sm leading-snug text-[var(--cream)]/85">
+              <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--amber)]">
+                {result.note}
+              </div>
+              <p className="mt-3 text-sm leading-snug text-[var(--cream)]/85">
                 {COUNTRY_PHRASES[result.country] ?? "Down to go?"}
               </p>
               <div className="mt-3 flex gap-2">
