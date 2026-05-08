@@ -255,7 +255,7 @@ function Index() {
                 <div className="hidden lg:block">
                   {[
                     { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -5, top: "0%", left: "4%" },
-                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 4, top: "20%", left: "44%" },
+                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 4, top: "20%", left: "34%" },
                   ].map((p) => (
                     <div
                       key={p.slot}
