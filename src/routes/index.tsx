@@ -61,15 +61,25 @@ export const Route = createFileRoute("/")({
 const HERO_HEADLINE = "THE TAKEOVER IS HAPPENING.";
 
 function HeroHeadline() {
+  const words = HERO_HEADLINE.split(" ");
+  let idx = 0;
   return (
-    <h1 className="font-display text-5xl leading-[0.95] text-[var(--cream)] sm:text-6xl md:text-7xl lg:text-8xl">
-      {HERO_HEADLINE.split("").map((ch, i) => (
-        <span
-          key={i}
-          className="hero-letter"
-          style={{ animationDelay: `${i * 35 + 200}ms` }}
-        >
-          {ch === " " ? "\u00A0" : ch}
+    <h1 className="font-display text-5xl leading-[0.95] text-[var(--cream)] sm:text-6xl md:text-7xl lg:text-8xl text-balance">
+      {words.map((word, wi) => (
+        <span key={wi} className="inline-block whitespace-nowrap">
+          {word.split("").map((ch) => {
+            const i = idx++;
+            return (
+              <span
+                key={i}
+                className="hero-letter inline-block"
+                style={{ animationDelay: `${i * 35 + 200}ms` }}
+              >
+                {ch}
+              </span>
+            );
+          })}
+          {wi < words.length - 1 && " "}
         </span>
       ))}
     </h1>
