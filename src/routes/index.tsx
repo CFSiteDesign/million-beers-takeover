@@ -343,7 +343,7 @@ function Index() {
               </div>
             </div>
 
-            <div id="form" className="col-span-12 lg:col-span-7">
+            <div id="form" className="col-span-12 lg:col-span-7 lg:flex">
               <InterestForm />
             </div>
           </div>
