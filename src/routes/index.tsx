@@ -222,13 +222,13 @@ function Index() {
               <div className="min-w-0 max-w-full pt-2 lg:pt-8">
                 <div className="flex flex-col items-center gap-8 sm:gap-10 lg:gap-16">
                   {[
-                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -4, x: 8 },
-                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 3, x: 18 },
-                    { slot: "polaroid-3", src: polaroid3, caption: "bali 26 x", rot: -3, x: -14 },
+                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -4, x: 4 },
+                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 3, x: 10 },
+                    { slot: "polaroid-3", src: polaroid3, caption: "bali 26 x", rot: -3, x: -8 },
                   ].map((p) => (
                     <div
                       key={p.slot}
-                      className="polaroid-tape polaroid-thin w-[55%] max-w-[240px]"
+                      className="polaroid-tape polaroid-thin w-[42%] max-w-[180px]"
                       style={{ transform: `translateX(${p.x}%) rotate(${p.rot}deg)`, transformOrigin: "center" }}
                     >
                       <img
