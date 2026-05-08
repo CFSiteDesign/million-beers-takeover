@@ -9,6 +9,7 @@ import { InterestForm } from "@/components/InterestForm";
 import { MMHeader } from "@/components/MMHeader";
 import { MMFooter } from "@/components/MMFooter";
 import { FoamOverflowDivider } from "@/components/Dividers";
+import heroImage from "@/assets/mil_beers_hero.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
