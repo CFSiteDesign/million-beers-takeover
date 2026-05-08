@@ -180,11 +180,11 @@ function Index() {
             </Reveal>
 
             <div className="col-span-12 lg:col-span-4">
-              <div className="relative mx-auto h-[520px] w-full max-w-sm">
+              <div className="relative mx-auto h-[900px] w-full max-w-sm">
                 {[
                   { slot: "polaroid-1", caption: "siem reap, 2am", rot: -6, x: -20, y: 0 },
-                  { slot: "polaroid-2", caption: "el nido vibes", rot: 4, x: 30, y: 140 },
-                  { slot: "polaroid-3", caption: "bali, definitely", rot: -2, x: -10, y: 280 },
+                  { slot: "polaroid-2", caption: "el nido vibes", rot: 4, x: 30, y: 300 },
+                  { slot: "polaroid-3", caption: "bali, definitely", rot: -2, x: -10, y: 600 },
                 ].map((p, i) => (
                   <div
                     key={p.slot}
