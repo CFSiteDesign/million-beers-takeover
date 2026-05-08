@@ -264,8 +264,8 @@ function Index() {
                     {s.label}
                   </p>
                   <div
-                    className="mt-2 font-display break-words text-[var(--ink)]"
-                    style={{ fontSize: "clamp(42px, 6vw, 78px)", lineHeight: 0.85 }}
+                    className="mt-2 font-display text-[var(--ink)] tabular-nums"
+                    style={{ fontSize: "clamp(36px, 4.6vw, 64px)", lineHeight: 0.95, whiteSpace: "nowrap" }}
                   >
                     <Counter to={s.n} />
                   </div>
