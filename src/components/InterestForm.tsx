@@ -132,7 +132,7 @@ export function InterestForm() {
           onCream
         />
         <StampGroup
-          label="06 / Best time of year"
+          label="Best time of year"
           options={TIMINGS}
           value={form.timing}
           onChange={(v) => set("timing", v)}
