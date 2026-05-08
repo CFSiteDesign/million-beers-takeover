@@ -40,7 +40,15 @@ export function InterestForm() {
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const r = schema.safeParse(form);
+    const payload = {
+      name: form.name,
+      whatsapp: `${form.dialCode} ${form.whatsapp}`.trim(),
+      location: form.location,
+      vibe: form.vibe,
+      budget: form.budget,
+      timing: form.timing,
+    };
+    const r = schema.safeParse(payload);
     if (!r.success) {
       const fieldErrs: Record<string, string> = {};
       r.error.issues.forEach((i) => (fieldErrs[i.path[0] as string] = i.message));
