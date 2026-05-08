@@ -88,46 +88,20 @@
   }
 }
 
-/* ===== High-energy utilities ===== */
-.tilt-l { transform: rotate(-3deg); }
-.tilt-r { transform: rotate(3deg); }
-.tilt-lg-l { transform: rotate(-6deg); }
-.tilt-lg-r { transform: rotate(6deg); }
+/* ===== Utilities ===== */
+.tilt-l, .tilt-r, .tilt-lg-l, .tilt-lg-r { transform: none; }
 
-.text-stroke-cream {
-  -webkit-text-stroke: 2px var(--cream);
-  color: transparent;
-}
-.text-stroke-ink {
-  -webkit-text-stroke: 2px var(--ink);
-  color: transparent;
-}
+.text-stroke-cream { -webkit-text-stroke: 2px var(--cream); color: transparent; }
+.text-stroke-ink { -webkit-text-stroke: 2px var(--ink); color: transparent; }
 
-/* Chunky offset text shadow (poster style) */
-.text-shadow-poster {
-  text-shadow:
-    3px 3px 0 var(--ink),
-    6px 6px 0 var(--hot-pink);
-}
-.text-shadow-poster-amber {
-  text-shadow:
-    3px 3px 0 var(--ink),
-    6px 6px 0 var(--amber);
-}
+/* Single hard offset (no neon layers) */
+.text-shadow-poster,
+.text-shadow-poster-amber,
 .text-shadow-poster-electric {
-  text-shadow:
-    3px 3px 0 var(--ink),
-    6px 6px 0 var(--electric);
+  text-shadow: 4px 4px 0 var(--ink);
 }
 
-/* Neon flicker for accents */
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  43% { opacity: 1; }
-  44% { opacity: 0.6; }
-  46% { opacity: 1; }
-}
-.flicker { animation: flicker 5s infinite; }
+.flicker { animation: none; }
 
 /* Sticker badge */
 .sticker {
