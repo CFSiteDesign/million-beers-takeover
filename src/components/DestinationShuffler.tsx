@@ -2,13 +2,13 @@ import { useRef, useState } from "react";
 
 const DESTINATIONS = [
   { city: "Siem Reap", country: "Cambodia", note: "$0.50 draft beers" },
-  { city: "El Nido", country: "Philippines", note: "island hop city" },
-  { city: "Bali", country: "Indonesia", note: "rooftops + rice fields" },
-  { city: "Hoi An", country: "Vietnam", note: "lanterns & bia hơi" },
-  { city: "Pai", country: "Thailand", note: "loop the mountains" },
-  { city: "Vang Vieng", country: "Laos", note: "tubing reborn" },
+  { city: "Phnom Penh", country: "Cambodia", note: "rooftop riverside" },
   { city: "Koh Rong", country: "Cambodia", note: "plankton beaches" },
-  { city: "Medellín", country: "Colombia", note: "eternal spring" },
+  { city: "Vang Vieng", country: "Laos", note: "tubing reborn" },
+  { city: "El Nido", country: "Philippines", note: "island hop city" },
+  { city: "Boracay", country: "Philippines", note: "white sand chaos" },
+  { city: "Bali", country: "Indonesia", note: "rooftops + rice fields" },
+  { city: "Gili T", country: "Indonesia", note: "no cars, all parties" },
 ];
 
 const N = DESTINATIONS.length;
