@@ -334,38 +334,6 @@ function Index() {
             <div id="form" className="col-span-12 lg:col-span-7">
               <InterestForm />
             </div>
-
-            <div className="col-span-12 mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-              {[
-                {
-                  title: "No spam.",
-                  body: "Just trip updates when there's something to say.",
-                },
-                {
-                  title: "No payment now.",
-                  body: "You commit when you're ready.",
-                },
-                {
-                  title: "You help pick.",
-                  body: "Your vote on the destination counts.",
-                },
-              ].map((t) => (
-                <div
-                  key={t.title}
-                  className="rounded-sm border border-[var(--cream)]/15 bg-[var(--cream)]/[0.03] p-5"
-                >
-                  <div
-                    className="font-display text-[var(--amber)]"
-                    style={{ fontFamily: "'Bungee', Impact, sans-serif", fontSize: 18, lineHeight: 1.1 }}
-                  >
-                    {t.title}
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--cream)]/80">
-                    {t.body}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
