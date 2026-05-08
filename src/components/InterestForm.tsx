@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -120,19 +120,10 @@ export function InterestForm() {
         <div>
           <span className="zine-label">WhatsApp</span>
           <div className="flex gap-2">
-            <select
-              className="zine-input shrink-0 basis-[8.5rem] pr-2"
-              style={{ color: "var(--ink)" }}
+            <DialCodePicker
               value={form.dialCode}
-              onChange={(e) => set("dialCode", e.target.value)}
-              aria-label="Country code"
-            >
-              {COUNTRIES.map((c) => (
-                <option key={c.code} value={c.dial} style={{ color: "#0a0a0a" }}>
-                  {c.flag} {c.dial} {c.name}
-                </option>
-              ))}
-            </select>
+              onChange={(v) => set("dialCode", v)}
+            />
             <input
               type="tel"
               inputMode="tel"
