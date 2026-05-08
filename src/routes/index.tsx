@@ -253,7 +253,7 @@ function Index() {
           </div>
 
           {/* Stats panel */}
-          <Reveal className="mx-auto mt-14 max-w-5xl px-6 lg:px-10">
+          <div className="mx-auto mt-14 max-w-5xl px-6 lg:px-10">
             <div className="grid grid-cols-1 border-2 border-[var(--ink)] sm:grid-cols-3">
               {[
                 { n: 20847, label: "beers logged" },
@@ -276,7 +276,7 @@ function Index() {
                 </div>
               ))}
             </div>
-          </Reveal>
+          </div>
         </section>
 
         <FoamOverflowDivider />
