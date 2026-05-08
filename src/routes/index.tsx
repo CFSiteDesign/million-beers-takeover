@@ -156,20 +156,20 @@ function Index() {
               <h2
                 className="font-display uppercase"
                 style={{
-                  fontSize: "clamp(36px, 5.6vw, 84px)",
-                  lineHeight: 0.88,
+                  fontSize: "clamp(34px, 5.6vw, 84px)",
+                  lineHeight: 0.95,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
               >
                 <span className="block">What's a</span>
                 <span
-                  className="block text-[var(--amber)]"
-                  style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}
+                  className="mt-1 block text-[var(--amber)]"
+                  style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif", lineHeight: 1.05 }}
                 >
                   TAKEOVER?
                 </span>
               </h2>
-              <div className="mt-8 max-w-xl space-y-5 text-base leading-relaxed sm:text-lg">
+              <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed sm:mt-8 sm:space-y-5 sm:text-lg">
                 <p>A Takeover is simple. A group of MM people go somewhere new together.</p>
                 <p>
                   New city. <span className="bg-[var(--amber)] px-1 text-[var(--ink)]">New beers.</span>{" "}
@@ -177,25 +177,29 @@ function Index() {
                 </p>
               </div>
               <p
-                className="font-script mt-8 text-[var(--amber)]"
-                style={{ fontSize: "clamp(28px, 4vw, 56px)", lineHeight: 1.05 }}
+                className="font-script mt-6 text-[var(--amber)] sm:mt-8"
+                style={{ fontSize: "clamp(26px, 4vw, 56px)", lineHeight: 1.05 }}
               >
                 "that's kinda the whole point."
               </p>
-              <p className="mt-6 max-w-lg text-base">
+              <p className="mt-5 max-w-lg text-base sm:mt-6">
                 We don't have a destination yet. We're picking based on who's in and where
                 people want to go. <strong>Register, tell us your vibe, help shape it.</strong>
               </p>
             </div>
 
             <div className="col-span-12 lg:col-span-5">
-              <div className="grid grid-cols-2 gap-5 sm:gap-6">
+              <div className="flex items-start justify-between gap-2 sm:gap-4">
                 {[
-                  { slot: "polaroid-1", caption: "siem reap, 2am", rot: "-rotate-3" },
-                  { slot: "polaroid-2", caption: "el nido vibes", rot: "rotate-2" },
-                  { slot: "polaroid-3", caption: "bali, definitely", rot: "rotate-1 col-span-2 max-w-[280px] mx-auto" },
+                  { slot: "polaroid-1", caption: "siem reap, 2am", rot: -6, mt: "mt-4" },
+                  { slot: "polaroid-2", caption: "el nido vibes", rot: 4, mt: "mt-0" },
+                  { slot: "polaroid-3", caption: "bali, definitely", rot: -2, mt: "mt-6" },
                 ].map((p) => (
-                  <div key={p.slot} className={`polaroid-tape w-full ${p.rot}`}>
+                  <div
+                    key={p.slot}
+                    className={`polaroid-tape w-1/3 ${p.mt}`}
+                    style={{ transform: `rotate(${p.rot}deg)` }}
+                  >
                     <img
                       data-image-slot={p.slot}
                       src={`https://placehold.co/400x500/0A0A0A/F5B82E?text=${encodeURIComponent(p.caption)}`}
@@ -204,7 +208,7 @@ function Index() {
                     />
                     <p
                       className="mt-2 text-center text-[var(--ink)]"
-                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 20 }}
+                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 14 }}
                     >
                       {p.caption}
                     </p>
