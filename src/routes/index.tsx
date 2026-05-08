@@ -50,7 +50,7 @@ const TICKER = "NO SPAM   //   NO PAYMENT NOW   //   YOU PICK THE DESTINATION   
 
 // Section padding allows extra space at top/bottom so the overflowing foam
 // divider doesn't cover any content.
-const SECTION_PY = "py-24 pt-[14vw] pb-[14vw] lg:py-32";
+const SECTION_PY = "py-28 lg:py-36";
 
 function Index() {
   useEffect(() => {
@@ -69,18 +69,17 @@ function Index() {
 
       <main className="relative z-10">
         {/* ============ 01 HERO (amber / beer) ============ */}
-        <section className={`relative overflow-hidden bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-6 lg:gap-12 lg:px-10">
+        <section className="relative overflow-hidden bg-[var(--amber)] pt-24 pb-36 text-[var(--ink)] lg:pt-32 lg:pb-44">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-10 px-6 lg:gap-12 lg:px-10">
             <div className="col-span-12 lg:col-span-7">
-              <h1 className="font-display text-[var(--ink)]" style={{ lineHeight: 0.85 }}>
-                <span className="block uppercase" style={{ fontSize: "clamp(44px, 9vw, 120px)" }}>
+              <h1 className="font-display max-w-[900px] text-[var(--ink)]" style={{ lineHeight: 0.86 }}>
+                <span className="block uppercase" style={{ fontSize: "clamp(44px, 8vw, 108px)" }}>
                   THE
                 </span>
                 <span
-                  className="block uppercase text-[var(--ink)]"
+                  className="block max-w-full overflow-hidden uppercase text-[var(--ink)]"
                   style={{
-                    fontSize: "clamp(56px, 13vw, 170px)",
-                    letterSpacing: "-0.02em",
+                    fontSize: "clamp(54px, 9.4vw, 132px)",
                     fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                   }}
                 >
@@ -109,14 +108,14 @@ function Index() {
               </div>
             </div>
 
-            <div className="col-span-12 lg:col-span-5">
-              <div className="mx-auto w-full max-w-[300px] lg:ml-auto lg:mr-0">
+            <div className="col-span-12 flex justify-center lg:col-span-5 lg:justify-end">
+              <div className="w-full max-w-[300px] lg:max-w-[320px]">
                 <div className="polaroid-tape">
                   <img
                     data-image-slot="hero-bg"
                     src="https://placehold.co/600x800/0A0A0A/F5B82E?text=HERO+POLAROID"
                     alt="Trip 01 placeholder"
-                    className="zine-photo h-72 w-full object-cover"
+                    className="zine-photo aspect-[4/3] w-full object-cover lg:aspect-[3/4]"
                   />
                   <p
                     className="font-script mt-3 text-center text-[var(--ink)]"
