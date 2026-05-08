@@ -24,6 +24,7 @@ const ROTS = [-3, 2, -2, 3, -4, 2, -3, 3, -2];
 export function InterestForm() {
   const [form, setForm] = useState({
     name: "",
+    dialCode: "+1",
     whatsapp: "",
     location: "",
     vibe: "",
