@@ -151,73 +151,84 @@ function Index() {
 
         {/* ============ 02 WHAT IS THE TAKEOVER (ink) ============ */}
         <section className={`relative overflow-hidden bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid w-full max-w-7xl grid-cols-12 items-start gap-10 px-5 pr-8 sm:px-8 lg:gap-14 lg:px-10">
-            <div className="col-span-12 lg:col-span-7 min-w-0">
-              <h2
-                className="font-display uppercase break-words"
-                style={{
-                  fontSize: "clamp(34px, 9vw, 84px)",
-                  lineHeight: 1.05,
-                  fontFamily: "'Bungee', Impact, sans-serif",
-                }}
-              >
-                <span className="block">What's a</span>
-                <span
-                  className="mt-2 block text-[var(--amber)] sm:mt-3"
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
+            <div className="grid w-full min-w-0 grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:gap-14">
+              <div className="min-w-0 max-w-full">
+                <h2
+                  className="font-display max-w-full uppercase"
                   style={{
-                    fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
-                    lineHeight: 1.15,
-                    fontSize: "clamp(30px, 8vw, 80px)",
+                    fontSize: "clamp(30px, 10vw, 84px)",
+                    lineHeight: 1,
+                    fontFamily: "'Bungee', Impact, sans-serif",
+                    overflowWrap: "break-word",
                   }}
                 >
-                  TAKEOVER?
-                </span>
-              </h2>
-              <div className="mt-6 max-w-xl space-y-4 text-[15px] leading-relaxed sm:mt-9 sm:space-y-5 sm:text-xl">
-                <p>A Takeover is simple. A group of MM people go somewhere new together.</p>
-                <p>
-                  New city. <span className="bg-[var(--amber)] px-1 text-[var(--ink)]">New beers.</span>{" "}
-                  New stories. Some of you know each other already. Most of you don't.
+                  <span className="block">What's a</span>
+                  <span
+                    className="mt-1 block text-[var(--amber)] sm:mt-3"
+                    style={{
+                      fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
+                      fontSize: "clamp(28px, 9vw, 78px)",
+                      lineHeight: 1.12,
+                      overflowWrap: "break-word",
+                    }}
+                  >
+                    TAKEOVER?
+                  </span>
+                </h2>
+
+                <div className="mt-6 max-w-[62ch] space-y-4 text-[16px] leading-relaxed sm:mt-9 sm:space-y-5 sm:text-xl">
+                  <p>A Takeover is simple. A group of MM people go somewhere new together.</p>
+                  <p>
+                    New city. New beers. New stories. Some of you know each other already. Most of you don't.
+                  </p>
+                </div>
+
+                <p
+                  className="font-script mt-6 max-w-full text-[var(--amber)] sm:mt-9"
+                  style={{ fontSize: "clamp(25px, 8vw, 56px)", lineHeight: 1.08, overflowWrap: "break-word" }}
+                >
+                  "that's kinda the whole point."
+                </p>
+
+                <p className="mt-5 max-w-[58ch] text-[16px] leading-relaxed sm:mt-7 sm:text-xl">
+                  We don't have a destination yet. We're picking based on who's in and where people want to go. Register,
+                  tell us your vibe, help shape it.
                 </p>
               </div>
-              <p
-                className="font-script mt-6 text-[var(--amber)] break-words sm:mt-9"
-                style={{ fontSize: "clamp(24px, 6vw, 56px)", lineHeight: 1.1 }}
-              >
-                "that's kinda the whole point."
-              </p>
-              <p className="mt-5 max-w-lg text-[15px] leading-relaxed sm:mt-7 sm:text-xl">
-                We don't have a destination yet. We're picking based on who's in and where
-                people want to go. <strong>Register, tell us your vibe, help shape it.</strong>
-              </p>
-            </div>
 
-            <div className="col-span-12 lg:col-span-5 min-w-0 w-full">
-              <div className="flex w-full items-start justify-center gap-2 px-1 sm:gap-5 overflow-hidden">
-                {[
-                  { slot: "polaroid-1", caption: "siem reap, 2am", rot: -5, mt: "mt-3" },
-                  { slot: "polaroid-2", caption: "el nido vibes", rot: 3, mt: "mt-0" },
-                  { slot: "polaroid-3", caption: "bali, definitely", rot: -2, mt: "mt-5" },
-                ].map((p) => (
-                  <div
-                    key={p.slot}
-                    className={`polaroid-tape polaroid-thin w-[30%] flex-shrink-0 ${p.mt}`}
-                    style={{ transform: `rotate(${p.rot}deg)`, transformOrigin: "center" }}
-                  >
-                    <img
-                      data-image-slot={p.slot}
-                      src={`https://placehold.co/400x500/0A0A0A/F5B82E?text=${encodeURIComponent(p.caption)}`}
-                      alt={p.caption}
-                      className="zine-photo aspect-[4/5] w-full object-cover"
-                    />
-                    <p
-                      className="mt-2 truncate text-center text-[var(--ink)]"
-                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 16, lineHeight: 1.05 }}
+              <div className="min-w-0 max-w-full overflow-hidden pt-2 lg:pt-8">
+                <div className="grid w-full grid-cols-3 items-start gap-2 sm:gap-4">
+                  {[
+                    { slot: "polaroid-1", caption: "siem reap, 2am", rot: -4, mt: "mt-3" },
+                    { slot: "polaroid-2", caption: "el nido vibes", rot: 3, mt: "mt-0" },
+                    { slot: "polaroid-3", caption: "bali", rot: -2, mt: "mt-5" },
+                  ].map((p) => (
+                    <div
+                      key={p.slot}
+                      className={`polaroid-tape polaroid-thin min-w-0 ${p.mt}`}
+                      style={{ transform: `rotate(${p.rot}deg)`, transformOrigin: "center" }}
                     >
-                      {p.caption}
-                    </p>
-                  </div>
-                ))}
+                      <img
+                        data-image-slot={p.slot}
+                        src={`https://placehold.co/400x500/0A0A0A/F5B82E?text=${encodeURIComponent(p.caption)}`}
+                        alt={p.caption}
+                        className="zine-photo aspect-[4/5] w-full object-cover"
+                      />
+                      <p
+                        className="mt-2 text-center text-[var(--ink)]"
+                        style={{
+                          fontFamily: "'Caveat', cursive, var(--font-sans)",
+                          fontSize: "clamp(12px, 3.4vw, 18px)",
+                          lineHeight: 1.05,
+                          overflowWrap: "anywhere",
+                        }}
+                      >
+                        {p.caption}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
