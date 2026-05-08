@@ -91,9 +91,9 @@ export function InterestForm() {
   }
 
   const fields: Array<{ k: keyof typeof form; label: string; placeholder: string; type?: string }> = [
-    { k: "name", label: "01 / Your name", placeholder: "Name or chat nickname" },
-    { k: "whatsapp", label: "02 / WhatsApp", placeholder: "+1 555 123 4567", type: "tel" },
-    { k: "location", label: "03 / Where you're based", placeholder: "City or country" },
+    { k: "name", label: "Your name", placeholder: "Name or chat nickname" },
+    { k: "whatsapp", label: "WhatsApp", placeholder: "+1 555 123 4567", type: "tel" },
+    { k: "location", label: "Where you're based", placeholder: "City or country" },
   ];
 
   return (
@@ -116,7 +116,7 @@ export function InterestForm() {
         ))}
 
         <StampGroup
-          label="04 / Pick your vibe"
+          label="Pick your vibe"
           options={VIBES}
           value={form.vibe}
           onChange={(v) => set("vibe", v)}
@@ -124,7 +124,7 @@ export function InterestForm() {
           onCream
         />
         <StampGroup
-          label="05 / Rough budget per person"
+          label="Rough budget per person"
           options={BUDGETS}
           value={form.budget}
           onChange={(v) => set("budget", v)}
@@ -132,7 +132,7 @@ export function InterestForm() {
           onCream
         />
         <StampGroup
-          label="06 / Best time of year"
+          label="Best time of year"
           options={TIMINGS}
           value={form.timing}
           onChange={(v) => set("timing", v)}
