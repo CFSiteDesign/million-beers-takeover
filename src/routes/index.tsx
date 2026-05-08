@@ -302,8 +302,8 @@ function Index() {
 
         {/* ============ 04 FORM (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-8 px-5 lg:gap-16 lg:px-10">
-            <div className="col-span-12 lg:col-span-5 lg:sticky lg:top-24">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-8 px-5 lg:items-stretch lg:gap-16 lg:px-10">
+            <div className="col-span-12 lg:col-span-5">
               <h2
                 className="font-display uppercase"
                 style={{
@@ -343,7 +343,7 @@ function Index() {
               </div>
             </div>
 
-            <div id="form" className="col-span-12 lg:col-span-7">
+            <div id="form" className="col-span-12 lg:col-span-7 lg:flex">
               <InterestForm />
             </div>
           </div>
