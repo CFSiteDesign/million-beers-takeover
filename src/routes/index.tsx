@@ -55,7 +55,7 @@ const TICKER = "NO SPAM   //   NO PAYMENT NOW   //   YOU PICK THE DESTINATION   
 
 // Foam dividers overlap their neighbours by ~50%, so sections only need a
 // modest internal padding above their content.
-const SECTION_PY = "pt-20 pb-24 lg:pt-24 lg:pb-28";
+const SECTION_PY = "pt-14 pb-16 lg:pt-24 lg:pb-28";
 
 function Index() {
   useEffect(() => {
@@ -74,38 +74,38 @@ function Index() {
 
       <main className="relative z-10">
         {/* ============ 01 HERO (amber / beer) ============ */}
-        <section className="relative overflow-hidden bg-[var(--amber)] pt-20 pb-32 text-[var(--ink)] lg:pt-24 lg:pb-36">
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-10 px-6 lg:gap-12 lg:px-10">
+        <section className="relative overflow-hidden bg-[var(--amber)] pt-14 pb-24 text-[var(--ink)] lg:pt-24 lg:pb-36">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-5 lg:gap-12 lg:px-10">
             <div className="col-span-12 lg:col-span-7 xl:col-span-8">
               <h1 className="font-display max-w-[980px] text-[var(--ink)]" style={{ lineHeight: 0.86 }}>
-                <span className="block uppercase" style={{ fontSize: "clamp(44px, 8vw, 108px)" }}>
+                <span className="block uppercase" style={{ fontSize: "clamp(40px, 8vw, 108px)" }}>
                   THE
                 </span>
                 <span
                   className="block max-w-full overflow-hidden uppercase text-[var(--ink)]"
                   style={{
-                    fontSize: "clamp(54px, 8.4vw, 118px)",
+                    fontSize: "clamp(46px, 8.4vw, 118px)",
                     fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                   }}
                 >
                   TAKEOVER
                 </span>
                 <span
-                  className="font-script mt-3 block lowercase text-[var(--ink)]"
-                  style={{ fontSize: "clamp(32px, 6vw, 72px)", lineHeight: 0.9 }}
+                  className="font-script mt-2 block lowercase text-[var(--ink)]"
+                  style={{ fontSize: "clamp(28px, 6vw, 72px)", lineHeight: 0.9 }}
                 >
                   is happening.
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-md text-lg font-semibold text-[var(--ink)] sm:text-xl">
+              <p className="mt-6 max-w-md text-base font-semibold text-[var(--ink)] sm:mt-8 sm:text-xl">
                 We're picking a place. We're going there.{" "}
                 <span className="bg-[var(--ink)] px-2 text-[var(--amber)]">And we want you in.</span>
               </p>
 
-              <div className="mt-8 flex flex-wrap items-end gap-5">
+              <div className="mt-7 flex flex-wrap items-end gap-4 sm:gap-5">
                 <BeerButton onClick={() => scrollTo("form")}>I'm in</BeerButton>
-                <span className="pb-1 font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--ink)]/70">
+                <span className="pb-1 font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--ink)]/70 sm:text-[11px]">
                   no commitment<br />no payment
                 </span>
               </div>
@@ -128,7 +128,7 @@ function Index() {
             </div>
 
             <div className="col-span-12 flex justify-center self-center lg:col-span-5 lg:justify-end xl:col-span-4">
-              <div className="w-full max-w-[360px] lg:max-w-[400px]">
+              <div className="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]">
                 <div className="polaroid-tape">
                   <img
                     data-image-slot="hero-bg"
@@ -138,7 +138,7 @@ function Index() {
                   />
                   <p
                     className="mt-3 text-center text-[var(--ink)]"
-                    style={{ fontFamily: "'Caveat', 'Kalam', cursive", fontSize: 28, transform: "rotate(-2deg)" }}
+                    style={{ fontFamily: "'Caveat', 'Kalam', cursive", fontSize: 24, transform: "rotate(-2deg)" }}
                   >
                     team mad monkey xox
                   </p>
@@ -154,12 +154,12 @@ function Index() {
 
         {/* ============ 02 WHAT IS THE TAKEOVER (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 lg:gap-14 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-5 lg:gap-14 lg:px-10">
             <div className="col-span-12 lg:col-span-7">
               <h2
                 className="font-display uppercase"
                 style={{
-                  fontSize: "clamp(40px, 5.6vw, 84px)",
+                  fontSize: "clamp(36px, 5.6vw, 84px)",
                   lineHeight: 0.88,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
@@ -207,7 +207,7 @@ function Index() {
                     />
                     <p
                       className="mt-2 text-center text-[var(--ink)]"
-                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 24 }}
+                      style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 20 }}
                     >
                       {p.caption}
                     </p>
@@ -222,12 +222,12 @@ function Index() {
 
         {/* ============ 03 COMMUNITY (amber / beer) ============ */}
         <section className={`relative overflow-hidden bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-6 lg:gap-12 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-5 lg:gap-12 lg:px-10">
             <div className="col-span-12">
               <h2
                 className="font-display mx-auto max-w-[1120px] text-center uppercase"
                 style={{
-                  fontSize: "clamp(36px, 5.6vw, 84px)",
+                  fontSize: "clamp(32px, 5.6vw, 84px)",
                   lineHeight: 0.92,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
@@ -302,12 +302,12 @@ function Index() {
 
         {/* ============ 04 FORM (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 lg:gap-16 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-8 px-5 lg:gap-16 lg:px-10">
             <div className="col-span-12 lg:col-span-5 lg:sticky lg:top-24">
               <h2
                 className="font-display uppercase"
                 style={{
-                  fontSize: "clamp(40px, 5.2vw, 84px)",
+                  fontSize: "clamp(36px, 5.2vw, 84px)",
                   lineHeight: 0.9,
                   fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                 }}
@@ -363,11 +363,11 @@ function Index() {
 
         {/* ============ 06 PRE-FOOTER CTA (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-6 lg:gap-12 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-6 px-5 text-center lg:gap-12 lg:px-10 lg:text-left">
             <h2
-              className="col-span-12 font-display max-w-[760px] uppercase lg:col-span-8"
+              className="col-span-12 font-display mx-auto max-w-[760px] uppercase lg:mx-0 lg:col-span-8"
               style={{
-                fontSize: "clamp(42px, 6.8vw, 92px)",
+                fontSize: "clamp(38px, 6.8vw, 92px)",
                 lineHeight: 0.85,
                 fontFamily: "'Bungee', Impact, sans-serif",
               }}
@@ -380,7 +380,7 @@ function Index() {
                 GET IN.
               </span>
             </h2>
-            <div className="col-span-12 flex justify-start lg:col-span-4 lg:justify-end">
+            <div className="col-span-12 flex justify-center lg:col-span-4 lg:justify-end">
               <BeerButton onClick={() => scrollTo("form")}>I'm in</BeerButton>
             </div>
           </div>
