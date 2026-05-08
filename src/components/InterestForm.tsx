@@ -109,21 +109,68 @@ export function InterestForm() {
   return (
     <form onSubmit={submit} className="flex h-full w-full flex-col bg-[var(--cream)] p-6 md:p-10" style={{ border: "4px solid var(--ink)" }}>
       <div className="space-y-7">
-        {fields.map(({ k, label, placeholder, type }) => (
-          <div key={k}>
-            <span className="zine-label">{label}</span>
+        <div>
+          <span className="zine-label">Your name</span>
+          <input
+            type="text"
+            className="zine-input"
+            placeholder="Name or chat nickname"
+            value={form.name}
+            onChange={(e) => set("name", e.target.value)}
+          />
+          {errors.name && (
+            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[var(--stamp-red)]">{errors.name}</p>
+          )}
+        </div>
+
+        <div>
+          <span className="zine-label">WhatsApp</span>
+          <div className="flex gap-2">
+            <select
+              className="zine-input shrink-0 basis-[7.5rem] pr-2"
+              value={form.dialCode}
+              onChange={(e) => set("dialCode", e.target.value)}
+              aria-label="Country code"
+            >
+              {COUNTRIES.map((c) => (
+                <option key={c.code} value={c.dial}>
+                  {c.flag} {c.dial} {c.name}
+                </option>
+              ))}
+            </select>
             <input
-              type={type ?? "text"}
-              className="zine-input"
-              placeholder={placeholder}
-              value={form[k]}
-              onChange={(e) => set(k, e.target.value)}
+              type="tel"
+              inputMode="tel"
+              className="zine-input flex-1 min-w-0"
+              placeholder="555 123 4567"
+              value={form.whatsapp}
+              onChange={(e) => set("whatsapp", e.target.value)}
             />
-            {errors[k] && (
-              <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[var(--stamp-red)]">{errors[k]}</p>
-            )}
           </div>
-        ))}
+          {errors.whatsapp && (
+            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[var(--stamp-red)]">{errors.whatsapp}</p>
+          )}
+        </div>
+
+        <div>
+          <span className="zine-label">Where you're based</span>
+          <select
+            className="zine-input"
+            value={form.location}
+            onChange={(e) => set("location", e.target.value)}
+            aria-label="Country"
+          >
+            <option value="">Pick your country…</option>
+            {COUNTRIES.map((c) => (
+              <option key={c.code} value={c.name}>
+                {c.flag} {c.name}
+              </option>
+            ))}
+          </select>
+          {errors.location && (
+            <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[var(--stamp-red)]">{errors.location}</p>
+          )}
+        </div>
 
         <StampGroup
           label="Pick your vibe"
