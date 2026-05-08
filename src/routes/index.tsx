@@ -320,20 +320,22 @@ function Index() {
             </div>
 
             <div className="col-span-12 lg:col-span-5">
-              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--ink)]">
-                Tell us you're in
-              </p>
+              <span className="sticker pink tilt-l text-sm">▸ tell us you're in</span>
               <h2
-                className="mt-3 font-display uppercase"
-                style={{ fontSize: "clamp(48px, 8vw, 110px)", lineHeight: 0.9 }}
+                className="mt-5 font-display uppercase"
+                style={{
+                  fontSize: "clamp(64px, 11vw, 150px)",
+                  lineHeight: 0.82,
+                  fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
+                }}
               >
-                <span className="marker-underline">Get</span><br />
-                on the<br />
-                list.
+                <span className="block tilt-l">GET</span>
+                <span className="block tilt-r">ON THE</span>
+                <span className="block text-[var(--stamp-red)] tilt-lg-l">LIST.</span>
               </h2>
               <p className="mt-8 max-w-sm text-base text-[var(--ink)]">
                 No commitment. No payment. Once we see who's in, we'll share destination
-                options, rough dates, and pricing. You'll get a vote.
+                options, rough dates, and pricing. <strong>You'll get a vote.</strong>
               </p>
             </div>
 
