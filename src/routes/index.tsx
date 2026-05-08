@@ -363,11 +363,11 @@ function Index() {
 
         {/* ============ 06 PRE-FOOTER CTA (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-6 lg:gap-12 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-6 px-5 text-center lg:gap-12 lg:px-10 lg:text-left">
             <h2
-              className="col-span-12 font-display max-w-[760px] uppercase lg:col-span-8"
+              className="col-span-12 font-display mx-auto max-w-[760px] uppercase lg:mx-0 lg:col-span-8"
               style={{
-                fontSize: "clamp(42px, 6.8vw, 92px)",
+                fontSize: "clamp(38px, 6.8vw, 92px)",
                 lineHeight: 0.85,
                 fontFamily: "'Bungee', Impact, sans-serif",
               }}
@@ -380,7 +380,7 @@ function Index() {
                 GET IN.
               </span>
             </h2>
-            <div className="col-span-12 flex justify-start lg:col-span-4 lg:justify-end">
+            <div className="col-span-12 flex justify-center lg:col-span-4 lg:justify-end">
               <BeerButton onClick={() => scrollTo("form")}>I'm in</BeerButton>
             </div>
           </div>
