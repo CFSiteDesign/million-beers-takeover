@@ -20,7 +20,7 @@ export function MMHeader() {
             alt="Mad Monkey Logo"
             width={137}
             height={40}
-            className="h-10 w-auto"
+            className="h-7 w-auto lg:h-10"
           />
         </a>
 
