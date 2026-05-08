@@ -77,9 +77,9 @@ function Index() {
         <section className="relative overflow-hidden pt-14 pb-24 text-[var(--ink)] lg:pt-24 lg:pb-36">
           <div aria-hidden className="absolute inset-0 z-0 bg-[var(--amber)]" />
           <Bubbles density={14} scope="section" />
-          <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-5 lg:gap-12 lg:px-10">
-            <div className="col-span-12 lg:col-span-7 xl:col-span-8">
-              <h1 className="font-display max-w-[980px] text-[var(--ink)]" style={{ lineHeight: 0.86 }}>
+          <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-12 items-center gap-8 px-5 pr-8 sm:px-8 lg:gap-12 lg:px-10">
+            <div className="col-span-12 min-w-0 max-w-full lg:col-span-7 xl:col-span-8">
+              <h1 className="font-display max-w-full text-[var(--ink)]" style={{ lineHeight: 0.86 }}>
                 <span className="block uppercase" style={{ fontSize: "clamp(40px, 8vw, 108px)" }}>
                   THE
                 </span>
@@ -100,13 +100,13 @@ function Index() {
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-md text-base font-semibold text-[var(--ink)] sm:mt-8 sm:text-xl">
+              <p className="mt-6 max-w-full text-base font-semibold text-[var(--ink)] sm:mt-8 sm:max-w-md sm:text-xl">
                 We're picking a place. We're going there.{" "}
                 <span className="bg-[var(--ink)] px-2 text-[var(--amber)]">And we want you in.</span>
               </p>
 
-              <div className="mt-8 max-w-md">
-                <div className="mb-2 flex items-baseline justify-between font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--ink)]">
+              <div className="mt-8 max-w-full sm:max-w-md">
+                <div className="mb-2 flex min-w-0 items-baseline justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--ink)] sm:text-[11px] sm:tracking-[0.25em]">
                   <span className="font-bold">20,847 beers logged</span>
                   <span className="text-[var(--ink)]/60">/ 1,000,000</span>
                 </div>
@@ -151,7 +151,7 @@ function Index() {
 
         {/* ============ 02 WHAT IS THE TAKEOVER (ink) ============ */}
         <section className={`relative overflow-hidden bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 sm:px-8 lg:gap-14 lg:px-10">
+          <div className="mx-auto grid w-full max-w-7xl grid-cols-12 items-start gap-10 px-5 pr-8 sm:px-8 lg:gap-14 lg:px-10">
             <div className="col-span-12 lg:col-span-7 min-w-0">
               <h2
                 className="font-display uppercase break-words"
@@ -227,7 +227,7 @@ function Index() {
 
         {/* ============ 03 COMMUNITY (amber / beer) ============ */}
         <section className={`relative overflow-hidden bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-5 lg:gap-12 lg:px-10">
+          <div className="mx-auto grid w-full max-w-7xl grid-cols-12 gap-8 px-5 pr-8 lg:gap-12 lg:px-10">
             <div className="col-span-12">
               <h2
                 className="font-display mx-auto max-w-[1120px] text-center uppercase"
@@ -275,7 +275,7 @@ function Index() {
           </div>
 
           {/* Stats panel */}
-          <div className="mx-auto mt-14 max-w-5xl px-6 lg:px-10">
+          <div className="mx-auto mt-14 w-full max-w-5xl px-5 pr-8 lg:px-10">
             <div className="grid grid-cols-1 border-2 border-[var(--ink)] sm:grid-cols-3">
               {[
                 { n: 20847, label: "beers logged" },
@@ -307,7 +307,7 @@ function Index() {
 
         {/* ============ 04 FORM (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-8 px-5 lg:items-stretch lg:gap-16 lg:px-10">
+          <div className="mx-auto grid w-full max-w-7xl grid-cols-12 items-start gap-8 px-5 pr-8 lg:items-stretch lg:gap-16 lg:px-10">
             <div className="col-span-12 lg:col-span-5">
               <h2
                 className="font-display uppercase"
@@ -368,7 +368,7 @@ function Index() {
 
         {/* ============ 06 PRE-FOOTER CTA (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-center gap-6 px-5 text-center lg:gap-12 lg:px-10 lg:text-left">
+          <div className="mx-auto grid w-full max-w-7xl grid-cols-12 items-center gap-6 px-5 pr-8 text-center lg:gap-12 lg:px-10 lg:text-left">
             <h2
               className="col-span-12 font-display mx-auto max-w-[760px] uppercase lg:mx-0 lg:col-span-8"
               style={{
