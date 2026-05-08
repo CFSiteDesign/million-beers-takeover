@@ -5,7 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Anton", "Impact", sans-serif;
+  --font-display: "Bungee", "Anton", "Impact", sans-serif;
+  --font-script: "Shrikhand", "Caveat", cursive;
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
   --radius-sm: calc(var(--radius) - 4px);
