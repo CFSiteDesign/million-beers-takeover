@@ -44,10 +44,10 @@
   --ink: #0A0A0A;                     /* near-black */
   --cream: #FFF6DE;                   /* paper cream */
   --amber: #F5B82E;                   /* beer amber */
-  --hot-pink: #FF2E88;                /* neon pink */
-  --electric: #2EC4FF;                /* electric blue */
-  --lime: #C6F432;                    /* lime party */
-  --stamp-red: #E53935;               /* warning stripe red */
+  --hot-pink: var(--amber);           /* alias → amber (neons removed) */
+  --electric: var(--amber);           /* alias → amber */
+  --lime: var(--cream);               /* alias → cream */
+  --stamp-red: #B83227;               /* muted brick red for accents */
 
   --background: var(--ink);
   --foreground: var(--cream);
