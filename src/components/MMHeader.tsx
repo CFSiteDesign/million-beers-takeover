@@ -61,7 +61,7 @@ export function MMHeader() {
       {open && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-[#FFF8E0] p-6 shadow-2xl">
+          <div className="absolute right-0 top-0 w-80 max-w-[85vw] bg-[#FFF8E0] p-6 shadow-2xl rounded-bl-2xl">
             <div className="flex items-center justify-end">
               <button onClick={() => setOpen(false)} aria-label="Close menu">
                 <X className="h-6 w-6 text-neutral-800" />
@@ -83,7 +83,7 @@ export function MMHeader() {
               </a>
               <a
                 href="https://madmonkeyhostels.com/booking"
-                className="mt-4 rounded-full bg-[var(--mm-teal)] px-5 py-3 text-center text-base font-semibold text-white"
+                className="mt-4 rounded-full bg-black px-5 py-3 text-center text-base font-semibold text-white"
               >
                 Book Now
               </a>
