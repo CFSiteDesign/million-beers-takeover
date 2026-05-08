@@ -109,6 +109,10 @@ function Index() {
                   no commitment<br />no payment
                 </span>
               </div>
+
+              <div className="mt-10">
+                <LiveBeerCounter />
+              </div>
             </div>
 
             <div className="col-span-12 flex justify-center self-center lg:col-span-5 lg:justify-end xl:col-span-4">
