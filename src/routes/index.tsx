@@ -110,13 +110,13 @@ function Index() {
             </div>
 
             <div className="col-span-12 flex justify-center self-center lg:col-span-5 lg:justify-end xl:col-span-4">
-              <div className="w-full max-w-[300px] lg:max-w-[320px]">
+              <div className="w-full max-w-[360px] lg:max-w-[400px]">
                 <div className="polaroid-tape">
                   <img
                     data-image-slot="hero-bg"
-                    src="https://placehold.co/600x800/0A0A0A/F5B82E?text=HERO+POLAROID"
-                    alt="Trip 01 placeholder"
-                    className="zine-photo aspect-[4/3] w-full object-cover lg:aspect-[3/4]"
+                    src={heroImage}
+                    alt="Mad Monkey crew clinking beers at sunset on a rooftop"
+                    className="zine-photo aspect-[4/3] w-full object-cover"
                   />
                   <p
                     className="font-script mt-3 text-center text-[var(--ink)]"
