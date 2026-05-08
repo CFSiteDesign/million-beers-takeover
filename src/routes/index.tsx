@@ -48,9 +48,9 @@ export const Route = createFileRoute("/")({
 
 const TICKER = "NO SPAM   //   NO PAYMENT NOW   //   YOU PICK THE DESTINATION   //   ";
 
-// Section padding allows extra space at top/bottom so the overflowing foam
-// divider doesn't cover any content.
-const SECTION_PY = "py-28 lg:py-36";
+// Foam dividers overlap their neighbours by ~50%, so sections only need a
+// modest internal padding above their content.
+const SECTION_PY = "pt-20 pb-24 lg:pt-24 lg:pb-28";
 
 function Index() {
   useEffect(() => {
