@@ -151,12 +151,12 @@ function Index() {
 
         {/* ============ 02 WHAT IS THE TAKEOVER (ink) ============ */}
         <section className={`relative overflow-hidden bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-5 lg:gap-14 lg:px-10">
-            <div className="col-span-12 lg:col-span-7">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-4 sm:px-5 lg:gap-14 lg:px-10">
+            <div className="col-span-12 lg:col-span-7 min-w-0">
               <h2
-                className="font-display uppercase"
+                className="font-display uppercase break-words"
                 style={{
-                  fontSize: "clamp(34px, 9vw, 84px)",
+                  fontSize: "clamp(28px, 8vw, 84px)",
                   lineHeight: 1.05,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
@@ -167,13 +167,13 @@ function Index() {
                   style={{
                     fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                     lineHeight: 1.15,
-                    fontSize: "clamp(30px, 8vw, 80px)",
+                    fontSize: "clamp(24px, 7vw, 80px)",
                   }}
                 >
                   TAKEOVER?
                 </span>
               </h2>
-              <div className="mt-6 max-w-xl space-y-4 text-[15px] leading-relaxed sm:mt-9 sm:space-y-5 sm:text-xl">
+              <div className="mt-6 max-w-xl space-y-4 text-[14px] leading-relaxed sm:mt-9 sm:space-y-5 sm:text-xl">
                 <p>A Takeover is simple. A group of MM people go somewhere new together.</p>
                 <p>
                   New city. <span className="bg-[var(--amber)] px-1 text-[var(--ink)]">New beers.</span>{" "}
@@ -181,12 +181,12 @@ function Index() {
                 </p>
               </div>
               <p
-                className="font-script mt-6 text-[var(--amber)] sm:mt-9"
-                style={{ fontSize: "clamp(24px, 6vw, 56px)", lineHeight: 1.1 }}
+                className="font-script mt-6 text-[var(--amber)] break-words sm:mt-9"
+                style={{ fontSize: "clamp(22px, 6vw, 56px)", lineHeight: 1.1 }}
               >
                 "that's kinda the whole point."
               </p>
-              <p className="mt-5 max-w-lg text-[15px] leading-relaxed sm:mt-7 sm:text-xl">
+              <p className="mt-5 max-w-lg text-[14px] leading-relaxed sm:mt-7 sm:text-xl">
                 We don't have a destination yet. We're picking based on who's in and where
                 people want to go. <strong>Register, tell us your vibe, help shape it.</strong>
               </p>
