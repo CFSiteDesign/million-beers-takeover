@@ -1,14 +1,10 @@
 import { useRef, useState } from "react";
 
 const DESTINATIONS = [
-  { city: "Siem Reap", country: "Cambodia", note: "$0.50 draft beers" },
-  { city: "Phnom Penh", country: "Cambodia", note: "rooftop riverside" },
-  { city: "Koh Rong", country: "Cambodia", note: "plankton beaches" },
-  { city: "Vang Vieng", country: "Laos", note: "tubing reborn" },
-  { city: "El Nido", country: "Philippines", note: "island hop city" },
-  { city: "Boracay", country: "Philippines", note: "white sand chaos" },
-  { city: "Bali", country: "Indonesia", note: "rooftops + rice fields" },
-  { city: "Gili T", country: "Indonesia", note: "no cars, all parties" },
+  { city: "Cambodia", country: "Cambodia", note: "Siem Reap · Phnom Penh · Koh Rong" },
+  { city: "Laos", country: "Laos", note: "Vang Vieng tubing reborn" },
+  { city: "Philippines", country: "Philippines", note: "El Nido · Boracay" },
+  { city: "Indonesia", country: "Indonesia", note: "Bali · Gili T" },
 ];
 
 const COUNTRY_PHRASES: Record<string, string> = {
