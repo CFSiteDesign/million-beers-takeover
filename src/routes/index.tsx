@@ -182,7 +182,9 @@ function Index() {
                   <p>
                     New city. New beers. New stories.
                     <br />
-                    Some of you know each other already. Most of you don't.
+                    Some of you know each other already.
+                    <br />
+                    Most of you don't.
                   </p>
                 </div>
 
