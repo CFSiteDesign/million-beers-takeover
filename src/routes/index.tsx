@@ -367,14 +367,23 @@ function Index() {
             </div>
             <h2
               className="col-span-12 font-display uppercase lg:col-span-7"
-              style={{ fontSize: "clamp(40px, 7vw, 96px)", lineHeight: 0.9 }}
+              style={{
+                fontSize: "clamp(48px, 8vw, 110px)",
+                lineHeight: 0.85,
+                fontFamily: "'Bungee', Impact, sans-serif",
+              }}
             >
-              Still reading?<br />
-              <span className="text-[var(--amber)]">Get on the list.</span>
+              <span className="block tilt-l">Still here?</span>
+              <span
+                className="block text-[var(--lime)] text-shadow-poster tilt-r"
+                style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}
+              >
+                GET IN.
+              </span>
             </h2>
             <div className="col-span-12 flex justify-start lg:col-span-3 lg:justify-end">
-              <button onClick={() => scrollTo("form")} className="btn-stamp btn-dark text-xl">
-                I'M IN
+              <button onClick={() => scrollTo("form")} className="btn-stamp btn-dark text-2xl tilt-r">
+                🍻 I'M IN
               </button>
             </div>
           </div>
