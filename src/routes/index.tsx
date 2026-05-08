@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Shrikhand&family=Anton&family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap",
       },
       {
         rel: "icon",
@@ -65,41 +65,54 @@ function Index() {
 
       <main className="relative z-10">
         {/* ============ 01 HERO ============ */}
-        <section className="relative bg-[var(--ink)] pt-10 pb-0">
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 pb-16 lg:gap-10 lg:px-10">
+        <section className="relative overflow-hidden bg-[var(--ink)] pt-10 pb-0">
+          {/* Floating party stickers */}
+          <span className="sticker pink absolute right-4 top-24 z-20 tilt-r text-sm sm:right-12 sm:text-base">🍻 cheers loser</span>
+          <span className="sticker electric absolute left-4 top-72 z-20 tilt-lg-l text-sm sm:left-10">est. forever</span>
+          <span className="sticker absolute right-8 top-[420px] z-20 tilt-l hidden text-sm sm:block">FREE BEER LIES*</span>
+
+          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 pb-20 lg:gap-10 lg:px-10">
             <div className="col-span-12 flex items-start lg:col-span-1">
-              <span className="section-num text-[var(--amber)]">01</span>
+              <span className="section-num text-[var(--amber)] tilt-l">01</span>
             </div>
 
             <div className="col-span-12 lg:col-span-7">
-              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--amber)]">
-                Million Beer Mission · Takeover #01
+              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--hot-pink)]">
+                ▸ Million Beer Mission · Takeover #01 ◂
               </p>
-              <h1 className="mt-6 font-display text-[var(--cream)]" style={{ lineHeight: 0.85 }}>
-                <span className="block uppercase tracking-tight" style={{ fontSize: "clamp(56px, 12vw, 140px)" }}>
+              <h1 className="mt-6 font-display text-[var(--cream)]" style={{ lineHeight: 0.78 }}>
+                <span
+                  className="block uppercase tilt-l"
+                  style={{ fontSize: "clamp(56px, 13vw, 150px)" }}
+                >
                   THE
                 </span>
                 <span
-                  className="block uppercase text-[var(--amber)]"
-                  style={{ fontSize: "clamp(96px, 22vw, 260px)", letterSpacing: "-0.02em" }}
+                  className="block uppercase text-[var(--amber)] text-shadow-poster"
+                  style={{
+                    fontSize: "clamp(88px, 22vw, 260px)",
+                    letterSpacing: "-0.02em",
+                    fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
+                  }}
                 >
                   TAKEOVER
                 </span>
                 <span
-                  className="block lowercase"
-                  style={{ fontSize: "clamp(40px, 8vw, 96px)", letterSpacing: "0.05em" }}
+                  className="font-script mt-4 block lowercase text-[var(--lime)] tilt-r"
+                  style={{ fontSize: "clamp(48px, 10vw, 110px)", lineHeight: 0.9 }}
                 >
                   is happening.
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-md text-lg text-[var(--cream)]">
-                We're picking a place. We're going there. And we want you in.
+              <p className="mt-10 max-w-md text-xl font-semibold text-[var(--cream)]">
+                We're picking a place. We're going there.{" "}
+                <span className="bg-[var(--hot-pink)] px-2 text-[var(--cream)]">And we want you in.</span>
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <button onClick={() => scrollTo("form")} className="btn-stamp text-xl">
-                  I'M IN, COUNT ME
+              <div className="mt-10 flex flex-wrap items-center gap-5">
+                <button onClick={() => scrollTo("form")} className="btn-stamp text-2xl tilt-r">
+                  I'M IN ✦ COUNT ME
                 </button>
                 <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--cream)]/70">
                   no commitment · no payment
@@ -108,7 +121,7 @@ function Index() {
             </div>
 
             <div className="col-span-12 lg:col-span-4">
-              <div className="relative ml-auto w-full max-w-xs" style={{ transform: "rotate(3deg)" }}>
+              <div className="relative ml-auto w-full max-w-xs tilt-r">
                 <div className="polaroid-tape">
                   <img
                     data-image-slot="hero-bg"
@@ -117,17 +130,17 @@ function Index() {
                     className="zine-photo h-72 w-full object-cover"
                   />
                   <p
-                    className="mt-3 text-center text-[var(--ink)]"
-                    style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 22 }}
+                    className="font-script mt-3 text-center text-[var(--ink)]"
+                    style={{ fontSize: 26 }}
                   >
                     trip 01 · destination tbc
                   </p>
                 </div>
                 <p
-                  className="mt-6 -rotate-2 text-[var(--stamp-red)]"
-                  style={{ fontFamily: "'Caveat', cursive, var(--font-sans)", fontSize: 26 }}
+                  className="font-script mt-8 -rotate-3 text-[var(--hot-pink)]"
+                  style={{ fontSize: 34 }}
                 >
-                  trip 01. destination: tbc.
+                  somewhere wild →
                 </p>
               </div>
             </div>
@@ -137,7 +150,7 @@ function Index() {
           <ProgressBar variant="status" />
         </section>
 
-        <FoamOverflowDivider fillFrom="var(--ink)" foamColor="var(--cream)" />
+        <FoamOverflowDivider />
 
         {/* ============ 02 WHAT IS THE TAKEOVER (cream) ============ */}
         <section className="relative bg-[var(--cream)] text-[var(--ink)]">
@@ -147,35 +160,37 @@ function Index() {
             </div>
 
             <Reveal className="col-span-12 lg:col-span-7">
-              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--stamp-red)]">
-                What you're signing up for
-              </p>
+              <span className="sticker pink tilt-l text-sm">▸ what's the deal</span>
               <h2
-                className="mt-3 font-display uppercase"
-                style={{ fontSize: "clamp(48px, 8vw, 110px)", lineHeight: 0.9 }}
+                className="mt-5 font-display uppercase"
+                style={{
+                  fontSize: "clamp(56px, 10vw, 140px)",
+                  lineHeight: 0.85,
+                  fontFamily: "'Bungee', Impact, sans-serif",
+                }}
               >
-                What's a<br />Takeover?
+                <span className="block tilt-l">What's a</span>
+                <span className="block text-[var(--hot-pink)] text-shadow-poster-amber tilt-r" style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}>
+                  TAKEOVER?
+                </span>
               </h2>
-              <div className="mt-8 max-w-xl space-y-5 text-lg leading-relaxed">
+              <div className="mt-10 max-w-xl space-y-5 text-lg leading-relaxed">
                 <p>A Takeover is simple. A group of MM people go somewhere new together.</p>
                 <p>
-                  New city. New beers. New stories. Some of you know each other already.
+                  New city. <span className="bg-[var(--lime)] px-1">New beers.</span>{" "}
+                  New stories. Some of you know each other already.
                   Most of you don't.
                 </p>
               </div>
               <p
-                className="mt-10 -ml-2 font-display uppercase text-[var(--amber)]"
-                style={{
-                  fontSize: "clamp(40px, 7vw, 88px)",
-                  lineHeight: 0.95,
-                  textShadow: "3px 3px 0 var(--ink)",
-                }}
+                className="font-script mt-12 -ml-2 text-[var(--stamp-red)] tilt-lg-l"
+                style={{ fontSize: "clamp(44px, 8vw, 96px)", lineHeight: 0.95 }}
               >
-                "That's kind of the whole point."
+                "that's kinda the whole point."
               </p>
-              <p className="mt-8 max-w-lg text-base">
+              <p className="mt-10 max-w-lg text-base">
                 We don't have a destination yet. We're picking based on who's in and where
-                people want to go. Register, tell us your vibe, help shape it.
+                people want to go. <strong>Register, tell us your vibe, help shape it.</strong>
               </p>
             </Reveal>
 
@@ -222,16 +237,23 @@ function Index() {
               <span className="section-num text-[var(--cream)]">03</span>
             </div>
             <Reveal className="col-span-12 text-right lg:col-span-10">
-              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--amber)]">
-                Twenty thousand and counting
-              </p>
+              <span className="sticker electric tilt-r text-sm">▸ the army</span>
               <h2
-                className="mt-3 font-display uppercase"
-                style={{ fontSize: "clamp(40px, 7.5vw, 100px)", lineHeight: 0.9 }}
+                className="mt-5 font-display uppercase"
+                style={{
+                  fontSize: "clamp(44px, 9vw, 130px)",
+                  lineHeight: 0.85,
+                  fontFamily: "'Bungee', Impact, sans-serif",
+                }}
               >
-                20,000+ photos.<br />
-                hundreds of people.<br />
-                <span className="text-[var(--amber)]">one ridiculous goal.</span>
+                <span className="block tilt-r">20,000+ photos.</span>
+                <span className="block text-[var(--lime)] tilt-l">hundreds of legends.</span>
+                <span
+                  className="block text-[var(--amber)] text-shadow-poster-electric tilt-r"
+                  style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}
+                >
+                  ONE STUPID GOAL.
+                </span>
               </h2>
             </Reveal>
           </div>
@@ -298,20 +320,22 @@ function Index() {
             </div>
 
             <div className="col-span-12 lg:col-span-5">
-              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--ink)]">
-                Tell us you're in
-              </p>
+              <span className="sticker pink tilt-l text-sm">▸ tell us you're in</span>
               <h2
-                className="mt-3 font-display uppercase"
-                style={{ fontSize: "clamp(48px, 8vw, 110px)", lineHeight: 0.9 }}
+                className="mt-5 font-display uppercase"
+                style={{
+                  fontSize: "clamp(64px, 11vw, 150px)",
+                  lineHeight: 0.82,
+                  fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
+                }}
               >
-                <span className="marker-underline">Get</span><br />
-                on the<br />
-                list.
+                <span className="block tilt-l">GET</span>
+                <span className="block tilt-r">ON THE</span>
+                <span className="block text-[var(--stamp-red)] tilt-lg-l">LIST.</span>
               </h2>
               <p className="mt-8 max-w-sm text-base text-[var(--ink)]">
                 No commitment. No payment. Once we see who's in, we'll share destination
-                options, rough dates, and pricing. You'll get a vote.
+                options, rough dates, and pricing. <strong>You'll get a vote.</strong>
               </p>
             </div>
 
@@ -343,14 +367,23 @@ function Index() {
             </div>
             <h2
               className="col-span-12 font-display uppercase lg:col-span-7"
-              style={{ fontSize: "clamp(40px, 7vw, 96px)", lineHeight: 0.9 }}
+              style={{
+                fontSize: "clamp(48px, 8vw, 110px)",
+                lineHeight: 0.85,
+                fontFamily: "'Bungee', Impact, sans-serif",
+              }}
             >
-              Still reading?<br />
-              <span className="text-[var(--amber)]">Get on the list.</span>
+              <span className="block tilt-l">Still here?</span>
+              <span
+                className="block text-[var(--lime)] text-shadow-poster tilt-r"
+                style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}
+              >
+                GET IN.
+              </span>
             </h2>
             <div className="col-span-12 flex justify-start lg:col-span-3 lg:justify-end">
-              <button onClick={() => scrollTo("form")} className="btn-stamp btn-dark text-xl">
-                I'M IN
+              <button onClick={() => scrollTo("form")} className="btn-stamp btn-dark text-2xl tilt-r">
+                🍻 I'M IN
               </button>
             </div>
           </div>
