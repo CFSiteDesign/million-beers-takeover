@@ -135,12 +135,12 @@ function Index() {
 
         {/* ============ 02 WHAT IS THE TAKEOVER (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-6 lg:gap-12 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 lg:gap-12 lg:px-10">
             <Reveal className="col-span-12 lg:col-span-7">
               <h2
-                className="font-display uppercase"
+                className="font-display max-w-[780px] uppercase"
                 style={{
-                  fontSize: "clamp(48px, 10vw, 140px)",
+                  fontSize: "clamp(44px, 7.8vw, 112px)",
                   lineHeight: 0.85,
                   fontFamily: "'Bungee', Impact, sans-serif",
                 }}
@@ -173,18 +173,18 @@ function Index() {
             </Reveal>
 
             <div className="col-span-12 lg:col-span-5">
-              <div className="flex flex-col gap-6">
+              <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-3 lg:ml-auto lg:grid-cols-1">
                 {[
                   { slot: "polaroid-1", caption: "siem reap, 2am" },
                   { slot: "polaroid-2", caption: "el nido vibes" },
                   { slot: "polaroid-3", caption: "bali, definitely" },
                 ].map((p) => (
-                  <div key={p.slot} className="polaroid-tape mx-auto w-full max-w-xs lg:mx-0 lg:ml-auto">
+                  <div key={p.slot} className="polaroid-tape mx-auto w-full max-w-[260px] lg:mx-0 lg:ml-auto">
                     <img
                       data-image-slot={p.slot}
                       src={`https://placehold.co/400x500/0A0A0A/F5B82E?text=${encodeURIComponent(p.caption)}`}
                       alt={p.caption}
-                      className="zine-photo h-48 w-full object-cover"
+                      className="zine-photo aspect-[4/3] w-full object-cover"
                     />
                     <p
                       className="mt-3 text-center text-[var(--ink)]"
