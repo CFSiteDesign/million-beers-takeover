@@ -220,11 +220,11 @@ function Index() {
               </div>
 
               <div className="min-w-0 max-w-full pt-2 lg:pt-8">
-                <div className="flex flex-col items-center gap-8 sm:gap-10 lg:gap-16">
+                <div className="flex flex-col items-center gap-3 sm:gap-4 lg:gap-5">
                   {[
-                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -4, x: 4 },
-                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 3, x: 10 },
-                    { slot: "polaroid-3", src: polaroid3, caption: "bali 26 x", rot: -3, x: -8 },
+                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -4, x: -10 },
+                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 3, x: 12 },
+                    { slot: "polaroid-3", src: polaroid3, caption: "bali 26 x", rot: -3, x: -10 },
                   ].map((p) => (
                     <div
                       key={p.slot}
