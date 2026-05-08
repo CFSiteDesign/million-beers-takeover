@@ -32,22 +32,30 @@ import marquee12 from "@/assets/marquee-12.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "The Million Beer Mission Takeover" },
+      { title: "Mad Monkey Takeover — One Million Beers, One Stupid Goal" },
       {
         name: "description",
-        content: "We're picking a place. We're going there. And we want you in.",
+        content:
+          "Join the Mad Monkey Takeover: a global crew picking a destination, sharing the trip, and chasing one million beers together. No spam, no payment now — just get on the list and help shape where we go.",
       },
-      { property: "og:title", content: "The Million Beer Mission Takeover" },
+      { property: "og:title", content: "Mad Monkey Takeover — One Million Beers, One Stupid Goal" },
       {
         property: "og:description",
-        content: "We're picking a place. We're going there. And we want you in.",
+        content:
+          "A travelling crew, a chosen destination, and a million beers along the way. Register your interest, vote on the trip, and pack a bag.",
       },
       {
         property: "og:image",
-        content: "https://placehold.co/1200x630/0A0A0A/F5B82E?text=Million+Beer+Mission",
+        content: "https://placehold.co/1200x630/0A0A0A/F5B82E?text=Mad+Monkey+Takeover",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Mad Monkey Takeover — One Million Beers, One Stupid Goal" },
+      {
+        name: "twitter:description",
+        content:
+          "A travelling crew, a chosen destination, and a million beers along the way. Register your interest, vote on the trip, and pack a bag.",
+      },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
