@@ -106,18 +106,18 @@
 /* Sticker badge */
 .sticker {
   display: inline-block;
-  padding: 6px 14px;
+  padding: 6px 12px;
   border: 2px solid var(--ink);
-  background: var(--lime);
+  background: var(--amber);
   color: var(--ink);
   font-family: var(--font-display);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   box-shadow: 4px 4px 0 0 var(--ink);
 }
-.sticker.pink { background: var(--hot-pink); color: var(--cream); }
-.sticker.electric { background: var(--electric); color: var(--ink); }
-.sticker.amber { background: var(--amber); color: var(--ink); }
+.sticker.pink, .sticker.electric, .sticker.amber {
+  background: var(--amber); color: var(--ink);
+}
 
 /* ===== Paper grain overlay ===== */
 .paper-grain::before {
