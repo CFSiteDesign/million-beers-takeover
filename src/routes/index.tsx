@@ -261,7 +261,7 @@ function Index() {
                   ].map((p) => (
                     <div
                       key={p.slot}
-                      className="polaroid-tape polaroid-thin absolute w-[44%] max-w-[200px]"
+                      className="polaroid-tape polaroid-thin absolute w-[58%] max-w-[280px]"
                       style={{ top: p.top, left: p.left, transform: `rotate(${p.rot}deg)`, transformOrigin: "center" }}
                     >
                       <img
