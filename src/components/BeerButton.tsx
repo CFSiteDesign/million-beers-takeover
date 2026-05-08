@@ -11,6 +11,9 @@ export function BeerButton({ children, className = "", ...rest }: BeerButtonProp
 
   useEffect(() => {
     if (typeof window === "undefined" || !btnRef.current) return;
+    // Hover-to-fill on desktop; scroll-to-fill only on mobile / coarse pointers.
+    const isMobile = window.matchMedia("(hover: none), (max-width: 767px)").matches;
+    if (!isMobile) return;
     const el = btnRef.current;
     const obs = new IntersectionObserver(
       (entries) => {
