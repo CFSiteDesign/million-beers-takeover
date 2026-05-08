@@ -362,7 +362,7 @@ function Index() {
           <div className="mx-auto grid w-full max-w-7xl grid-cols-12 items-start gap-8 px-5 pr-8 lg:items-stretch lg:gap-16 lg:px-10">
             <div className="col-span-12 lg:col-span-5">
               <h2
-                className="font-display uppercase"
+                className="font-display uppercase lg:tracking-[-0.01em]"
                 style={{
                   fontSize: "clamp(36px, 5.2vw, 84px)",
                   lineHeight: 0.9,
@@ -375,27 +375,33 @@ function Index() {
                 </span>
               </h2>
 
-              <p className="mt-8 max-w-md text-lg leading-relaxed text-[var(--cream)]/90">
+              <p className="mt-8 max-w-md text-lg leading-relaxed text-[var(--cream)]/90 lg:mt-10 lg:max-w-[34ch] lg:text-[1.35rem] lg:leading-[1.55]">
                 Once we see who's in, we'll share destination options, rough dates,
                 and pricing. <strong className="text-[var(--amber)]">You'll get a vote.</strong>
               </p>
 
-              <ul className="mt-8 max-w-md space-y-4 text-[var(--cream)]/85">
-                <li className="flex gap-3">
-                  <span className="mt-1 text-[var(--amber)]">✓</span>
-                  <span><strong className="text-[var(--cream)]">No spam.</strong> Just trip updates when there's something to say.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1 text-[var(--amber)]">✓</span>
-                  <span><strong className="text-[var(--cream)]">No payment now.</strong> You commit when you're ready.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1 text-[var(--amber)]">✓</span>
-                  <span><strong className="text-[var(--cream)]">You help pick the destination.</strong> Your vote counts.</span>
-                </li>
+              <ul className="mt-8 max-w-md space-y-4 text-[var(--cream)]/85 lg:mt-10 lg:max-w-none lg:space-y-0 lg:divide-y lg:divide-[var(--cream)]/10 lg:border-y lg:border-[var(--cream)]/10">
+                {[
+                  { t: "No spam.", d: "Just trip updates when there's something to say." },
+                  { t: "No payment now.", d: "You commit when you're ready." },
+                  { t: "You help pick the destination.", d: "Your vote counts." },
+                ].map((item) => (
+                  <li
+                    key={item.t}
+                    className="flex gap-3 lg:items-baseline lg:gap-5 lg:py-4"
+                  >
+                    <span className="mt-1 text-[var(--amber)] lg:mt-0 lg:font-mono lg:text-xs lg:font-bold lg:tracking-[0.25em]">✓</span>
+                    <span className="lg:flex lg:flex-1 lg:items-baseline lg:justify-between lg:gap-6">
+                      <strong className="text-[var(--cream)] lg:text-[1.05rem] lg:uppercase lg:tracking-[0.04em]">
+                        {item.t}
+                      </strong>{" "}
+                      <span className="lg:text-[var(--cream)]/65 lg:text-right lg:text-[0.95rem]">{item.d}</span>
+                    </span>
+                  </li>
+                ))}
               </ul>
 
-              <div className="mt-10 max-w-md">
+              <div className="mt-10 max-w-md lg:mt-12">
                 <DestinationShuffler />
               </div>
             </div>
