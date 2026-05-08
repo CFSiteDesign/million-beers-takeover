@@ -160,35 +160,37 @@ function Index() {
             </div>
 
             <Reveal className="col-span-12 lg:col-span-7">
-              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--stamp-red)]">
-                What you're signing up for
-              </p>
+              <span className="sticker pink tilt-l text-sm">▸ what's the deal</span>
               <h2
-                className="mt-3 font-display uppercase"
-                style={{ fontSize: "clamp(48px, 8vw, 110px)", lineHeight: 0.9 }}
+                className="mt-5 font-display uppercase"
+                style={{
+                  fontSize: "clamp(56px, 10vw, 140px)",
+                  lineHeight: 0.85,
+                  fontFamily: "'Bungee', Impact, sans-serif",
+                }}
               >
-                What's a<br />Takeover?
+                <span className="block tilt-l">What's a</span>
+                <span className="block text-[var(--hot-pink)] text-shadow-poster-amber tilt-r" style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}>
+                  TAKEOVER?
+                </span>
               </h2>
-              <div className="mt-8 max-w-xl space-y-5 text-lg leading-relaxed">
+              <div className="mt-10 max-w-xl space-y-5 text-lg leading-relaxed">
                 <p>A Takeover is simple. A group of MM people go somewhere new together.</p>
                 <p>
-                  New city. New beers. New stories. Some of you know each other already.
+                  New city. <span className="bg-[var(--lime)] px-1">New beers.</span>{" "}
+                  New stories. Some of you know each other already.
                   Most of you don't.
                 </p>
               </div>
               <p
-                className="mt-10 -ml-2 font-display uppercase text-[var(--amber)]"
-                style={{
-                  fontSize: "clamp(40px, 7vw, 88px)",
-                  lineHeight: 0.95,
-                  textShadow: "3px 3px 0 var(--ink)",
-                }}
+                className="font-script mt-12 -ml-2 text-[var(--stamp-red)] tilt-lg-l"
+                style={{ fontSize: "clamp(44px, 8vw, 96px)", lineHeight: 0.95 }}
               >
-                "That's kind of the whole point."
+                "that's kinda the whole point."
               </p>
-              <p className="mt-8 max-w-lg text-base">
+              <p className="mt-10 max-w-lg text-base">
                 We don't have a destination yet. We're picking based on who's in and where
-                people want to go. Register, tell us your vibe, help shape it.
+                people want to go. <strong>Register, tell us your vibe, help shape it.</strong>
               </p>
             </Reveal>
 
