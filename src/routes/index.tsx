@@ -16,7 +16,6 @@ import { CountUp } from "@/components/CountUp";
 import { LiveBeerCounter } from "@/components/LiveBeerCounter";
 import polaroid1 from "@/assets/polaroid-1.png";
 import polaroid2 from "@/assets/polaroid-2.png";
-import polaroid3 from "@/assets/polaroid-3.png";
 import marquee1 from "@/assets/marquee-1.png";
 import marquee2 from "@/assets/marquee-2.png";
 import marquee3 from "@/assets/marquee-3.png";
