@@ -267,16 +267,18 @@ function Index() {
               ].map((s, i) => (
                 <div
                   key={s.label}
-                  className={`min-w-0 bg-[var(--cream)] p-6 sm:p-8 ${i < 2 ? "sm:border-r-2 sm:border-[var(--ink)]" : ""} ${i < 2 ? "border-b-2 border-[var(--ink)] sm:border-b-0" : ""}`}
+                  className={`flex items-center justify-between gap-4 bg-[var(--cream)] p-5 sm:block sm:p-8 ${i < 2 ? "sm:border-r-2 sm:border-[var(--ink)]" : ""} ${i < 2 ? "border-b-2 border-[var(--ink)] sm:border-b-0" : ""}`}
                 >
                   <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--ink)]/70">
                     {s.label}
                   </p>
                   <div
-                    className="mt-2 font-display text-[var(--ink)] tabular-nums"
-                    style={{ fontSize: "clamp(24px, 2.8vw, 44px)", lineHeight: 1, whiteSpace: "nowrap" }}
+                    className="font-display text-right text-[var(--ink)] tabular-nums sm:mt-2 sm:text-left"
+                    style={{ lineHeight: 1, whiteSpace: "nowrap" }}
                   >
-                    <Counter to={s.n} />
+                    <span className="text-2xl sm:text-[clamp(24px,2.8vw,44px)]">
+                      <Counter to={s.n} />
+                    </span>
                   </div>
                 </div>
               ))}
