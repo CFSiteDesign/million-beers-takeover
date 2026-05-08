@@ -174,7 +174,7 @@ function Index() {
                 We don't have a destination yet. We're picking based on who's in and where
                 people want to go. <strong>Register, tell us your vibe, help shape it.</strong>
               </p>
-            </Reveal>
+            </div>
 
             <div className="col-span-12 lg:col-span-5">
               <div className="grid grid-cols-2 gap-5 sm:gap-6">
