@@ -419,6 +419,9 @@
 }
 .beer-btn:hover .beer-liquid,
 .beer-btn.is-inview .beer-liquid { transform: translateY(0); }
+@media (hover: hover) and (pointer: fine) {
+  .beer-btn:hover .beer-liquid { transition: transform 2.5s cubic-bezier(0.16, 1, 0.3, 1); }
+}
 .beer-inner { position: absolute; inset: 0; overflow: hidden; }
 .beer-btn:hover .beer-inner,
 .beer-btn.is-inview .beer-inner { animation: beer-slosh 5s ease-in-out 1.4s infinite; }
