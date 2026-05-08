@@ -284,14 +284,13 @@ function Index() {
               <h2
                 className="font-display max-w-[560px] uppercase"
                 style={{
-                  fontSize: "clamp(52px, 7.6vw, 112px)",
-                  lineHeight: 0.85,
+                  fontSize: "clamp(44px, 5.4vw, 80px)",
+                  lineHeight: 0.92,
                   fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                 }}
               >
-                <span className="block">GET</span>
-                <span className="block">ON THE</span>
-                <span className="block text-[var(--amber)]">LIST.</span>
+                <span className="block">GET ON</span>
+                <span className="block">THE <span className="text-[var(--amber)]">LIST.</span></span>
               </h2>
               <p className="mt-8 max-w-sm text-base text-[var(--cream)]">
                 No commitment. No payment. Once we see who's in, we'll share destination
