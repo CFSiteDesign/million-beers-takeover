@@ -128,7 +128,7 @@ function Index() {
             </div>
 
             <div className="col-span-12 flex justify-center self-center lg:col-span-5 lg:justify-end xl:col-span-4">
-              <div className="w-full max-w-[360px] lg:max-w-[400px]">
+              <div className="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]">
                 <div className="polaroid-tape">
                   <img
                     data-image-slot="hero-bg"
@@ -138,7 +138,7 @@ function Index() {
                   />
                   <p
                     className="mt-3 text-center text-[var(--ink)]"
-                    style={{ fontFamily: "'Caveat', 'Kalam', cursive", fontSize: 28, transform: "rotate(-2deg)" }}
+                    style={{ fontFamily: "'Caveat', 'Kalam', cursive", fontSize: 24, transform: "rotate(-2deg)" }}
                   >
                     team mad monkey xox
                   </p>
