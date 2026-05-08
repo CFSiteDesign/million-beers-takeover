@@ -220,17 +220,17 @@ function Index() {
               </div>
 
               <div className="min-w-0 max-w-full pt-2 lg:relative lg:h-full lg:pt-0">
-                {/* Mobile: simple stacked layout */}
-                <div className="flex flex-col items-center gap-3 lg:hidden">
+                {/* Mobile: 3 polaroids side by side, slightly staggered */}
+                <div className="grid grid-cols-3 items-start gap-2 sm:gap-3 lg:hidden">
                   {[
-                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -4, x: -22 },
-                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 3, x: 24 },
-                    { slot: "polaroid-3", src: polaroid3, caption: "bali 26 x", rot: -3, x: -22 },
+                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -4, mt: "mt-0" },
+                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 3, mt: "mt-4" },
+                    { slot: "polaroid-3", src: polaroid3, caption: "bali 26 x", rot: -2, mt: "mt-8" },
                   ].map((p) => (
                     <div
                       key={p.slot}
-                      className="polaroid-tape polaroid-thin w-[38%] max-w-[160px]"
-                      style={{ transform: `translateX(${p.x}%) rotate(${p.rot}deg)`, transformOrigin: "center" }}
+                      className={`polaroid-tape polaroid-thin min-w-0 ${p.mt}`}
+                      style={{ transform: `rotate(${p.rot}deg)`, transformOrigin: "center" }}
                     >
                       <img
                         data-image-slot={p.slot}
@@ -242,7 +242,7 @@ function Index() {
                         className="mt-2 text-center text-[var(--ink)]"
                         style={{
                           fontFamily: "'Caveat', cursive, var(--font-sans)",
-                          fontSize: "clamp(13px, 1.6vw, 18px)",
+                          fontSize: "clamp(11px, 3vw, 16px)",
                           lineHeight: 1.05,
                           overflowWrap: "anywhere",
                         }}
