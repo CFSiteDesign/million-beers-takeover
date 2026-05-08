@@ -256,13 +256,12 @@ function Index() {
                 {/* Desktop: absolutely-positioned cluster filling column height */}
                 <div className="hidden lg:block">
                   {[
-                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -5, top: "0%", left: "0%" },
-                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 4, top: "0%", left: "38%" },
-                    { slot: "polaroid-3", src: polaroid3, caption: "bali 26 x", rot: -3, top: "62%", left: "8%" },
+                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -5, top: "0%", left: "4%" },
+                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 4, top: "20%", left: "44%" },
                   ].map((p) => (
                     <div
                       key={p.slot}
-                      className="polaroid-tape polaroid-thin absolute w-[58%] max-w-[260px]"
+                      className="polaroid-tape polaroid-thin absolute w-[44%] max-w-[200px]"
                       style={{ top: p.top, left: p.left, transform: `rotate(${p.rot}deg)`, transformOrigin: "center" }}
                     >
                       <img
