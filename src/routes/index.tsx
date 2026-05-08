@@ -143,8 +143,6 @@ function Index() {
               </div>
             </div>
           </div>
-
-          <ProgressBar variant="status" />
         </section>
 
         <FoamOverflowDivider />
