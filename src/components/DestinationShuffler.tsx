@@ -100,9 +100,12 @@ export function DestinationShuffler() {
               const path = `M ${cx} ${cy} L ${x0} ${y0} A ${R} ${R} 0 ${large} 1 ${x1} ${y1} Z`;
               const fill = i % 2 === 0 ? "var(--amber)" : "var(--cream)";
               const labelAngle = i * SEG + SEG / 2 - 90;
-              const lr = R * 0.62;
+              const lr = R * 0.68;
               const lx = cx + lr * Math.cos((labelAngle * Math.PI) / 180);
               const ly = cy + lr * Math.sin((labelAngle * Math.PI) / 180);
+              // flip text on bottom half so it stays right-side up
+              const flip = labelAngle > 0 && labelAngle < 180;
+              const rot = flip ? labelAngle + 180 : labelAngle;
               return (
                 <g key={i}>
                   <path d={path} fill={fill} stroke="var(--ink)" strokeWidth="1.5" />
@@ -110,12 +113,12 @@ export function DestinationShuffler() {
                     x={lx}
                     y={ly}
                     fill="var(--ink)"
-                    fontSize="11"
+                    fontSize="9.5"
                     fontFamily="'Bungee', Impact, sans-serif"
                     textAnchor="middle"
                     dominantBaseline="middle"
-                    transform={`rotate(${labelAngle + 90} ${lx} ${ly})`}
-                    style={{ letterSpacing: "0.5px" }}
+                    transform={`rotate(${rot} ${lx} ${ly})`}
+                    style={{ letterSpacing: "0.3px" }}
                   >
                     {d.city.toUpperCase()}
                   </text>
