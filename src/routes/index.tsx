@@ -284,8 +284,8 @@ function Index() {
               <h2
                 className="font-display max-w-[560px] uppercase"
                 style={{
-                  fontSize: "clamp(44px, 5.4vw, 80px)",
-                  lineHeight: 0.92,
+                  fontSize: "clamp(40px, 4.6vw, 68px)",
+                  lineHeight: 0.95,
                   fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                 }}
               >
