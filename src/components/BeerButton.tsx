@@ -10,16 +10,13 @@ export function BeerButton({ children, className = "", ...rest }: BeerButtonProp
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    // Only enable scroll-fill on touch / no-hover devices (mobile).
-    const isTouch = window.matchMedia("(hover: none)").matches;
-    if (!isTouch || !btnRef.current) return;
+    if (typeof window === "undefined" || !btnRef.current) return;
     const el = btnRef.current;
     const obs = new IntersectionObserver(
       (entries) => {
-        for (const e of entries) setInView(e.isIntersecting && e.intersectionRatio >= 0.6);
+        for (const e of entries) setInView(e.isIntersecting && e.intersectionRatio >= 0.4);
       },
-      { threshold: [0, 0.6, 1], rootMargin: "0px 0px -10% 0px" }
+      { threshold: [0, 0.4, 0.8, 1], rootMargin: "-15% 0px -15% 0px" }
     );
     obs.observe(el);
     return () => obs.disconnect();
