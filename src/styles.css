@@ -291,6 +291,7 @@
 }
 .polaroid-tape::before { left: 8px; }
 .polaroid-tape::after { right: 8px; transform: rotate(6deg); }
+.polaroid-thin { padding: 6px 6px 22px; border-width: 1px; box-shadow: 4px 4px 0 0 var(--ink); }
 
 /* ===== Halftone edge ===== */
 .halftone-bg {
