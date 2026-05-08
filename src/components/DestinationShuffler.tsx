@@ -1,125 +1,179 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const DESTINATIONS = [
-  { city: "Siem Reap", country: "Cambodia", emoji: "🛺", note: "$0.50 draft beers" },
-  { city: "El Nido", country: "Philippines", emoji: "🏝️", note: "island hop city" },
-  { city: "Bali", country: "Indonesia", emoji: "🌋", note: "rooftops + rice fields" },
-  { city: "Hoi An", country: "Vietnam", emoji: "🏮", note: "lanterns & bia hơi" },
-  { city: "Pai", country: "Thailand", emoji: "🛵", note: "loop the mountains" },
-  { city: "Vang Vieng", country: "Laos", emoji: "🛶", note: "tubing reborn" },
-  { city: "Koh Rong", country: "Cambodia", emoji: "🌊", note: "plankton beaches" },
-  { city: "Medellín", country: "Colombia", emoji: "🌆", note: "city of eternal spring" },
+  { city: "Siem Reap", country: "Cambodia", note: "$0.50 draft beers" },
+  { city: "El Nido", country: "Philippines", note: "island hop city" },
+  { city: "Bali", country: "Indonesia", note: "rooftops + rice fields" },
+  { city: "Hoi An", country: "Vietnam", note: "lanterns & bia hơi" },
+  { city: "Pai", country: "Thailand", note: "loop the mountains" },
+  { city: "Vang Vieng", country: "Laos", note: "tubing reborn" },
+  { city: "Koh Rong", country: "Cambodia", note: "plankton beaches" },
+  { city: "Medellín", country: "Colombia", note: "eternal spring" },
 ];
 
+const N = DESTINATIONS.length;
+const SEG = 360 / N;
+
 export function DestinationShuffler() {
-  const [index, setIndex] = useState(0);
+  const [rotation, setRotation] = useState(0);
   const [spinning, setSpinning] = useState(false);
-  const [votes, setVotes] = useState<Record<number, number>>({});
-  const [voted, setVoted] = useState<Set<number>>(new Set());
-  const tickRef = useRef<number | null>(null);
+  const [landed, setLanded] = useState<number | null>(null);
+  const totalRef = useRef(0);
 
   const spin = () => {
     if (spinning) return;
     setSpinning(true);
-    let elapsed = 0;
-    let delay = 60;
-    const step = () => {
-      setIndex((i) => (i + 1) % DESTINATIONS.length);
-      elapsed += delay;
-      delay = Math.min(delay * 1.18, 380);
-      if (elapsed < 1800) {
-        tickRef.current = window.setTimeout(step, delay);
-      } else {
-        setSpinning(false);
-      }
-    };
-    tickRef.current = window.setTimeout(step, delay);
+    setLanded(null);
+    const target = Math.floor(Math.random() * N);
+    // pointer is at top (12 o'clock). segment i center angle (clockwise from top): i*SEG + SEG/2
+    // we rotate the wheel by -that + 360*turns so segment lands under pointer
+    const turns = 5 + Math.floor(Math.random() * 3);
+    const finalAngle = 360 * turns - (target * SEG + SEG / 2);
+    totalRef.current = totalRef.current + (finalAngle - (totalRef.current % 360));
+    // Simpler: just set absolute rotation
+    const next = totalRef.current === 0 ? finalAngle : totalRef.current + 360 * turns + (-(target * SEG + SEG / 2) - (totalRef.current % 360));
+    totalRef.current = next;
+    setRotation(next);
+    setTimeout(() => {
+      setSpinning(false);
+      setLanded(target);
+    }, 4200);
   };
 
-  useEffect(() => () => {
-    if (tickRef.current) clearTimeout(tickRef.current);
-  }, []);
+  const result = landed != null ? DESTINATIONS[landed] : null;
 
-  const current = DESTINATIONS[index];
-  const currentVotes = votes[index] ?? Math.floor(20 + index * 7);
-  const hasVoted = voted.has(index);
-
-  const vote = () => {
-    if (hasVoted || spinning) return;
-    setVotes((v) => ({ ...v, [index]: currentVotes + 1 }));
-    setVoted((s) => new Set(s).add(index));
-  };
+  // Build wheel SVG
+  const R = 140;
+  const cx = 150;
+  const cy = 150;
 
   return (
     <div className="hidden lg:block">
-      <div className="relative overflow-hidden rounded-sm border-2 border-[var(--cream)]/20 bg-[var(--cream)]/5 p-6">
-        <div className="flex items-center justify-between border-b border-[var(--cream)]/15 pb-3 font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--cream)]/60">
-          <span>destination roulette · top secret</span>
-          <span className="text-[var(--amber)]">live preview</span>
+      <div className="relative overflow-hidden rounded-sm border-2 border-[var(--cream)]/15 bg-gradient-to-b from-[var(--cream)]/[0.04] to-transparent p-6">
+        <div className="flex items-center justify-between border-b border-[var(--cream)]/10 pb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--cream)]/60">
+          <span>spin · the · vibe</span>
+          <span className="flex items-center gap-2 text-[var(--amber)]">
+            <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--amber)]" />
+            live
+          </span>
         </div>
 
-        <div className="mt-5 grid grid-cols-[1fr_auto] items-center gap-6">
-          <div className="min-w-0">
-            <div
-              key={index}
-              className={`font-display text-[var(--cream)] ${spinning ? "opacity-70" : "opacity-100"}`}
-              style={{
-                fontSize: "clamp(28px, 3vw, 44px)",
-                lineHeight: 1,
-                fontFamily: "'Bungee', Impact, sans-serif",
-                transition: "opacity 120ms ease",
-              }}
-            >
-              {current.city.toUpperCase()}
-            </div>
-            <div className="mt-2 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--amber)]">
-              <span>{current.country}</span>
-              <span className="text-[var(--cream)]/40">·</span>
-              <span className="text-[var(--cream)]/70 normal-case tracking-normal font-sans text-sm">
-                {current.note}
-              </span>
-            </div>
-          </div>
+        <div className="relative mx-auto mt-6 flex h-[300px] w-[300px] items-center justify-center">
+          {/* glow */}
+          <div className="pointer-events-none absolute inset-0 rounded-full bg-[var(--amber)]/15 blur-3xl" />
+
+          {/* pointer */}
           <div
             aria-hidden
-            className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-[var(--amber)] bg-[var(--ink)] text-4xl shadow-[0_0_0_4px_var(--ink),0_0_0_6px_var(--amber)]"
+            className="absolute left-1/2 top-[-2px] z-20 -translate-x-1/2"
             style={{
-              transform: spinning ? "rotate(720deg)" : "rotate(0deg)",
-              transition: "transform 1.8s cubic-bezier(.2,.8,.2,1)",
+              width: 0,
+              height: 0,
+              borderLeft: "12px solid transparent",
+              borderRight: "12px solid transparent",
+              borderTop: "22px solid var(--amber)",
+              filter: "drop-shadow(0 2px 0 rgba(0,0,0,0.4))",
+            }}
+          />
+
+          {/* wheel */}
+          <svg
+            viewBox="0 0 300 300"
+            className="relative z-10 h-full w-full"
+            style={{
+              transform: `rotate(${rotation}deg)`,
+              transition: spinning
+                ? "transform 4.2s cubic-bezier(.17,.67,.16,1)"
+                : "none",
+              filter: "drop-shadow(0 10px 30px rgba(0,0,0,0.5))",
             }}
           >
-            {current.emoji}
-          </div>
+            <circle cx={cx} cy={cy} r={R + 6} fill="var(--ink)" stroke="var(--amber)" strokeWidth="2" />
+            {DESTINATIONS.map((d, i) => {
+              const a0 = (i * SEG - 90) * (Math.PI / 180);
+              const a1 = ((i + 1) * SEG - 90) * (Math.PI / 180);
+              const x0 = cx + R * Math.cos(a0);
+              const y0 = cy + R * Math.sin(a0);
+              const x1 = cx + R * Math.cos(a1);
+              const y1 = cy + R * Math.sin(a1);
+              const large = SEG > 180 ? 1 : 0;
+              const path = `M ${cx} ${cy} L ${x0} ${y0} A ${R} ${R} 0 ${large} 1 ${x1} ${y1} Z`;
+              const fill = i % 2 === 0 ? "var(--amber)" : "var(--cream)";
+              const labelAngle = i * SEG + SEG / 2 - 90;
+              const lr = R * 0.62;
+              const lx = cx + lr * Math.cos((labelAngle * Math.PI) / 180);
+              const ly = cy + lr * Math.sin((labelAngle * Math.PI) / 180);
+              return (
+                <g key={i}>
+                  <path d={path} fill={fill} stroke="var(--ink)" strokeWidth="1.5" />
+                  <text
+                    x={lx}
+                    y={ly}
+                    fill="var(--ink)"
+                    fontSize="11"
+                    fontFamily="'Bungee', Impact, sans-serif"
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    transform={`rotate(${labelAngle + 90} ${lx} ${ly})`}
+                    style={{ letterSpacing: "0.5px" }}
+                  >
+                    {d.city.toUpperCase()}
+                  </text>
+                </g>
+              );
+            })}
+            {/* hub */}
+            <circle cx={cx} cy={cy} r="22" fill="var(--ink)" stroke="var(--amber)" strokeWidth="3" />
+            <circle cx={cx} cy={cy} r="6" fill="var(--amber)" />
+          </svg>
         </div>
 
-        <div className="mt-5 flex items-center gap-3">
-          <button
-            onClick={spin}
-            disabled={spinning}
-            className="flex-1 border-2 border-[var(--amber)] bg-transparent px-4 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-[var(--amber)] transition hover:bg-[var(--amber)] hover:text-[var(--ink)] disabled:opacity-50"
-          >
-            {spinning ? "spinning…" : "spin the globe"}
-          </button>
-          <button
-            onClick={vote}
-            disabled={spinning || hasVoted}
-            className="flex items-center gap-2 border-2 border-[var(--cream)] bg-[var(--cream)] px-4 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-[var(--ink)] transition hover:bg-[var(--amber)] hover:border-[var(--amber)] disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {hasVoted ? "voted ✓" : "vote +1"}
-            <span className="tabular-nums opacity-70">{currentVotes}</span>
-          </button>
+        {/* result / cta */}
+        <div className="mt-4 min-h-[64px]">
+          {result ? (
+            <div
+              key={landed}
+              className="flex items-center justify-between rounded-sm border border-[var(--amber)]/40 bg-[var(--amber)]/10 px-4 py-3"
+              style={{ animation: "fade-in 280ms ease-out" }}
+            >
+              <div>
+                <div
+                  className="text-[var(--cream)]"
+                  style={{
+                    fontFamily: "'Bungee', Impact, sans-serif",
+                    fontSize: 20,
+                    lineHeight: 1,
+                  }}
+                >
+                  {result.city.toUpperCase()}
+                </div>
+                <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--amber)]">
+                  {result.country} · {result.note}
+                </div>
+              </div>
+              <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--cream)]/60">
+                rumour
+              </span>
+            </div>
+          ) : (
+            <div className="flex h-full items-center font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--cream)]/50">
+              {spinning ? "deciding your fate…" : "pick your destiny ↓"}
+            </div>
+          )}
         </div>
 
-        <div className="mt-5 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--cream)]/50">
-          <span>{DESTINATIONS.length} candidates rumoured</span>
-          <span>{Object.keys(votes).length}/8 you've voted</span>
-        </div>
+        <button
+          onClick={spin}
+          disabled={spinning}
+          className="mt-4 w-full border-2 border-[var(--amber)] bg-[var(--amber)] px-4 py-3 font-mono text-[12px] font-black uppercase tracking-[0.3em] text-[var(--ink)] transition hover:bg-transparent hover:text-[var(--amber)] disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          {spinning ? "spinning…" : result ? "spin again" : "spin the wheel"}
+        </button>
 
-        <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[var(--amber)]/10 blur-2xl" />
+        <p className="mt-3 text-center font-mono text-[9px] uppercase tracking-[0.3em] text-[var(--cream)]/40">
+          for the vibes only · real shortlist drops once you're on the list
+        </p>
       </div>
-      <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--cream)]/40">
-        ↑ just a teaser. real shortlist drops once you're on the list.
-      </p>
     </div>
   );
 }
