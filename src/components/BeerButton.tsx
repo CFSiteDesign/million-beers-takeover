@@ -6,6 +6,25 @@ type BeerButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 /** Premium "fills with beer on hover" CTA button. */
 export function BeerButton({ children, className = "", ...rest }: BeerButtonProps) {
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    // Only enable scroll-fill on touch / no-hover devices (mobile).
+    const isTouch = window.matchMedia("(hover: none)").matches;
+    if (!isTouch || !btnRef.current) return;
+    const el = btnRef.current;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) setInView(e.isIntersecting && e.intersectionRatio >= 0.6);
+      },
+      { threshold: [0, 0.6, 1], rootMargin: "0px 0px -10% 0px" }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   // 14 bubbles with deterministic-ish randomized positions
   const bubbles = Array.from({ length: 14 }).map((_, i) => {
     const left = 6 + ((i * 6.7) % 88);
