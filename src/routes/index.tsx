@@ -105,7 +105,7 @@ function Index() {
               <div className="mt-8 flex flex-wrap items-center gap-5">
                 <BeerButton onClick={() => scrollTo("form")}>I'm in</BeerButton>
                 <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--ink)]/70">
-                  no commitment · no payment
+                  no commitment<br />no payment
                 </span>
               </div>
             </div>
