@@ -16,7 +16,6 @@ import { CountUp } from "@/components/CountUp";
 import { LiveBeerCounter } from "@/components/LiveBeerCounter";
 import polaroid1 from "@/assets/polaroid-1.png";
 import polaroid2 from "@/assets/polaroid-2.png";
-import polaroid3 from "@/assets/polaroid-3.png";
 import marquee1 from "@/assets/marquee-1.png";
 import marquee2 from "@/assets/marquee-2.png";
 import marquee3 from "@/assets/marquee-3.png";
@@ -220,12 +219,11 @@ function Index() {
               </div>
 
               <div className="min-w-0 max-w-full pt-2 lg:relative lg:h-full lg:pt-0">
-                {/* Mobile: 3 polaroids side by side, slightly staggered */}
-                <div className="grid grid-cols-3 items-start gap-2 sm:gap-3 lg:hidden">
+                {/* Mobile: 2 polaroids side by side, slightly staggered */}
+                <div className="grid grid-cols-2 items-start gap-3 lg:hidden">
                   {[
                     { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -4, mt: "mt-0" },
-                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 3, mt: "mt-4" },
-                    { slot: "polaroid-3", src: polaroid3, caption: "bali 26 x", rot: -2, mt: "mt-8" },
+                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 3, mt: "mt-6" },
                   ].map((p) => (
                     <div
                       key={p.slot}
