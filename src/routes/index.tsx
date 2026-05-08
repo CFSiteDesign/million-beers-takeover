@@ -65,32 +65,24 @@ function Index() {
 
       <main className="relative z-10">
         {/* ============ 01 HERO ============ */}
-        <section className="relative overflow-hidden bg-[var(--ink)] pt-10 pb-0">
-          {/* Floating party stickers */}
-          <span className="sticker pink absolute right-4 top-24 z-20 tilt-r text-sm sm:right-12 sm:text-base">🍻 cheers loser</span>
-          <span className="sticker electric absolute left-4 top-72 z-20 tilt-lg-l text-sm sm:left-10">est. forever</span>
-          <span className="sticker absolute right-8 top-[420px] z-20 tilt-l hidden text-sm sm:block">FREE BEER LIES*</span>
-
-          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 pb-20 lg:gap-10 lg:px-10">
-            <div className="col-span-12 flex items-start lg:col-span-1">
-              <span className="section-num text-[var(--amber)] tilt-l">01</span>
-            </div>
-
+        <section className="relative overflow-hidden bg-[var(--ink)] pt-16 pb-0">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-6 pb-24 lg:gap-12 lg:px-10">
             <div className="col-span-12 lg:col-span-7">
-              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--hot-pink)]">
-                ▸ Million Beer Mission · Takeover #01 ◂
-              </p>
-              <h1 className="mt-6 font-display text-[var(--cream)]" style={{ lineHeight: 0.78 }}>
-                <span
-                  className="block uppercase tilt-l"
-                  style={{ fontSize: "clamp(56px, 13vw, 150px)" }}
-                >
+              <div className="flex items-baseline gap-4">
+                <span className="section-num text-[var(--amber)]">01</span>
+                <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-[var(--amber)]">
+                  Million Beer Mission · Takeover #01
+                </p>
+              </div>
+
+              <h1 className="mt-8 font-display text-[var(--cream)]" style={{ lineHeight: 0.82 }}>
+                <span className="block uppercase" style={{ fontSize: "clamp(56px, 12vw, 140px)" }}>
                   THE
                 </span>
                 <span
                   className="block uppercase text-[var(--amber)] text-shadow-poster"
                   style={{
-                    fontSize: "clamp(88px, 22vw, 260px)",
+                    fontSize: "clamp(80px, 18vw, 220px)",
                     letterSpacing: "-0.02em",
                     fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                   }}
@@ -98,8 +90,8 @@ function Index() {
                   TAKEOVER
                 </span>
                 <span
-                  className="font-script mt-4 block lowercase text-[var(--lime)] tilt-r"
-                  style={{ fontSize: "clamp(48px, 10vw, 110px)", lineHeight: 0.9 }}
+                  className="font-script mt-4 block lowercase text-[var(--amber)]"
+                  style={{ fontSize: "clamp(44px, 8vw, 90px)", lineHeight: 0.9 }}
                 >
                   is happening.
                 </span>
@@ -107,11 +99,11 @@ function Index() {
 
               <p className="mt-10 max-w-md text-xl font-semibold text-[var(--cream)]">
                 We're picking a place. We're going there.{" "}
-                <span className="bg-[var(--hot-pink)] px-2 text-[var(--cream)]">And we want you in.</span>
+                <span className="bg-[var(--amber)] px-2 text-[var(--ink)]">And we want you in.</span>
               </p>
 
               <div className="mt-10 flex flex-wrap items-center gap-5">
-                <button onClick={() => scrollTo("form")} className="btn-stamp text-2xl tilt-r">
+                <button onClick={() => scrollTo("form")} className="btn-stamp text-2xl">
                   I'M IN ✦ COUNT ME
                 </button>
                 <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--cream)]/70">
@@ -120,14 +112,14 @@ function Index() {
               </div>
             </div>
 
-            <div className="col-span-12 lg:col-span-4">
-              <div className="relative ml-auto w-full max-w-xs tilt-r">
+            <div className="col-span-12 lg:col-span-5">
+              <div className="ml-auto w-full max-w-sm">
                 <div className="polaroid-tape">
                   <img
                     data-image-slot="hero-bg"
                     src="https://placehold.co/600x800/0A0A0A/F5B82E?text=HERO+POLAROID"
                     alt="Trip 01 placeholder"
-                    className="zine-photo h-72 w-full object-cover"
+                    className="zine-photo h-80 w-full object-cover"
                   />
                   <p
                     className="font-script mt-3 text-center text-[var(--ink)]"
@@ -136,17 +128,10 @@ function Index() {
                     trip 01 · destination tbc
                   </p>
                 </div>
-                <p
-                  className="font-script mt-8 -rotate-3 text-[var(--hot-pink)]"
-                  style={{ fontSize: 34 }}
-                >
-                  somewhere wild →
-                </p>
               </div>
             </div>
           </div>
 
-          {/* Status bar full-bleed */}
           <ProgressBar variant="status" />
         </section>
 
@@ -195,20 +180,13 @@ function Index() {
             </Reveal>
 
             <div className="col-span-12 lg:col-span-4">
-              <div className="relative mx-auto h-[900px] w-full max-w-sm">
+              <div className="flex flex-col gap-6">
                 {[
-                  { slot: "polaroid-1", caption: "siem reap, 2am", rot: -6, x: -20, y: 0 },
-                  { slot: "polaroid-2", caption: "el nido vibes", rot: 4, x: 30, y: 300 },
-                  { slot: "polaroid-3", caption: "bali, definitely", rot: -2, x: -10, y: 600 },
-                ].map((p, i) => (
-                  <div
-                    key={p.slot}
-                    className="polaroid-tape absolute left-1/2 top-0 w-56"
-                    style={{
-                      transform: `translate(calc(-50% + ${p.x}px), ${p.y}px) rotate(${p.rot}deg)`,
-                      zIndex: i,
-                    }}
-                  >
+                  { slot: "polaroid-1", caption: "siem reap, 2am" },
+                  { slot: "polaroid-2", caption: "el nido vibes" },
+                  { slot: "polaroid-3", caption: "bali, definitely" },
+                ].map((p) => (
+                  <div key={p.slot} className="polaroid-tape w-full max-w-xs">
                     <img
                       data-image-slot={p.slot}
                       src={`https://placehold.co/400x500/0A0A0A/F5B82E?text=${encodeURIComponent(p.caption)}`}
