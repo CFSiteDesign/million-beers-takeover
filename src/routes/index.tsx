@@ -127,8 +127,8 @@ function Index() {
               </div>
             </div>
 
-            <div className="col-span-12 flex justify-center self-center lg:col-span-5 lg:justify-end xl:col-span-4">
-              <div className="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]">
+            <div className="col-span-12 flex justify-center self-start lg:col-span-5 lg:-mt-6 lg:justify-end xl:col-span-4">
+              <div className="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]" style={{ transform: "rotate(-4deg)" }}>
                 <div className="polaroid-tape">
                   <img
                     data-image-slot="hero-bg"
