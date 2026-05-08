@@ -192,7 +192,11 @@ function Index() {
                   className="font-script mt-6 max-w-full text-[var(--amber)] sm:mt-9"
                   style={{ fontSize: "clamp(25px, 8vw, 56px)", lineHeight: 1.08, overflowWrap: "break-word" }}
                 >
-                  "that's kinda the whole point."
+                  "new faces.
+                  <br />
+                  new nights.
+                  <br />
+                  that's the point."
                 </p>
 
                 <p className="mt-5 max-w-[58ch] text-[16px] leading-relaxed sm:mt-7 sm:text-xl">
