@@ -282,29 +282,42 @@ function Index() {
 
         {/* ============ 04 FORM (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 lg:gap-12 lg:px-10">
-            <div className="col-span-12 lg:col-span-5">
+          <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 lg:gap-16 lg:px-10">
+            <div className="col-span-12 lg:col-span-5 lg:sticky lg:top-24">
               <h2
-                className="font-display max-w-[560px] uppercase"
+                className="font-display uppercase"
                 style={{
-                  fontSize: "clamp(40px, 4.6vw, 68px)",
-                  lineHeight: 0.95,
+                  fontSize: "clamp(40px, 5.2vw, 84px)",
+                  lineHeight: 0.9,
                   fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                 }}
               >
                 <span className="block">GET ON</span>
-                <span className="block">THE <span className="text-[var(--amber)]">LIST.</span></span>
+                <span className="block">
+                  THE <span className="text-[var(--amber)]">LIST.</span>
+                </span>
               </h2>
-              <p className="mt-8 max-w-sm text-base text-[var(--cream)]">
-                No commitment. No payment. Once we see who's in, we'll share destination
-                options, rough dates, and pricing. <strong>You'll get a vote.</strong>
+
+              <p className="mt-8 max-w-md text-lg leading-relaxed text-[var(--cream)]/90">
+                Once we see who's in, we'll share destination options, rough dates,
+                and pricing. <strong className="text-[var(--amber)]">You'll get a vote.</strong>
               </p>
+
+              <ul className="mt-8 max-w-md space-y-3 font-mono text-[12px] uppercase tracking-[0.2em] text-[var(--cream)]/80">
+                <li className="flex items-center gap-3">
+                  <span className="text-[var(--amber)]">✓</span> No commitment
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-[var(--amber)]">✓</span> No payment
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-[var(--amber)]">✓</span> First dibs on the trip
+                </li>
+              </ul>
             </div>
 
             <div id="form" className="col-span-12 lg:col-span-7">
-              <Reveal>
-                <InterestForm />
-              </Reveal>
+              <InterestForm />
             </div>
           </div>
         </section>
