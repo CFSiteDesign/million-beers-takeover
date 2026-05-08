@@ -140,7 +140,7 @@ function Index() {
         {/* ============ 02 WHAT IS THE TAKEOVER (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
           <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-10 px-6 lg:gap-14 lg:px-10">
-            <Reveal className="col-span-12 lg:col-span-7">
+            <div className="col-span-12 lg:col-span-7">
               <h2
                 className="font-display uppercase"
                 style={{
@@ -174,7 +174,7 @@ function Index() {
                 We don't have a destination yet. We're picking based on who's in and where
                 people want to go. <strong>Register, tell us your vibe, help shape it.</strong>
               </p>
-            </Reveal>
+            </div>
 
             <div className="col-span-12 lg:col-span-5">
               <div className="grid grid-cols-2 gap-5 sm:gap-6">
