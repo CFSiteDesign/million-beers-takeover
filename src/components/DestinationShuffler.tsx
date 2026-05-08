@@ -120,7 +120,7 @@ export function DestinationShuffler() {
                     x={lx}
                     y={ly}
                     fill="var(--ink)"
-                    fontSize="8"
+                    fontSize="13"
                     fontFamily="'Bungee', Impact, sans-serif"
                     textAnchor="middle"
                     dominantBaseline="middle"
