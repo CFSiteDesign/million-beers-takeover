@@ -167,7 +167,7 @@ function Index() {
         {/* ============ 02 WHAT IS THE TAKEOVER (ink) ============ */}
         <section className={`relative overflow-hidden bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
-            <div className="grid w-full min-w-0 grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:gap-14">
+            <div className="grid w-full min-w-0 grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-stretch lg:gap-14">
               <div className="min-w-0 max-w-full">
                 <h2
                   className="font-display max-w-full uppercase"
