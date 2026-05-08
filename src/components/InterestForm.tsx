@@ -121,7 +121,19 @@ export function InterestForm() {
         <div>
           <span className="zine-label">WhatsApp</span>
           <div className="flex gap-2">
-            <DialCodeSelect value={form.dialCode} onChange={(v) => set("dialCode", v)} />
+            <select
+              className="zine-input shrink-0 basis-[8.5rem] pr-2"
+              style={{ color: "var(--ink)" }}
+              value={form.dialCode}
+              onChange={(e) => set("dialCode", e.target.value)}
+              aria-label="Country code"
+            >
+              {COUNTRIES.map((c) => (
+                <option key={c.code} value={c.dial} style={{ color: "#0a0a0a" }}>
+                  {c.flag} {c.dial} {c.name}
+                </option>
+              ))}
+            </select>
             <input
               type="tel"
               inputMode="tel"
