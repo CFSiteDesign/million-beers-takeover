@@ -13,6 +13,7 @@ import heroImage from "@/assets/mil_beers_hero.png";
 import { BeerButton } from "@/components/BeerButton";
 import { CountUp } from "@/components/CountUp";
 import { DestinationShuffler } from "@/components/DestinationShuffler";
+import { LiveBeerCounter } from "@/components/LiveBeerCounter";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -107,6 +108,10 @@ function Index() {
                 <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--ink)]/70">
                   no commitment<br />no payment
                 </span>
+              </div>
+
+              <div className="mt-10">
+                <LiveBeerCounter />
               </div>
             </div>
 
