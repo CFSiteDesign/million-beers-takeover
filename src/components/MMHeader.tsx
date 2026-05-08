@@ -49,11 +49,13 @@ export function MMHeader() {
         </nav>
 
         <button
-          aria-label="Open menu"
-          className="lg:hidden"
-          onClick={() => setOpen(true)}
+          type="button"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-md lg:hidden"
+          onClick={() => setOpen((o) => !o)}
         >
-          <Menu className="h-7 w-7 text-neutral-900" />
+          {open ? <X className="h-7 w-7 text-neutral-900" /> : <Menu className="h-7 w-7 text-neutral-900" />}
         </button>
       </div>
 
