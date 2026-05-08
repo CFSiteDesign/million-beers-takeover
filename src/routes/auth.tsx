@@ -3,15 +3,15 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
+const ADMIN_EMAIL = "madmonkeyadmin@theorox.com";
+
 export const Route = createFileRoute("/auth")({
-  head: () => ({ meta: [{ title: "Admin login — MM Takeover" }] }),
+  head: () => ({ meta: [{ title: "Admin login — MM Takeover" }, { name: "robots", content: "noindex" }] }),
   component: AuthPage,
 });
 
 function AuthPage() {
   const navigate = useNavigate();
-  const [mode, setMode] = useState<"login" | "signup">("login");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -19,27 +19,22 @@ function AuthPage() {
     supabase.auth.getSession().then(({ data }) => {
       if (data.session) navigate({ to: "/admin" });
     });
+    // Best-effort seed of the admin account on first load
+    fetch("/api/public/seed-admin").catch(() => {});
   }, [navigate]);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    if (mode === "signup") {
-      const { error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: { emailRedirectTo: `${window.location.origin}/admin` },
-      });
-      setLoading(false);
-      if (error) return toast.error(error.message);
-      toast.success("Account created. Logging in…");
-      navigate({ to: "/admin" });
-    } else {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
-      setLoading(false);
-      if (error) return toast.error(error.message);
-      navigate({ to: "/admin" });
-    }
+    // Make sure the admin user exists before attempting to sign in
+    await fetch("/api/public/seed-admin").catch(() => {});
+    const { error } = await supabase.auth.signInWithPassword({
+      email: ADMIN_EMAIL,
+      password,
+    });
+    setLoading(false);
+    if (error) return toast.error(error.message);
+    navigate({ to: "/admin" });
   };
 
   return (
@@ -49,24 +44,24 @@ function AuthPage() {
         className="w-full max-w-md bg-[var(--cream)] text-[var(--ink)] p-8"
         style={{ border: "4px solid var(--ink)", boxShadow: "10px 10px 0 0 var(--amber)" }}
       >
-        <h1 className="font-display text-4xl mb-6">{mode === "login" ? "Admin login" : "Create admin"}</h1>
-
-        <label className="zine-label">Email</label>
-        <input type="email" required className="zine-input mb-4" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <h1 className="font-display text-4xl mb-2">Admin login</h1>
+        <p className="font-mono text-xs uppercase tracking-widest opacity-60 mb-6 break-all">
+          {ADMIN_EMAIL}
+        </p>
 
         <label className="zine-label">Password</label>
-        <input type="password" required minLength={6} className="zine-input mb-6" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <input
+          type="password"
+          required
+          minLength={6}
+          autoFocus
+          className="zine-input mb-6"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
         <button type="submit" disabled={loading} className="btn-stamp btn-on-cream w-full text-xl">
-          {loading ? "…" : mode === "login" ? "LOG IN" : "SIGN UP"}
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setMode(mode === "login" ? "signup" : "login")}
-          className="mt-4 w-full text-center font-mono text-xs uppercase tracking-widest underline"
-        >
-          {mode === "login" ? "Need an account? Sign up" : "Have an account? Log in"}
+          {loading ? "…" : "LOG IN"}
         </button>
 
         <Link to="/" className="mt-6 block text-center font-mono text-xs uppercase tracking-widest opacity-60">
