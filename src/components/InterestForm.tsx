@@ -124,7 +124,7 @@ export function InterestForm() {
           onCream
         />
         <StampGroup
-          label="05 / Rough budget per person"
+          label="Rough budget per person"
           options={BUDGETS}
           value={form.budget}
           onChange={(v) => set("budget", v)}
