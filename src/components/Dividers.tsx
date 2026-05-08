@@ -1,109 +1,77 @@
-/* Section dividers — each unique */
+/* Beer foam overflow divider — same shape used between every section.
+   Static (no animation), evokes a glass overflowing with foam and bubbles. */
 
-export function FoamWaveDivider() {
+export function FoamOverflowDivider() {
   return (
-    <div aria-hidden className="relative h-16 w-full overflow-hidden">
-      <div className="foam-drift absolute bottom-0 left-0 flex w-[200%]">
-        {[0, 1].map((i) => (
-          <svg
-            key={i}
-            viewBox="0 0 1200 80"
-            preserveAspectRatio="none"
-            className="h-16 w-1/2"
-          >
-            <path
-              d="M0,50 C150,10 300,90 450,50 C600,10 750,90 900,50 C1050,10 1200,80 1200,50 L1200,80 L0,80 Z"
-              fill="var(--cream)"
-              opacity="0.95"
-            />
-            <circle cx="120" cy="40" r="5" fill="var(--foam)" opacity="0.9" />
-            <circle cx="320" cy="30" r="3" fill="var(--cream)" />
-            <circle cx="540" cy="42" r="4" fill="var(--foam)" />
-            <circle cx="780" cy="34" r="6" fill="var(--cream)" />
-            <circle cx="1010" cy="40" r="3" fill="var(--foam)" />
-          </svg>
-        ))}
-      </div>
-    </div>
-  );
-}
+    <div aria-hidden className="relative h-20 w-full overflow-hidden">
+      {/* Drips hanging down from the previous section */}
+      <svg
+        viewBox="0 0 1200 80"
+        preserveAspectRatio="none"
+        className="absolute inset-0 h-full w-full"
+      >
+        <defs>
+          <linearGradient id="foamGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="var(--foam)" />
+            <stop offset="60%" stopColor="var(--cream)" />
+            <stop offset="100%" stopColor="var(--cream)" />
+          </linearGradient>
+        </defs>
+        {/* Main foam blob with overflowing bumps */}
+        <path
+          d="
+            M0,30
+            C 60,10 120,50 180,32
+            C 240,12 300,52 360,30
+            C 420,8  480,50 540,28
+            C 600,6  660,52 720,30
+            C 780,10 840,50 900,28
+            C 960,8  1020,52 1080,30
+            C 1140,12 1200,40 1200,30
+            L 1200,80 L 0,80 Z
+          "
+          fill="url(#foamGrad)"
+        />
+        {/* Drips */}
+        <path d="M120,52 q4,18 8,0 z" fill="var(--cream)" />
+        <path d="M310,58 q5,22 10,0 z" fill="var(--cream)" />
+        <path d="M540,55 q4,16 8,0 z" fill="var(--cream)" />
+        <path d="M780,60 q5,24 10,0 z" fill="var(--cream)" />
+        <path d="M970,54 q4,18 8,0 z" fill="var(--cream)" />
+      </svg>
 
-export function BottleCapDivider() {
-  const caps = Array.from({ length: 13 });
-  return (
-    <div
-      aria-hidden
-      className="relative flex h-16 w-full items-center justify-center gap-2 overflow-hidden"
-    >
-      {caps.map((_, i) => {
-        const isAmber = i % 2 === 0;
-        const rotate = i === 6 ? 18 : 0;
-        return (
+      {/* Bubbles popping out of the foam */}
+      <div className="absolute inset-0">
+        {[
+          { l: 6, t: 18, s: 10 },
+          { l: 14, t: 8, s: 6 },
+          { l: 22, t: 22, s: 14 },
+          { l: 30, t: 4, s: 8 },
+          { l: 38, t: 16, s: 11 },
+          { l: 46, t: 6, s: 7 },
+          { l: 54, t: 20, s: 13 },
+          { l: 62, t: 10, s: 9 },
+          { l: 70, t: 18, s: 12 },
+          { l: 78, t: 4, s: 6 },
+          { l: 86, t: 14, s: 10 },
+          { l: 94, t: 8, s: 8 },
+        ].map((b, i) => (
           <span
             key={i}
-            className="relative inline-block h-7 w-7 rounded-full shadow-md"
+            className="absolute rounded-full"
             style={{
-              background: isAmber
-                ? "radial-gradient(circle at 30% 30%, var(--foam), var(--amber) 60%, var(--amber-deep))"
-                : "radial-gradient(circle at 30% 30%, #444, #111 70%)",
-              transform: `rotate(${rotate}deg)`,
-              boxShadow: "0 4px 8px rgba(0,0,0,0.5)",
+              left: `${b.l}%`,
+              top: b.t,
+              width: b.s,
+              height: b.s,
+              background:
+                "radial-gradient(circle at 30% 30%, #ffffff 0%, var(--foam) 45%, var(--cream) 80%)",
+              boxShadow:
+                "inset 0 0 3px rgba(255,255,255,0.8), 0 1px 2px rgba(0,0,0,0.25)",
             }}
-          >
-            <span
-              className="absolute inset-0 rounded-full"
-              style={{
-                backgroundImage:
-                  "repeating-conic-gradient(from 0deg, transparent 0 8deg, rgba(0,0,0,0.25) 8deg 12deg)",
-              }}
-            />
-          </span>
-        );
-      })}
-    </div>
-  );
-}
-
-export function PullTabDivider() {
-  return (
-    <div aria-hidden className="relative flex h-16 items-center justify-center">
-      <div className="flex-1 border-t border-dashed border-[var(--amber)]/40" />
-      <svg viewBox="0 0 60 30" className="mx-3 h-8 w-16">
-        <ellipse cx="30" cy="15" rx="22" ry="10" fill="none" stroke="var(--amber)" strokeWidth="2" />
-        <ellipse cx="30" cy="15" rx="10" ry="5" fill="none" stroke="var(--amber)" strokeWidth="1.5" />
-        <circle cx="30" cy="15" r="2" fill="var(--amber-deep)" />
-      </svg>
-      <div className="flex-1 border-t border-dashed border-[var(--amber)]/40" />
-    </div>
-  );
-}
-
-export function PourDivider() {
-  return (
-    <div aria-hidden className="relative h-20 w-full overflow-hidden">
-      <div
-        className="absolute left-1/2 top-0 h-16 w-1.5 -translate-x-1/2 rounded-full"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent, var(--amber-deep), var(--amber))",
-        }}
-      />
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2">
-        <span className="block h-3 w-3 animate-ping rounded-full bg-[var(--foam)] opacity-75" />
-        <span className="absolute -left-3 top-1 block h-2 w-2 rounded-full bg-[var(--cream)]/80" />
-        <span className="absolute left-3 top-2 block h-1.5 w-1.5 rounded-full bg-[var(--amber)]" />
+          />
+        ))}
       </div>
-    </div>
-  );
-}
-
-export function CoasterRingsDivider() {
-  return (
-    <div aria-hidden className="relative h-20 w-full overflow-hidden">
-      <div className="absolute left-[20%] top-2 h-16 w-16 rounded-full border-2 border-[var(--amber)]/30" />
-      <div className="absolute left-[35%] top-4 h-12 w-12 rounded-full border-2 border-[var(--amber-deep)]/35" />
-      <div className="absolute left-[60%] top-1 h-20 w-20 rounded-full border-2 border-[var(--amber)]/25" />
-      <div className="absolute left-[78%] top-5 h-10 w-10 rounded-full border-2 border-[var(--amber)]/30" />
     </div>
   );
 }
