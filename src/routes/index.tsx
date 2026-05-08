@@ -210,9 +210,9 @@ function Index() {
               <div className="min-w-0 max-w-full overflow-hidden pt-2 lg:pt-8">
                 <div className="grid w-full grid-cols-3 items-start gap-2 sm:gap-4">
                   {[
-                    { slot: "polaroid-1", caption: "siem reap, 2am", rot: -4, mt: "mt-3" },
-                    { slot: "polaroid-2", caption: "el nido vibes", rot: 3, mt: "mt-0" },
-                    { slot: "polaroid-3", caption: "bali", rot: -2, mt: "mt-5" },
+                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -4, mt: "mt-3" },
+                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 3, mt: "mt-0" },
+                    { slot: "polaroid-3", src: polaroid3, caption: "bali", rot: -2, mt: "mt-5" },
                   ].map((p) => (
                     <div
                       key={p.slot}
@@ -221,7 +221,7 @@ function Index() {
                     >
                       <img
                         data-image-slot={p.slot}
-                        src={`https://placehold.co/400x500/0A0A0A/F5B82E?text=${encodeURIComponent(p.caption)}`}
+                        src={p.src}
                         alt={p.caption}
                         className="zine-photo aspect-[4/5] w-full object-cover"
                       />
