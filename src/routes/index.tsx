@@ -315,6 +315,10 @@ function Index() {
                   <span className="text-[var(--amber)]">✓</span> First dibs on the trip
                 </li>
               </ul>
+
+              <div className="mt-10 max-w-md">
+                <DestinationShuffler />
+              </div>
             </div>
 
             <div id="form" className="col-span-12 lg:col-span-7">
