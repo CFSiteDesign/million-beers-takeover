@@ -116,7 +116,7 @@ export function InterestForm() {
         ))}
 
         <StampGroup
-          label="04 / Pick your vibe"
+          label="Pick your vibe"
           options={VIBES}
           value={form.vibe}
           onChange={(v) => set("vibe", v)}
