@@ -276,7 +276,7 @@ function Index() {
                 </div>
               ))}
             </div>
-          </Reveal>
+          </div>
         </section>
 
         <FoamOverflowDivider />
