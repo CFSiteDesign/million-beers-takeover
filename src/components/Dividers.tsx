@@ -13,14 +13,14 @@ export function FoamOverflowDivider({
   return (
     <div
       aria-hidden
-      className="relative z-30 w-full overflow-visible leading-[0]"
-      style={{ marginTop: "-6vw", marginBottom: "-6vw", pointerEvents: "none" }}
+      className="relative z-30 h-0 w-full overflow-visible leading-[0]"
+      style={{ pointerEvents: "none" }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1600 400"
-        preserveAspectRatio="xMidYMid meet"
-        className="block h-auto w-full"
+        preserveAspectRatio="none"
+        className="absolute left-0 top-0 block h-[clamp(150px,18vw,260px)] w-full -translate-y-1/2"
       >
         <defs>
           <linearGradient id="foamGrad" x1="0" y1="0" x2="0" y2="1">
