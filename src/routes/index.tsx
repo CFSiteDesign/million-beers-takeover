@@ -205,13 +205,13 @@ function Index() {
 
                 <p
                   className="font-script mt-6 max-w-full text-[var(--amber)] sm:mt-9"
-                  style={{ fontSize: "clamp(25px, 8vw, 56px)", lineHeight: 1.08, overflowWrap: "break-word" }}
+                  style={{ fontSize: "clamp(25px, 8vw, 56px)", lineHeight: 1.08, overflowWrap: "break-word", textIndent: "-0.35em" }}
                 >
                   "new faces.
                   <br />
-                  new nights.
+                  <span style={{ textIndent: 0, display: "inline-block" }}>new nights.</span>
                   <br />
-                  that's the point."
+                  <span style={{ textIndent: 0, display: "inline-block" }}>that's the point."</span>
                 </p>
 
                 <p className="mt-5 max-w-[58ch] text-[16px] leading-relaxed sm:mt-7 sm:text-xl">
