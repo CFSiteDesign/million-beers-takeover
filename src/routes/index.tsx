@@ -224,7 +224,7 @@ function Index() {
                   {[
                     { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -4, mt: "mt-0" },
                     { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 3, mt: "mt-8 sm:mt-12" },
-                    { slot: "polaroid-3", src: polaroid3, caption: "bali", rot: -2, mt: "mt-16 sm:mt-24" },
+                    { slot: "polaroid-3", src: polaroid3, caption: "bali 26 x", rot: -2, mt: "mt-16 sm:mt-24" },
                   ].map((p) => (
                     <div
                       key={p.slot}
