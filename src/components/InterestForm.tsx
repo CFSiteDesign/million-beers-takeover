@@ -97,7 +97,7 @@ export function InterestForm() {
   ];
 
   return (
-    <form onSubmit={submit} className="bg-[var(--cream)] p-6 md:p-10" style={{ border: "4px solid var(--ink)" }}>
+    <form onSubmit={submit} className="flex h-full flex-col bg-[var(--cream)] p-6 md:p-10" style={{ border: "4px solid var(--ink)" }}>
       <div className="space-y-7">
         {fields.map(({ k, label, placeholder, type }) => (
           <div key={k}>
