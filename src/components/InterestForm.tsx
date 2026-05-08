@@ -91,9 +91,9 @@ export function InterestForm() {
   }
 
   const fields: Array<{ k: keyof typeof form; label: string; placeholder: string; type?: string }> = [
-    { k: "name", label: "01 / Your name", placeholder: "Name or chat nickname" },
-    { k: "whatsapp", label: "02 / WhatsApp", placeholder: "+1 555 123 4567", type: "tel" },
-    { k: "location", label: "03 / Where you're based", placeholder: "City or country" },
+    { k: "name", label: "Your name", placeholder: "Name or chat nickname" },
+    { k: "whatsapp", label: "WhatsApp", placeholder: "+1 555 123 4567", type: "tel" },
+    { k: "location", label: "Where you're based", placeholder: "City or country" },
   ];
 
   return (
