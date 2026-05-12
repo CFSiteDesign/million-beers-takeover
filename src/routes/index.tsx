@@ -213,10 +213,8 @@ function Index() {
                   fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                 }}
               >
-                <span className="block">GET ON</span>
-                <span className="block">
-                  THE <span className="text-[var(--amber)]">LIST.</span>
-                </span>
+                <span className="block">VOTE</span>
+                <span className="block text-[var(--amber)]">NOW</span>
               </h2>
 
               <ul className="mt-8 max-w-md space-y-4 text-[var(--cream)]/85 lg:mt-10 lg:max-w-[42ch] lg:space-y-6">
