@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { Toaster } from "sonner";
 import { Bubbles } from "@/components/Bubbles";
+import { FoamOverflowDivider } from "@/components/Dividers";
 import { InterestForm } from "@/components/InterestForm";
 import { MMHeader } from "@/components/MMHeader";
 import { MMFooter } from "@/components/MMFooter";
