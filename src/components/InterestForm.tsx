@@ -24,8 +24,6 @@ export function InterestForm() {
     whatsapp: "",
     location: "",
     vibe: "",
-    budget: "",
-    timing: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
@@ -41,8 +39,6 @@ export function InterestForm() {
       whatsapp: `${form.dialCode} ${form.whatsapp}`.trim(),
       location: form.location,
       vibe: form.vibe,
-      budget: form.budget,
-      timing: form.timing,
     };
     const r = schema.safeParse(payload);
     if (!r.success) {
