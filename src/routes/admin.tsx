@@ -105,14 +105,13 @@ function AdminPage() {
   const filtered = (leads ?? []).filter((l) => {
     if (!filter) return true;
     const f = filter.toLowerCase();
-    return [l.name, l.whatsapp, l.location, l.vibe, l.budget, l.timing].some((v) =>
+    return [l.name, l.whatsapp, l.location, l.vibe].some((v) =>
       v?.toLowerCase().includes(f),
     );
   });
 
   const total = leads?.length ?? 0;
   const byVibe = countBy(leads ?? [], "vibe");
-  const byBudget = countBy(leads ?? [], "budget");
 
   return (
     <div className="min-h-screen bg-[var(--ink)] text-[var(--cream)] p-6 md:p-10">
