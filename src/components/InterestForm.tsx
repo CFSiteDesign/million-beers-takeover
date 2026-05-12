@@ -75,7 +75,7 @@ export function InterestForm() {
           }}
         >
           <div className="font-display text-5xl tracking-wider">ON THE LIST</div>
-          <div className="mt-2 font-mono text-xs tracking-[0.3em]">MM TAKEOVER · {today}</div>
+          
         </div>
         <p className="mx-auto mt-8 max-w-md text-[var(--cream)]/80">
           We'll be in touch when there's something worth saying.
