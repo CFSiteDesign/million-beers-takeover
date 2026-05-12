@@ -13,25 +13,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Join the Mad Monkey Takeover: a global crew picking a destination, sharing the trip, and chasing one million beers together. No spam, no payment now — just get on the list and help shape where we go.",
-      },
-      { property: "og:title", content: "Mad Monkey Takeover — One Million Beers, One Stupid Goal" },
-      {
-        property: "og:description",
-        content:
-          "A travelling crew, a chosen destination, and a million beers along the way. Register your interest, vote on the trip, and pack a bag.",
-      },
-      {
-        property: "og:image",
-        content: "https://placehold.co/1200x630/0A0A0A/F5B82E?text=Mad+Monkey+Takeover",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Mad Monkey Takeover — One Million Beers, One Stupid Goal" },
-      {
-        name: "twitter:description",
-        content:
-          "A travelling crew, a chosen destination, and a million beers along the way. Register your interest, vote on the trip, and pack a bag.",
+          "Join the Mad Monkey Takeover: a global crew picking a destination, sharing the trip, and chasing one million beers together.",
       },
     ],
     links: [
@@ -50,20 +32,10 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const TICKER = "NO SPAM   //   NO PAYMENT NOW   //   YOU PICK THE DESTINATION   //   ";
-
-// Foam dividers overlap their neighbours by ~50%, so sections only need a
-// modest internal padding above their content.
-const SECTION_PY = "pt-14 pb-16 lg:pt-24 lg:pb-28";
-
 function Index() {
   useEffect(() => {
     document.documentElement.classList.add("dark");
   }, []);
-
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <div className="paper-grain relative min-h-screen overflow-x-hidden bg-[var(--ink)] text-[var(--cream)]">
@@ -72,17 +44,16 @@ function Index() {
       <Toaster position="top-center" theme="dark" richColors />
 
       <main className="relative z-10">
-        {/* ============ 01 HERO (amber / beer) ============ */}
-        <section className="relative overflow-hidden pt-14 pb-24 text-[var(--ink)] lg:pt-24 lg:pb-36">
+        <section className="relative overflow-hidden pt-14 pb-16 text-[var(--ink)] lg:pt-24 lg:pb-24">
           <div aria-hidden className="absolute inset-0 z-0 bg-[var(--amber)]" />
           <Bubbles density={14} scope="section" />
           <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-12 items-center gap-8 px-5 pr-8 sm:px-8 lg:gap-12 lg:px-10">
-            <div className="col-span-12 min-w-0 max-w-full lg:col-span-7 xl:col-span-8">
+            <div className="col-span-12 min-w-0 max-w-full lg:col-span-6">
               <h1 className="font-display max-w-full text-[var(--ink)]" style={{ lineHeight: 0.9 }}>
                 <span
                   className="block uppercase"
                   style={{
-                    fontSize: "clamp(34px, 6.4vw, 88px)",
+                    fontSize: "clamp(34px, 5.4vw, 76px)",
                     fontFamily: "'Bungee', Impact, sans-serif",
                   }}
                 >
@@ -91,226 +62,18 @@ function Index() {
                 <span
                   className="mt-3 block uppercase text-[var(--ink)]"
                   style={{
-                    fontSize: "clamp(40px, 7.4vw, 104px)",
+                    fontSize: "clamp(40px, 6.2vw, 88px)",
                     fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                   }}
                 >
                   YOU'RE INVITED.
                 </span>
               </h1>
-
-              <div className="mt-8">
-                <BeerButton onClick={() => scrollTo("vote")}>Where we going?</BeerButton>
-              </div>
             </div>
 
-            <div className="col-span-12 flex justify-center self-start lg:col-span-5 lg:items-center lg:self-center lg:justify-end xl:col-span-4">
-              <div className="w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]" style={{ transform: "rotate(-4deg)" }}>
-                <div className="polaroid-tape">
-                  <img
-                    data-image-slot="hero-bg"
-                    src={heroImage}
-                    alt="Mad Monkey crew clinking beers at sunset on a rooftop"
-                    className="zine-photo aspect-[4/3] w-full object-cover"
-                  />
-                  <p
-                    className="mt-3 text-center text-[var(--ink)]"
-                    style={{ fontFamily: "'Caveat', 'Kalam', cursive", fontSize: 24, transform: "rotate(-2deg)" }}
-                  >
-                    team mad monkey xox
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <FoamOverflowDivider />
-
-        {/* ============ 02 WHAT IS THE TAKEOVER (ink) ============ */}
-        <section id="vote" className={`relative overflow-hidden bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
-            <h2
-              className="font-display mx-auto max-w-[16ch] text-center uppercase"
-              style={{
-                fontSize: "clamp(34px, 7vw, 84px)",
-                lineHeight: 1,
-                fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
-                overflowWrap: "break-word",
-              }}
-            >
-              <span className="block text-[var(--cream)]">What gets</span>
-              <span className="mt-2 block text-[var(--amber)]">your vote?</span>
-            </h2>
-
-            <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-6 lg:mt-16 lg:gap-10">
-              {[
-                { src: polaroid1, caption: "UK Summer Meet up — August", rot: -4 },
-                { src: polaroid3, caption: "Island hopping in Cambodia — November", rot: 3 },
-                { src: polaroid2, caption: "Ha Giang Loop in Vietnam — October", rot: -2 },
-              ].map((p) => (
-                <div
-                  key={p.caption}
-                  className="polaroid-tape polaroid-thin mx-auto w-full max-w-[280px]"
-                  style={{ transform: `rotate(${p.rot}deg)`, transformOrigin: "center" }}
-                >
-                  <img
-                    src={p.src}
-                    alt={p.caption}
-                    className="zine-photo aspect-[4/5] w-full object-cover"
-                  />
-                  <p
-                    className="mt-3 text-center text-[var(--ink)]"
-                    style={{
-                      fontFamily: "'Caveat', cursive, var(--font-sans)",
-                      fontSize: "clamp(16px, 2.2vw, 22px)",
-                      lineHeight: 1.15,
-                    }}
-                  >
-                    {p.caption}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <FoamOverflowDivider />
-
-        {/* ============ 04 FORM (ink) ============ */}
-        <section className={`relative bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
-          <div className="mx-auto grid w-full max-w-7xl grid-cols-12 items-start gap-8 px-5 pr-8 lg:items-stretch lg:gap-16 lg:px-10">
-            <div className="col-span-12 lg:col-span-5">
-              <h2
-                className="font-display uppercase lg:tracking-[-0.01em]"
-                style={{
-                  fontSize: "clamp(36px, 5.2vw, 84px)",
-                  lineHeight: 0.9,
-                  fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
-                }}
-              >
-                <span className="block">VOTE</span>
-                <span className="block text-[var(--ink)]">NOW</span>
-              </h2>
-
-              <ul className="mt-8 max-w-md space-y-3 text-[var(--ink)] lg:mt-10 lg:max-w-[42ch] lg:space-y-4">
-                {[
-                  "Sign up for trip updates.",
-                  "No commitment required today.",
-                  "No payment needed.",
-                ].map((t) => (
-                  <li key={t} className="flex items-center gap-3 lg:gap-4">
-                    <span
-                      aria-hidden
-                      className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[var(--ink)] text-[var(--amber)] font-bold lg:h-8 lg:w-8 lg:text-lg"
-                    >
-                      ✓
-                    </span>
-                    <span className="font-semibold lg:uppercase lg:tracking-[0.06em] lg:text-[1rem]">
-                      {t}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-            </div>
-
-            <div id="form" className="col-span-12 lg:col-span-7 lg:flex">
+            <div className="col-span-12 lg:col-span-6 lg:flex">
               <InterestForm />
             </div>
-          </div>
-        </section>
-
-        {/* ============ 05 TICKER (amber) — hard amber strip, no foam ============ */}
-        <section
-          aria-label="Trip terms"
-          className="relative overflow-hidden border-y-[3px] border-[var(--ink)] bg-[var(--amber)] text-[var(--ink)]"
-        >
-          <div className="ticker-track flex w-max whitespace-nowrap py-6 font-mono text-base font-bold uppercase tracking-[0.25em] sm:text-lg">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <span key={i} className="px-4">{TICKER}</span>
-            ))}
-          </div>
-        </section>
-
-        {/* ============ 06 PRE-FOOTER CTA (ink) ============ */}
-        <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
-          <div className="mx-auto grid w-full max-w-7xl grid-cols-12 items-center gap-6 px-5 pr-8 text-center lg:gap-12 lg:px-10 lg:text-left">
-            <h2
-              className="col-span-12 font-display mx-auto max-w-[760px] uppercase lg:mx-0 lg:col-span-8"
-              style={{
-                fontSize: "clamp(38px, 6.8vw, 92px)",
-                lineHeight: 0.85,
-                fontFamily: "'Bungee', Impact, sans-serif",
-              }}
-            >
-              <span className="block">Still here?</span>
-              <span
-                className="block text-[var(--amber)]"
-                style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}
-              >
-                GET IN.
-              </span>
-            </h2>
-            <div className="col-span-12 flex justify-center lg:col-span-4 lg:justify-end">
-              <BeerButton onClick={() => scrollTo("form")}>I'm in</BeerButton>
-            </div>
-          </div>
-        </section>
-
-        <FoamOverflowDivider />
-
-        {/* ============ 07 COMMUNITY PHOTOS + CTA (amber / beer) ============ */}
-        <section className={`relative overflow-hidden bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
-          <div className="mx-auto grid w-full max-w-7xl grid-cols-12 gap-8 px-5 pr-8 lg:gap-12 lg:px-10">
-            <div className="col-span-12">
-              <h2
-                className="font-display mx-auto max-w-[1120px] text-center uppercase"
-                style={{
-                  fontSize: "clamp(32px, 5.6vw, 84px)",
-                  lineHeight: 0.92,
-                  fontFamily: "'Bungee', Impact, sans-serif",
-                }}
-              >
-                <span className="block">
-                  <CountUp to={20000} duration={1600} />+ photos.
-                </span>
-                <span className="block">hundreds of legends.</span>
-                <span
-                  className="block text-[var(--ink)]"
-                  style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}
-                >
-                  ONE STUPID GOAL.
-                </span>
-              </h2>
-            </div>
-          </div>
-
-          {/* Marquee */}
-          <div className="relative mt-14 overflow-hidden border-y-2 border-[var(--ink)]">
-            <div className="marquee-track flex w-max">
-              {(() => {
-                const real = [marquee1, marquee2, marquee3, marquee4, marquee5, marquee6, marquee7, marquee8, marquee9, marquee10, marquee11, marquee12];
-                return [...real, ...real].map((src, i) => (
-                  <div
-                    key={`m-${i}`}
-                    className="relative h-36 w-36 flex-shrink-0 overflow-hidden border-2 border-[var(--ink)] sm:h-44 sm:w-44"
-                  >
-                    <img
-                      src={src}
-                      alt=""
-                      className="zine-photo h-full w-full object-cover"
-                      style={{ filter: "contrast(1.05) saturate(0.85)" }}
-                    />
-                  </div>
-                ));
-              })()}
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="mx-auto mt-14 flex w-full max-w-5xl justify-center px-5 pr-8 lg:px-10">
-            <BeerButton onClick={() => scrollTo("form")}>Have your say</BeerButton>
           </div>
         </section>
       </main>
