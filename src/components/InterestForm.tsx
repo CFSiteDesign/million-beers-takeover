@@ -159,22 +159,6 @@ export function InterestForm() {
           error={errors.vibe}
           onCream
         />
-        <StampGroup
-          label="Rough budget per person"
-          options={BUDGETS}
-          value={form.budget}
-          onChange={(v) => set("budget", v)}
-          error={errors.budget}
-          onCream
-        />
-        <StampGroup
-          label="Best time of year"
-          options={TIMINGS}
-          value={form.timing}
-          onChange={(v) => set("timing", v)}
-          error={errors.timing}
-          onCream
-        />
 
         <button type="submit" disabled={loading} className="btn-stamp btn-on-cream w-full text-2xl">
           {loading ? "ADDING…" : "STAMP ME IN"}
