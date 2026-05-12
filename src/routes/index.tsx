@@ -16,6 +16,7 @@ import { CountUp } from "@/components/CountUp";
 import { LiveBeerCounter } from "@/components/LiveBeerCounter";
 import polaroid1 from "@/assets/polaroid-1.png";
 import polaroid2 from "@/assets/polaroid-2.png";
+import polaroid3 from "@/assets/polaroid-3.png";
 import marquee1 from "@/assets/marquee-1.png";
 import marquee2 from "@/assets/marquee-2.png";
 import marquee3 from "@/assets/marquee-3.png";
@@ -153,123 +154,47 @@ function Index() {
         {/* ============ 02 WHAT IS THE TAKEOVER (ink) ============ */}
         <section className={`relative overflow-hidden bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
-            <div className="grid w-full min-w-0 grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-stretch lg:gap-14">
-              <div className="min-w-0 max-w-full">
-                <h2
-                  className="font-display max-w-full uppercase"
-                  style={{
-                    fontSize: "clamp(30px, 10vw, 84px)",
-                    lineHeight: 1,
-                    fontFamily: "'Bungee', Impact, sans-serif",
-                    overflowWrap: "break-word",
-                  }}
+            <h2
+              className="font-display mx-auto max-w-[16ch] text-center uppercase"
+              style={{
+                fontSize: "clamp(34px, 7vw, 84px)",
+                lineHeight: 1,
+                fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
+                overflowWrap: "break-word",
+              }}
+            >
+              <span className="block text-[var(--cream)]">What gets</span>
+              <span className="mt-2 block text-[var(--amber)]">your vote?</span>
+            </h2>
+
+            <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-6 lg:mt-16 lg:gap-10">
+              {[
+                { src: polaroid1, caption: "UK Summer Met up — August", rot: -4 },
+                { src: polaroid3, caption: "Island hopping in Cambodia — November", rot: 3 },
+                { src: polaroid2, caption: "Ha Giang Loop in Vietnam — October", rot: -2 },
+              ].map((p) => (
+                <div
+                  key={p.caption}
+                  className="polaroid-tape polaroid-thin mx-auto w-full max-w-[280px]"
+                  style={{ transform: `rotate(${p.rot}deg)`, transformOrigin: "center" }}
                 >
-                  <span className="block">What's a</span>
-                  <span
-                    className="mt-1 block text-[var(--amber)] sm:mt-3"
+                  <img
+                    src={p.src}
+                    alt={p.caption}
+                    className="zine-photo aspect-[4/5] w-full object-cover"
+                  />
+                  <p
+                    className="mt-3 text-center text-[var(--ink)]"
                     style={{
-                      fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
-                      fontSize: "clamp(28px, 9vw, 78px)",
-                      lineHeight: 1.12,
-                      overflowWrap: "break-word",
+                      fontFamily: "'Caveat', cursive, var(--font-sans)",
+                      fontSize: "clamp(16px, 2.2vw, 22px)",
+                      lineHeight: 1.15,
                     }}
                   >
-                    TAKEOVER?
-                  </span>
-                </h2>
-
-                <div className="mt-6 max-w-[62ch] space-y-4 text-[16px] leading-relaxed sm:mt-9 sm:space-y-5 sm:text-xl">
-                  <p>A Takeover is simple. A group of MM people go somewhere new together.</p>
-                  <p>
-                    New city. New beers. New stories.
-                    <br />
-                    Some of you know each other already.
-                    <br />
-                    Most of you don't.
+                    {p.caption}
                   </p>
                 </div>
-
-                <p
-                  className="font-script mt-6 max-w-full text-[var(--amber)] sm:mt-9"
-                  style={{ fontSize: "clamp(25px, 8vw, 56px)", lineHeight: 1.08, overflowWrap: "break-word", textIndent: "-0.35em" }}
-                >
-                  "new faces.
-                  <br />
-                  <span style={{ textIndent: 0, display: "inline-block" }}>new nights.</span>
-                  <br />
-                  <span style={{ textIndent: 0, display: "inline-block" }}>that's the point."</span>
-                </p>
-
-                <p className="mt-5 max-w-[58ch] text-[16px] leading-relaxed sm:mt-7 sm:text-xl">
-                  We don't have a destination yet. We're picking based on who's in and where people want to go. Register, tell us your vibe, help shape it.
-                </p>
-              </div>
-
-              <div className="min-w-0 max-w-full pt-2 lg:relative lg:h-full lg:pt-0">
-                {/* Mobile: 2 polaroids side by side, slightly staggered */}
-                <div className="grid grid-cols-2 items-start gap-3 lg:hidden">
-                  {[
-                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -4, mt: "mt-0" },
-                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 3, mt: "mt-6" },
-                  ].map((p) => (
-                    <div
-                      key={p.slot}
-                      className={`polaroid-tape polaroid-thin min-w-0 ${p.mt}`}
-                      style={{ transform: `rotate(${p.rot}deg)`, transformOrigin: "center" }}
-                    >
-                      <img
-                        data-image-slot={p.slot}
-                        src={p.src}
-                        alt={p.caption}
-                        className="zine-photo aspect-[4/5] w-full object-cover"
-                      />
-                      <p
-                        className="mt-2 text-center text-[var(--ink)]"
-                        style={{
-                          fontFamily: "'Caveat', cursive, var(--font-sans)",
-                          fontSize: "clamp(11px, 3vw, 16px)",
-                          lineHeight: 1.05,
-                          overflowWrap: "anywhere",
-                        }}
-                      >
-                        {p.caption}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Desktop: absolutely-positioned cluster filling column height */}
-                <div className="hidden lg:block">
-                  {[
-                    { slot: "polaroid-1", src: polaroid1, caption: "siem reap, 2am", rot: -5, top: "0%", left: "4%" },
-                    { slot: "polaroid-2", src: polaroid2, caption: "el nido vibes", rot: 4, top: "20%", left: "34%" },
-                  ].map((p) => (
-                    <div
-                      key={p.slot}
-                      className="polaroid-tape polaroid-thin absolute w-[58%] max-w-[280px]"
-                      style={{ top: p.top, left: p.left, transform: `rotate(${p.rot}deg)`, transformOrigin: "center" }}
-                    >
-                      <img
-                        data-image-slot={p.slot}
-                        src={p.src}
-                        alt={p.caption}
-                        className="zine-photo aspect-[4/5] w-full object-cover"
-                      />
-                      <p
-                        className="mt-2 text-center text-[var(--ink)]"
-                        style={{
-                          fontFamily: "'Caveat', cursive, var(--font-sans)",
-                          fontSize: "clamp(14px, 1.4vw, 18px)",
-                          lineHeight: 1.05,
-                          overflowWrap: "anywhere",
-                        }}
-                      >
-                        {p.caption}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
