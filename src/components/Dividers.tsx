@@ -20,7 +20,7 @@ export function FoamOverflowDivider({
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1600 400"
         preserveAspectRatio="none"
-        className="absolute left-1/2 top-0 block h-[clamp(96px,18vw,300px)] w-[170vw] min-w-[2100px] -translate-x-1/2 -translate-y-[30%]"
+        className="absolute left-1/2 top-0 block h-[clamp(80px,12vw,160px)] w-[170vw] min-w-[2100px] -translate-x-1/2 -translate-y-[35%]"
       >
         <defs>
           <linearGradient id="foamGrad" x1="0" y1="0" x2="0" y2="1">
