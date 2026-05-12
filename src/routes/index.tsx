@@ -101,50 +101,29 @@ function Index() {
           <Bubbles density={14} scope="section" />
           <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-12 items-center gap-8 px-5 pr-8 sm:px-8 lg:gap-12 lg:px-10">
             <div className="col-span-12 min-w-0 max-w-full lg:col-span-7 xl:col-span-8">
-              <h1 className="font-display max-w-full text-[var(--ink)]" style={{ lineHeight: 0.86 }}>
-                <span className="block uppercase" style={{ fontSize: "clamp(40px, 8vw, 108px)" }}>
-                  THE
+              <h1 className="font-display max-w-full text-[var(--ink)]" style={{ lineHeight: 0.9 }}>
+                <span
+                  className="block uppercase"
+                  style={{
+                    fontSize: "clamp(34px, 6.4vw, 88px)",
+                    fontFamily: "'Bungee', Impact, sans-serif",
+                  }}
+                >
+                  PLANS THAT MAKE IT OUT OF THE GROUP CHAT.
                 </span>
                 <span
-                  className="block max-w-full overflow-hidden uppercase text-[var(--ink)]"
+                  className="mt-3 block uppercase text-[var(--ink)]"
                   style={{
-                    fontSize: "clamp(46px, 8.4vw, 118px)",
+                    fontSize: "clamp(40px, 7.4vw, 104px)",
                     fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                   }}
                 >
-                  TAKEOVER
-                </span>
-                <span
-                  className="font-script mt-2 block lowercase text-[var(--ink)]"
-                  style={{ fontSize: "clamp(28px, 6vw, 72px)", lineHeight: 0.9 }}
-                >
-                  is happening.
+                  YOU'RE INVITED.
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-full text-base font-semibold text-[var(--ink)] sm:mt-8 sm:max-w-md sm:text-xl">
-                We're picking a place. We're going there.{" "}
-                <span className="bg-[var(--ink)] px-2 text-[var(--amber)]">And we want you in.</span>
-              </p>
-
-              <div className="mt-8 max-w-full sm:max-w-md">
-                <div className="mb-2 flex min-w-0 items-baseline justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--ink)] sm:text-[11px] sm:tracking-[0.25em]">
-                  <span className="font-bold">20,847 beers logged</span>
-                  <span className="text-[var(--ink)]/60">/ 1,000,000</span>
-                </div>
-                <div className="relative h-2 w-full overflow-hidden rounded-full bg-[var(--ink)]/15">
-                  <div
-                    className="h-full rounded-full bg-[var(--ink)] transition-[width] duration-1000 ease-out"
-                    style={{ width: "2.1%" }}
-                  />
-                </div>
-                <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--ink)]/60">
-                  2.1% to the million
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <BeerButton onClick={() => scrollTo("form")}>I'm in</BeerButton>
+              <div className="mt-8">
+                <BeerButton onClick={() => scrollTo("form")}>I'm in &gt;&gt; Where we going?</BeerButton>
               </div>
             </div>
 
