@@ -4,7 +4,11 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { COUNTRIES } from "@/lib/countries";
 
-const VIBES = ["Summer, UK", "Ha Giang, Vietnam", "Islands, Cambodia"];
+const VIBES = [
+  "UK Summer Meet Up, August 2026",
+  "Island Hopping in Cambodia, November 2026",
+  "Ha Giang Loop + Vietnam, October 2026",
+];
 
 const schema = z.object({
   name: z.string().trim().min(1, "What do we call you?").max(80),
