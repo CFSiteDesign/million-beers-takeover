@@ -4,17 +4,13 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { COUNTRIES } from "@/lib/countries";
 
-const VIBES = ["Beach", "City", "Mountains", "Festival"];
-const BUDGETS = ["Under $300", "$300–600", "$600–1,000", "$1,000+"];
-const TIMINGS = ["Jan–Mar", "Apr–Jun", "Jul–Sep", "Oct–Dec", "Flexible"];
+const VIBES = ["Summer, UK", "Ha Giang, Vietnam", "Islands, Cambodia"];
 
 const schema = z.object({
   name: z.string().trim().min(1, "What do we call you?").max(80),
   whatsapp: z.string().trim().min(4, "Add your number").max(30),
   location: z.string().trim().min(1, "Tell us where").max(80),
   vibe: z.string().min(1, "Pick a vibe"),
-  budget: z.string().min(1, "Pick a budget"),
-  timing: z.string().min(1, "Pick a time"),
 });
 
 const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/invite/placeholder";
