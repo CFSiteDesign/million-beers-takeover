@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { Toaster } from "sonner";
 import { Bubbles } from "@/components/Bubbles";
-import { FoamOverflowDivider } from "@/components/Dividers";
 import { InterestForm } from "@/components/InterestForm";
 import { MMHeader } from "@/components/MMHeader";
 import { MMFooter } from "@/components/MMFooter";
@@ -45,9 +44,6 @@ function Index() {
       <Toaster position="top-center" theme="dark" richColors />
 
       <main className="relative z-10">
-        <div className="relative z-[60]">
-          <FoamOverflowDivider />
-        </div>
         <section className="relative overflow-hidden pt-14 pb-16 text-[var(--ink)] lg:pt-24 lg:pb-24">
           <div aria-hidden className="absolute inset-0 z-0 bg-[var(--amber)]" />
           <Bubbles density={14} scope="section" />
