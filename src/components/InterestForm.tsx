@@ -59,11 +59,6 @@ export function InterestForm() {
   };
 
   if (done) {
-    const today = new Date().toLocaleDateString("en-GB", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-    }).toUpperCase();
     return (
       <div className="relative bg-[var(--ink)] p-10 text-center" style={{ border: "4px solid var(--ink)", boxShadow: "10px 10px 0 0 var(--amber)" }}>
         <div
