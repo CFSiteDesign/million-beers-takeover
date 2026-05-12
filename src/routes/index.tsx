@@ -202,7 +202,7 @@ function Index() {
         <FoamOverflowDivider />
 
         {/* ============ 04 FORM (ink) ============ */}
-        <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
+        <section className={`relative bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
           <div className="mx-auto grid w-full max-w-7xl grid-cols-12 items-start gap-8 px-5 pr-8 lg:items-stretch lg:gap-16 lg:px-10">
             <div className="col-span-12 lg:col-span-5">
               <h2
@@ -214,23 +214,23 @@ function Index() {
                 }}
               >
                 <span className="block">VOTE</span>
-                <span className="block text-[var(--amber)]">NOW</span>
+                <span className="block text-[var(--ink)]">NOW</span>
               </h2>
 
-              <ul className="mt-8 max-w-md space-y-4 text-[var(--cream)]/85 lg:mt-10 lg:max-w-[42ch] lg:space-y-6">
+              <ul className="mt-8 max-w-md space-y-4 text-[var(--ink)]/85 lg:mt-10 lg:max-w-[42ch] lg:space-y-6">
                 {[
                   { t: "Sign up for trip updates.", d: "" },
                   { t: "No commitment required today.", d: "" },
                   { t: "No payment needed.", d: "" },
                 ].map((item) => (
                   <li key={item.t} className="flex gap-3 lg:gap-4">
-                    <span className="mt-1 text-[var(--amber)] lg:mt-[2px] lg:text-lg">✓</span>
+                    <span className="mt-1 text-[var(--ink)] lg:mt-[2px] lg:text-lg">✓</span>
                     <div className="min-w-0 flex-1">
-                      <div className="text-[var(--cream)] font-semibold lg:uppercase lg:tracking-[0.06em] lg:text-[0.95rem]">
+                      <div className="text-[var(--ink)] font-semibold lg:uppercase lg:tracking-[0.06em] lg:text-[0.95rem]">
                         {item.t}
                       </div>
                       {item.d && (
-                        <div className="mt-0.5 text-[var(--cream)]/70 lg:mt-1 lg:text-[1rem] lg:leading-snug">
+                        <div className="mt-0.5 text-[var(--ink)]/70 lg:mt-1 lg:text-[1rem] lg:leading-snug">
                           {item.d}
                         </div>
                       )}
