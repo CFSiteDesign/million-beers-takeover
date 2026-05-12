@@ -16,32 +16,32 @@ export type Database = {
     Tables: {
       takeover_interest: {
         Row: {
-          budget: string
+          budget: string | null
           created_at: string
           id: string
           location: string
           name: string
-          timing: string
+          timing: string | null
           vibe: string
           whatsapp: string
         }
         Insert: {
-          budget: string
+          budget?: string | null
           created_at?: string
           id?: string
           location: string
           name: string
-          timing: string
+          timing?: string | null
           vibe: string
           whatsapp: string
         }
         Update: {
-          budget?: string
+          budget?: string | null
           created_at?: string
           id?: string
           location?: string
           name?: string
-          timing?: string
+          timing?: string | null
           vibe?: string
           whatsapp?: string
         }

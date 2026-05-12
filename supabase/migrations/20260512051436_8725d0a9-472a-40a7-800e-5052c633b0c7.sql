@@ -1,0 +1,1 @@
+ALTER TABLE public.takeover_interest ALTER COLUMN budget DROP NOT NULL, ALTER COLUMN timing DROP NOT NULL;

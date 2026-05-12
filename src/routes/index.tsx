@@ -101,50 +101,29 @@ function Index() {
           <Bubbles density={14} scope="section" />
           <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-12 items-center gap-8 px-5 pr-8 sm:px-8 lg:gap-12 lg:px-10">
             <div className="col-span-12 min-w-0 max-w-full lg:col-span-7 xl:col-span-8">
-              <h1 className="font-display max-w-full text-[var(--ink)]" style={{ lineHeight: 0.86 }}>
-                <span className="block uppercase" style={{ fontSize: "clamp(40px, 8vw, 108px)" }}>
-                  THE
+              <h1 className="font-display max-w-full text-[var(--ink)]" style={{ lineHeight: 0.9 }}>
+                <span
+                  className="block uppercase"
+                  style={{
+                    fontSize: "clamp(34px, 6.4vw, 88px)",
+                    fontFamily: "'Bungee', Impact, sans-serif",
+                  }}
+                >
+                  PLANS THAT MAKE IT OUT OF THE GROUP CHAT.
                 </span>
                 <span
-                  className="block max-w-full overflow-hidden uppercase text-[var(--ink)]"
+                  className="mt-3 block uppercase text-[var(--ink)]"
                   style={{
-                    fontSize: "clamp(46px, 8.4vw, 118px)",
+                    fontSize: "clamp(40px, 7.4vw, 104px)",
                     fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                   }}
                 >
-                  TAKEOVER
-                </span>
-                <span
-                  className="font-script mt-2 block lowercase text-[var(--ink)]"
-                  style={{ fontSize: "clamp(28px, 6vw, 72px)", lineHeight: 0.9 }}
-                >
-                  is happening.
+                  YOU'RE INVITED.
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-full text-base font-semibold text-[var(--ink)] sm:mt-8 sm:max-w-md sm:text-xl">
-                We're picking a place. We're going there.{" "}
-                <span className="bg-[var(--ink)] px-2 text-[var(--amber)]">And we want you in.</span>
-              </p>
-
-              <div className="mt-8 max-w-full sm:max-w-md">
-                <div className="mb-2 flex min-w-0 items-baseline justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--ink)] sm:text-[11px] sm:tracking-[0.25em]">
-                  <span className="font-bold">20,847 beers logged</span>
-                  <span className="text-[var(--ink)]/60">/ 1,000,000</span>
-                </div>
-                <div className="relative h-2 w-full overflow-hidden rounded-full bg-[var(--ink)]/15">
-                  <div
-                    className="h-full rounded-full bg-[var(--ink)] transition-[width] duration-1000 ease-out"
-                    style={{ width: "2.1%" }}
-                  />
-                </div>
-                <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--ink)]/60">
-                  2.1% to the million
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <BeerButton onClick={() => scrollTo("form")}>I'm in</BeerButton>
+              <div className="mt-8">
+                <BeerButton onClick={() => scrollTo("form")}>I'm in &gt;&gt; Where we going?</BeerButton>
               </div>
             </div>
 
@@ -297,105 +276,6 @@ function Index() {
 
         <FoamOverflowDivider />
 
-        {/* ============ 03 COMMUNITY (amber / beer) ============ */}
-        <section className={`relative overflow-hidden bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
-          <div className="mx-auto grid w-full max-w-7xl grid-cols-12 gap-8 px-5 pr-8 lg:gap-12 lg:px-10">
-            <div className="col-span-12">
-              <h2
-                className="font-display mx-auto max-w-[1120px] text-center uppercase"
-                style={{
-                  fontSize: "clamp(32px, 5.6vw, 84px)",
-                  lineHeight: 0.92,
-                  fontFamily: "'Bungee', Impact, sans-serif",
-                }}
-              >
-                <span className="block">
-                  <CountUp to={20000} duration={1600} />+ photos.
-                </span>
-                <span className="block">hundreds of legends.</span>
-                <span
-                  className="block text-[var(--ink)]"
-                  style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}
-                >
-                  ONE STUPID GOAL.
-                </span>
-              </h2>
-            </div>
-          </div>
-
-          {/* Marquee */}
-          <div className="relative mt-14 overflow-hidden border-y-2 border-[var(--ink)]">
-            <div className="marquee-track flex w-max">
-              {(() => {
-                const real = [marquee1, marquee2, marquee3, marquee4, marquee5, marquee6, marquee7, marquee8, marquee9, marquee10, marquee11, marquee12];
-                const tiles: Array<{ src?: string; placeholder?: boolean; key: string }> = [];
-                for (let i = 0; i < real.length; i++) tiles.push({ src: real[i], key: `r${i}` });
-                // duplicate for seamless loop
-                return [...tiles, ...tiles].map((t, i) => (
-                  <div
-                    key={`${t.key}-${i}`}
-                    className="relative h-36 w-36 flex-shrink-0 overflow-hidden border-2 border-[var(--ink)] sm:h-44 sm:w-44"
-                  >
-                    {t.src ? (
-                      <img
-                        src={t.src}
-                        alt=""
-                        className="zine-photo h-full w-full object-cover"
-                        style={{ filter: "contrast(1.05) saturate(0.85)" }}
-                      />
-                    ) : (
-                      <div className="flex h-full w-full flex-col items-center justify-center bg-[var(--ink)] p-3 text-center">
-                        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--amber)]/70">
-                          coming
-                        </span>
-                        <span
-                          className="mt-1 font-display uppercase leading-none text-[var(--cream)]"
-                          style={{ fontSize: "clamp(22px, 3.6vw, 30px)" }}
-                        >
-                          soon
-                        </span>
-                        <span className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--cream)]/40">
-                          ▼ ▼ ▼
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                ));
-              })()}
-            </div>
-          </div>
-
-          {/* Stats panel */}
-          <div className="mx-auto mt-14 w-full max-w-5xl px-5 pr-8 lg:px-10">
-            <div className="grid grid-cols-1 border-2 border-[var(--ink)] sm:grid-cols-3">
-              {[
-                { n: 20847, label: "beers logged" },
-                { n: 11, label: "countries" },
-                { n: 1_000_000 - 20847, label: "to go" },
-              ].map((s, i) => (
-                <div
-                  key={s.label}
-                  className={`flex items-center justify-between gap-4 bg-[var(--cream)] p-5 sm:block sm:p-8 ${i < 2 ? "sm:border-r-2 sm:border-[var(--ink)]" : ""} ${i < 2 ? "border-b-2 border-[var(--ink)] sm:border-b-0" : ""}`}
-                >
-                  <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--ink)]/70">
-                    {s.label}
-                  </p>
-                  <div
-                    className="font-display text-right text-[var(--ink)] tabular-nums sm:mt-2 sm:text-left"
-                    style={{ lineHeight: 1, whiteSpace: "nowrap" }}
-                  >
-                    <span className="text-2xl sm:text-[clamp(24px,2.8vw,44px)]">
-                      <Counter to={s.n} />
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <FoamOverflowDivider />
-
         {/* ============ 04 FORM (ink) ============ */}
         <section className={`relative bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
           <div className="mx-auto grid w-full max-w-7xl grid-cols-12 items-start gap-8 px-5 pr-8 lg:items-stretch lg:gap-16 lg:px-10">
@@ -414,16 +294,10 @@ function Index() {
                 </span>
               </h2>
 
-              <p className="mt-8 max-w-md text-lg leading-relaxed text-[var(--cream)]/90 lg:mt-10 lg:max-w-[34ch] lg:text-[1.35rem] lg:leading-[1.55]">
-                Once we see who's in, we'll share destination options, rough dates,
-                and pricing. <strong className="text-[var(--amber)]">You'll get a vote.</strong>
-              </p>
-
               <ul className="mt-8 max-w-md space-y-4 text-[var(--cream)]/85 lg:mt-10 lg:max-w-[42ch] lg:space-y-6">
                 {[
-                  { t: "No spam.", d: "Just trip updates when there's something to say." },
-                  { t: "No payment now.", d: "You commit when you're ready." },
-                  { t: "You help pick the destination.", d: "Your vote counts." },
+                  { t: "Sign up for trip updates.", d: "No commitment required today." },
+                  { t: "No payment needed.", d: "" },
                 ].map((item) => (
                   <li key={item.t} className="flex gap-3 lg:gap-4">
                     <span className="mt-1 text-[var(--amber)] lg:mt-[2px] lg:text-lg">✓</span>
@@ -431,9 +305,11 @@ function Index() {
                       <div className="text-[var(--cream)] font-semibold lg:uppercase lg:tracking-[0.06em] lg:text-[0.95rem]">
                         {item.t}
                       </div>
-                      <div className="mt-0.5 text-[var(--cream)]/70 lg:mt-1 lg:text-[1rem] lg:leading-snug">
-                        {item.d}
-                      </div>
+                      {item.d && (
+                        <div className="mt-0.5 text-[var(--cream)]/70 lg:mt-1 lg:text-[1rem] lg:leading-snug">
+                          {item.d}
+                        </div>
+                      )}
                     </div>
                   </li>
                 ))}
@@ -481,6 +357,62 @@ function Index() {
             <div className="col-span-12 flex justify-center lg:col-span-4 lg:justify-end">
               <BeerButton onClick={() => scrollTo("form")}>I'm in</BeerButton>
             </div>
+          </div>
+        </section>
+
+        <FoamOverflowDivider />
+
+        {/* ============ 07 COMMUNITY PHOTOS + CTA (amber / beer) ============ */}
+        <section className={`relative overflow-hidden bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
+          <div className="mx-auto grid w-full max-w-7xl grid-cols-12 gap-8 px-5 pr-8 lg:gap-12 lg:px-10">
+            <div className="col-span-12">
+              <h2
+                className="font-display mx-auto max-w-[1120px] text-center uppercase"
+                style={{
+                  fontSize: "clamp(32px, 5.6vw, 84px)",
+                  lineHeight: 0.92,
+                  fontFamily: "'Bungee', Impact, sans-serif",
+                }}
+              >
+                <span className="block">
+                  <CountUp to={20000} duration={1600} />+ photos.
+                </span>
+                <span className="block">hundreds of legends.</span>
+                <span
+                  className="block text-[var(--ink)]"
+                  style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}
+                >
+                  ONE STUPID GOAL.
+                </span>
+              </h2>
+            </div>
+          </div>
+
+          {/* Marquee */}
+          <div className="relative mt-14 overflow-hidden border-y-2 border-[var(--ink)]">
+            <div className="marquee-track flex w-max">
+              {(() => {
+                const real = [marquee1, marquee2, marquee3, marquee4, marquee5, marquee6, marquee7, marquee8, marquee9, marquee10, marquee11, marquee12];
+                return [...real, ...real].map((src, i) => (
+                  <div
+                    key={`m-${i}`}
+                    className="relative h-36 w-36 flex-shrink-0 overflow-hidden border-2 border-[var(--ink)] sm:h-44 sm:w-44"
+                  >
+                    <img
+                      src={src}
+                      alt=""
+                      className="zine-photo h-full w-full object-cover"
+                      style={{ filter: "contrast(1.05) saturate(0.85)" }}
+                    />
+                  </div>
+                ));
+              })()}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="mx-auto mt-14 flex w-full max-w-5xl justify-center px-5 pr-8 lg:px-10">
+            <BeerButton onClick={() => scrollTo("form")}>Have your say</BeerButton>
           </div>
         </section>
       </main>
