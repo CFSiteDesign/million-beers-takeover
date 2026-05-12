@@ -169,7 +169,7 @@ function Index() {
 
             <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-6 lg:mt-16 lg:gap-10">
               {[
-                { src: polaroid1, caption: "UK Summer Met up — August", rot: -4 },
+                { src: polaroid1, caption: "UK Summer Meet up — August", rot: -4 },
                 { src: polaroid3, caption: "Island hopping in Cambodia — November", rot: 3 },
                 { src: polaroid2, caption: "Ha Giang Loop in Vietnam — October", rot: -2 },
               ].map((p) => (
