@@ -217,24 +217,22 @@ function Index() {
                 <span className="block text-[var(--ink)]">NOW</span>
               </h2>
 
-              <ul className="mt-8 max-w-md space-y-4 text-[var(--ink)]/85 lg:mt-10 lg:max-w-[42ch] lg:space-y-6">
+              <ul className="mt-8 max-w-md space-y-3 text-[var(--ink)] lg:mt-10 lg:max-w-[42ch] lg:space-y-4">
                 {[
-                  { t: "Sign up for trip updates.", d: "" },
-                  { t: "No commitment required today.", d: "" },
-                  { t: "No payment needed.", d: "" },
-                ].map((item) => (
-                  <li key={item.t} className="flex gap-3 lg:gap-4">
-                    <span className="mt-1 text-[var(--ink)] lg:mt-[2px] lg:text-lg">✓</span>
-                    <div className="min-w-0 flex-1">
-                      <div className="text-[var(--ink)] font-semibold lg:uppercase lg:tracking-[0.06em] lg:text-[0.95rem]">
-                        {item.t}
-                      </div>
-                      {item.d && (
-                        <div className="mt-0.5 text-[var(--ink)]/70 lg:mt-1 lg:text-[1rem] lg:leading-snug">
-                          {item.d}
-                        </div>
-                      )}
-                    </div>
+                  "Sign up for trip updates.",
+                  "No commitment required today.",
+                  "No payment needed.",
+                ].map((t) => (
+                  <li key={t} className="flex items-center gap-3 lg:gap-4">
+                    <span
+                      aria-hidden
+                      className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[var(--ink)] text-[var(--amber)] font-bold lg:h-8 lg:w-8 lg:text-lg"
+                    >
+                      ✓
+                    </span>
+                    <span className="font-semibold lg:uppercase lg:tracking-[0.06em] lg:text-[1rem]">
+                      {t}
+                    </span>
                   </li>
                 ))}
               </ul>
