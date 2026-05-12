@@ -124,7 +124,7 @@ function Index() {
               </h1>
 
               <div className="mt-8">
-                <BeerButton onClick={() => scrollTo("form")}>Where are we going?</BeerButton>
+                <BeerButton onClick={() => scrollTo("vote")}>Where we going?</BeerButton>
               </div>
             </div>
 
@@ -152,7 +152,7 @@ function Index() {
         <FoamOverflowDivider />
 
         {/* ============ 02 WHAT IS THE TAKEOVER (ink) ============ */}
-        <section className={`relative overflow-hidden bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
+        <section id="vote" className={`relative overflow-hidden bg-[var(--ink)] text-[var(--cream)] ${SECTION_PY}`}>
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
             <h2
               className="font-display mx-auto max-w-[16ch] text-center uppercase"
