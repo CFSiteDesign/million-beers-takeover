@@ -148,13 +148,11 @@ function AdminPage() {
                 <th className="p-3 text-left">WhatsApp</th>
                 <th className="p-3 text-left">Location</th>
                 <th className="p-3 text-left">Vibe</th>
-                <th className="p-3 text-left">Budget</th>
-                <th className="p-3 text-left">Timing</th>
               </tr>
             </thead>
             <tbody>
               {filtered.length === 0 && (
-                <tr><td colSpan={7} className="p-6 text-center font-mono text-xs uppercase tracking-widest opacity-60">No leads yet</td></tr>
+                <tr><td colSpan={5} className="p-6 text-center font-mono text-xs uppercase tracking-widest opacity-60">No leads yet</td></tr>
               )}
               {filtered.map((l) => (
                 <tr key={l.id} className="border-t border-[var(--ink)]/10">
@@ -163,8 +161,6 @@ function AdminPage() {
                   <td className="p-3 font-mono text-xs">{l.whatsapp}</td>
                   <td className="p-3">{l.location}</td>
                   <td className="p-3">{l.vibe}</td>
-                  <td className="p-3">{l.budget}</td>
-                  <td className="p-3">{l.timing}</td>
                 </tr>
               ))}
             </tbody>
