@@ -359,6 +359,62 @@ function Index() {
             </div>
           </div>
         </section>
+
+        <FoamOverflowDivider />
+
+        {/* ============ 07 COMMUNITY PHOTOS + CTA (amber / beer) ============ */}
+        <section className={`relative overflow-hidden bg-[var(--amber)] text-[var(--ink)] ${SECTION_PY}`}>
+          <div className="mx-auto grid w-full max-w-7xl grid-cols-12 gap-8 px-5 pr-8 lg:gap-12 lg:px-10">
+            <div className="col-span-12">
+              <h2
+                className="font-display mx-auto max-w-[1120px] text-center uppercase"
+                style={{
+                  fontSize: "clamp(32px, 5.6vw, 84px)",
+                  lineHeight: 0.92,
+                  fontFamily: "'Bungee', Impact, sans-serif",
+                }}
+              >
+                <span className="block">
+                  <CountUp to={20000} duration={1600} />+ photos.
+                </span>
+                <span className="block">hundreds of legends.</span>
+                <span
+                  className="block text-[var(--ink)]"
+                  style={{ fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif" }}
+                >
+                  ONE STUPID GOAL.
+                </span>
+              </h2>
+            </div>
+          </div>
+
+          {/* Marquee */}
+          <div className="relative mt-14 overflow-hidden border-y-2 border-[var(--ink)]">
+            <div className="marquee-track flex w-max">
+              {(() => {
+                const real = [marquee1, marquee2, marquee3, marquee4, marquee5, marquee6, marquee7, marquee8, marquee9, marquee10, marquee11, marquee12];
+                return [...real, ...real].map((src, i) => (
+                  <div
+                    key={`m-${i}`}
+                    className="relative h-36 w-36 flex-shrink-0 overflow-hidden border-2 border-[var(--ink)] sm:h-44 sm:w-44"
+                  >
+                    <img
+                      src={src}
+                      alt=""
+                      className="zine-photo h-full w-full object-cover"
+                      style={{ filter: "contrast(1.05) saturate(0.85)" }}
+                    />
+                  </div>
+                ));
+              })()}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="mx-auto mt-14 flex w-full max-w-5xl justify-center px-5 pr-8 lg:px-10">
+            <BeerButton onClick={() => scrollTo("form")}>Have your say</BeerButton>
+          </div>
+        </section>
       </main>
 
       <MMFooter />
