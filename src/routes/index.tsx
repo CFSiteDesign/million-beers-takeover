@@ -344,33 +344,11 @@ function Index() {
             </div>
           </div>
 
-          {/* Stats panel */}
-          <div className="mx-auto mt-14 w-full max-w-5xl px-5 pr-8 lg:px-10">
-            <div className="grid grid-cols-1 border-2 border-[var(--ink)] sm:grid-cols-3">
-              {[
-                { n: 20847, label: "beers logged" },
-                { n: 11, label: "countries" },
-                { n: 1_000_000 - 20847, label: "to go" },
-              ].map((s, i) => (
-                <div
-                  key={s.label}
-                  className={`flex items-center justify-between gap-4 bg-[var(--cream)] p-5 sm:block sm:p-8 ${i < 2 ? "sm:border-r-2 sm:border-[var(--ink)]" : ""} ${i < 2 ? "border-b-2 border-[var(--ink)] sm:border-b-0" : ""}`}
-                >
-                  <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--ink)]/70">
-                    {s.label}
-                  </p>
-                  <div
-                    className="font-display text-right text-[var(--ink)] tabular-nums sm:mt-2 sm:text-left"
-                    style={{ lineHeight: 1, whiteSpace: "nowrap" }}
-                  >
-                    <span className="text-2xl sm:text-[clamp(24px,2.8vw,44px)]">
-                      <Counter to={s.n} />
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* CTA */}
+          <div className="mx-auto mt-14 flex w-full max-w-5xl justify-center px-5 pr-8 lg:px-10">
+            <BeerButton onClick={() => scrollTo("form")}>Have your say</BeerButton>
           </div>
+
         </section>
 
         <FoamOverflowDivider />
