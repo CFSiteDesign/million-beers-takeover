@@ -124,7 +124,7 @@ function Index() {
               </h1>
 
               <div className="mt-8">
-                <BeerButton onClick={() => scrollTo("form")}>Where are we going?</BeerButton>
+                <BeerButton onClick={() => scrollTo("vote")}>Where we going?</BeerButton>
               </div>
             </div>
 
