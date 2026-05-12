@@ -59,11 +59,6 @@ export function InterestForm() {
   };
 
   if (done) {
-    const today = new Date().toLocaleDateString("en-GB", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-    }).toUpperCase();
     return (
       <div className="relative bg-[var(--ink)] p-10 text-center" style={{ border: "4px solid var(--ink)", boxShadow: "10px 10px 0 0 var(--amber)" }}>
         <div
@@ -75,7 +70,7 @@ export function InterestForm() {
           }}
         >
           <div className="font-display text-5xl tracking-wider">ON THE LIST</div>
-          <div className="mt-2 font-mono text-xs tracking-[0.3em]">MM TAKEOVER · {today}</div>
+          
         </div>
         <p className="mx-auto mt-8 max-w-md text-[var(--cream)]/80">
           We'll be in touch when there's something worth saying.
