@@ -10,8 +10,6 @@ type Lead = {
   whatsapp: string;
   location: string;
   vibe: string;
-  budget: string;
-  timing: string;
 };
 
 export const Route = createFileRoute("/admin")({
@@ -70,7 +68,7 @@ function AdminPage() {
 
   const exportCsv = () => {
     if (!leads) return;
-    const headers = ["created_at", "name", "whatsapp", "location", "vibe", "budget", "timing"];
+    const headers = ["created_at", "name", "whatsapp", "location", "vibe"];
     const rows = leads.map((l) =>
       headers.map((h) => `"${String((l as any)[h] ?? "").replace(/"/g, '""')}"`).join(","),
     );
@@ -107,14 +105,13 @@ function AdminPage() {
   const filtered = (leads ?? []).filter((l) => {
     if (!filter) return true;
     const f = filter.toLowerCase();
-    return [l.name, l.whatsapp, l.location, l.vibe, l.budget, l.timing].some((v) =>
+    return [l.name, l.whatsapp, l.location, l.vibe].some((v) =>
       v?.toLowerCase().includes(f),
     );
   });
 
   const total = leads?.length ?? 0;
   const byVibe = countBy(leads ?? [], "vibe");
-  const byBudget = countBy(leads ?? [], "budget");
 
   return (
     <div className="min-h-screen bg-[var(--ink)] text-[var(--cream)] p-6 md:p-10">
@@ -130,10 +127,9 @@ function AdminPage() {
           </div>
         </header>
 
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           <Stat label="Total leads" value={total} />
           <StatList label="By vibe" entries={byVibe} />
-          <StatList label="By budget" entries={byBudget} />
         </section>
 
         <input
@@ -152,13 +148,11 @@ function AdminPage() {
                 <th className="p-3 text-left">WhatsApp</th>
                 <th className="p-3 text-left">Location</th>
                 <th className="p-3 text-left">Vibe</th>
-                <th className="p-3 text-left">Budget</th>
-                <th className="p-3 text-left">Timing</th>
               </tr>
             </thead>
             <tbody>
               {filtered.length === 0 && (
-                <tr><td colSpan={7} className="p-6 text-center font-mono text-xs uppercase tracking-widest opacity-60">No leads yet</td></tr>
+                <tr><td colSpan={5} className="p-6 text-center font-mono text-xs uppercase tracking-widest opacity-60">No leads yet</td></tr>
               )}
               {filtered.map((l) => (
                 <tr key={l.id} className="border-t border-[var(--ink)]/10">
@@ -167,8 +161,6 @@ function AdminPage() {
                   <td className="p-3 font-mono text-xs">{l.whatsapp}</td>
                   <td className="p-3">{l.location}</td>
                   <td className="p-3">{l.vibe}</td>
-                  <td className="p-3">{l.budget}</td>
-                  <td className="p-3">{l.timing}</td>
                 </tr>
               ))}
             </tbody>
