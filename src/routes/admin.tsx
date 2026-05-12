@@ -10,8 +10,6 @@ type Lead = {
   whatsapp: string;
   location: string;
   vibe: string;
-  budget: string;
-  timing: string;
 };
 
 export const Route = createFileRoute("/admin")({
