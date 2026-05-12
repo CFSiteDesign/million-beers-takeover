@@ -393,16 +393,10 @@ function Index() {
                 </span>
               </h2>
 
-              <p className="mt-8 max-w-md text-lg leading-relaxed text-[var(--cream)]/90 lg:mt-10 lg:max-w-[34ch] lg:text-[1.35rem] lg:leading-[1.55]">
-                Once we see who's in, we'll share destination options, rough dates,
-                and pricing. <strong className="text-[var(--amber)]">You'll get a vote.</strong>
-              </p>
-
               <ul className="mt-8 max-w-md space-y-4 text-[var(--cream)]/85 lg:mt-10 lg:max-w-[42ch] lg:space-y-6">
                 {[
-                  { t: "No spam.", d: "Just trip updates when there's something to say." },
-                  { t: "No payment now.", d: "You commit when you're ready." },
-                  { t: "You help pick the destination.", d: "Your vote counts." },
+                  { t: "Sign up for trip updates.", d: "No commitment required today." },
+                  { t: "No payment needed.", d: "" },
                 ].map((item) => (
                   <li key={item.t} className="flex gap-3 lg:gap-4">
                     <span className="mt-1 text-[var(--amber)] lg:mt-[2px] lg:text-lg">✓</span>
@@ -410,9 +404,11 @@ function Index() {
                       <div className="text-[var(--cream)] font-semibold lg:uppercase lg:tracking-[0.06em] lg:text-[0.95rem]">
                         {item.t}
                       </div>
-                      <div className="mt-0.5 text-[var(--cream)]/70 lg:mt-1 lg:text-[1rem] lg:leading-snug">
-                        {item.d}
-                      </div>
+                      {item.d && (
+                        <div className="mt-0.5 text-[var(--cream)]/70 lg:mt-1 lg:text-[1rem] lg:leading-snug">
+                          {item.d}
+                        </div>
+                      )}
                     </div>
                   </li>
                 ))}
