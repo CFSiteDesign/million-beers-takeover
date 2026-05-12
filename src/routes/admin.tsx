@@ -68,7 +68,7 @@ function AdminPage() {
 
   const exportCsv = () => {
     if (!leads) return;
-    const headers = ["created_at", "name", "whatsapp", "location", "vibe", "budget", "timing"];
+    const headers = ["created_at", "name", "whatsapp", "location", "vibe"];
     const rows = leads.map((l) =>
       headers.map((h) => `"${String((l as any)[h] ?? "").replace(/"/g, '""')}"`).join(","),
     );
