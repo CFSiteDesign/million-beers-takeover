@@ -2,33 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { Toaster } from "sonner";
 import { Bubbles } from "@/components/Bubbles";
-import { Reveal } from "@/components/Reveal";
-import { Counter } from "@/components/Counter";
-import { ProgressBar } from "@/components/ProgressBar";
 import { InterestForm } from "@/components/InterestForm";
 import { MMHeader } from "@/components/MMHeader";
 import { MMFooter } from "@/components/MMFooter";
-import { FoamOverflowDivider } from "@/components/Dividers";
-import heroImage from "@/assets/mil_beers_hero.png";
-import { BeerButton } from "@/components/BeerButton";
-import { CountUp } from "@/components/CountUp";
-
-import { LiveBeerCounter } from "@/components/LiveBeerCounter";
-import polaroid1 from "@/assets/polaroid-1.png";
-import polaroid2 from "@/assets/polaroid-2.png";
-import polaroid3 from "@/assets/polaroid-3.png";
-import marquee1 from "@/assets/marquee-1.png";
-import marquee2 from "@/assets/marquee-2.png";
-import marquee3 from "@/assets/marquee-3.png";
-import marquee4 from "@/assets/marquee-4.png";
-import marquee5 from "@/assets/marquee-5.png";
-import marquee6 from "@/assets/marquee-6.png";
-import marquee7 from "@/assets/marquee-7.png";
-import marquee8 from "@/assets/marquee-8.png";
-import marquee9 from "@/assets/marquee-9.png";
-import marquee10 from "@/assets/marquee-10.png";
-import marquee11 from "@/assets/marquee-11.png";
-import marquee12 from "@/assets/marquee-12.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
