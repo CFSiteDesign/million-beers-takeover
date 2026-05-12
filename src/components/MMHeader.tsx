@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { FoamOverflowDivider } from "@/components/Dividers";
 
 const NAV = [
   { label: "Ha Giang Loop", href: "https://madmonkeyhostels.com/ha-giang-loop/", highlighted: true },
@@ -12,8 +13,8 @@ const NAV = [
 export function MMHeader() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#FFF8E0] shadow-sm">
-      <span aria-hidden className="foam-head-edge" />
+    <header className="sticky top-0 z-50 w-full overflow-visible bg-[#FFF8E0] shadow-sm">
+      <FoamOverflowDivider />
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
         <a href="https://madmonkeyhostels.com" className="flex items-center">
           <img
