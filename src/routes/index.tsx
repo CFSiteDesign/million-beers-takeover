@@ -221,7 +221,8 @@ function Index() {
 
               <ul className="mt-8 max-w-md space-y-4 text-[var(--cream)]/85 lg:mt-10 lg:max-w-[42ch] lg:space-y-6">
                 {[
-                  { t: "Sign up for trip updates.", d: "No commitment required today." },
+                  { t: "Sign up for trip updates.", d: "" },
+                  { t: "No commitment required today.", d: "" },
                   { t: "No payment needed.", d: "" },
                 ].map((item) => (
                   <li key={item.t} className="flex gap-3 lg:gap-4">
