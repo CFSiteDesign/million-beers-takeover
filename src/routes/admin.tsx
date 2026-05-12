@@ -127,10 +127,9 @@ function AdminPage() {
           </div>
         </header>
 
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           <Stat label="Total leads" value={total} />
           <StatList label="By vibe" entries={byVibe} />
-          <StatList label="By budget" entries={byBudget} />
         </section>
 
         <input
