@@ -53,7 +53,7 @@ function Index() {
                 <span
                   className="block uppercase"
                   style={{
-                    fontSize: "clamp(34px, 5.4vw, 76px)",
+                    fontSize: "clamp(44px, 6.4vw, 76px)",
                     fontFamily: "'Bungee', Impact, sans-serif",
                   }}
                 >
@@ -62,7 +62,7 @@ function Index() {
                 <span
                   className="mt-3 block uppercase text-[var(--ink)]"
                   style={{
-                    fontSize: "clamp(40px, 6.2vw, 88px)",
+                    fontSize: "clamp(52px, 7.4vw, 88px)",
                     fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
                   }}
                 >
