@@ -108,9 +108,9 @@ export function MMFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-md border border-white/20 bg-white/5 transition hover:border-[var(--mm-teal)] hover:bg-[var(--mm-teal)]"
+                  className="block h-9 w-9 transition hover:opacity-80"
                 >
-                  <s.Icon className="h-4 w-4 text-white" strokeWidth={1.75} />
+                  <img src={s.src} alt={s.label} className="h-full w-full" />
                 </a>
               ))}
             </div>
