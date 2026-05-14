@@ -50,29 +50,29 @@ const COLS_RIGHT: { title: string; links: { label: string; href: string }[] }[] 
   },
 ];
 
-const SOCIALS: { src: string; href: string; label: string }[] = [
+const SOCIALS: { Icon: typeof Instagram; href: string; label: string }[] = [
   {
-    src: "https://madmonkeyhostels.com/images/instagram.svg",
+    Icon: Instagram,
     href: "https://www.instagram.com/madmonkeyhostels/",
     label: "Instagram",
   },
   {
-    src: "https://madmonkeyhostels.com/images/tiktok.svg",
+    Icon: Music2,
     href: "https://www.tiktok.com/@madmonkeyhostels",
     label: "TikTok",
   },
   {
-    src: "https://madmonkeyhostels.com/images/x.png",
+    Icon: Twitter,
     href: "http://twitter.com/madmonkeyhostel",
     label: "X",
   },
   {
-    src: "https://madmonkeyhostels.com/images/facebook.svg",
+    Icon: Facebook,
     href: "https://www.facebook.com/MadMonkeyHostels",
     label: "Facebook",
   },
   {
-    src: "https://madmonkeyhostels.com/images/youtube.svg",
+    Icon: Youtube,
     href: "https://www.youtube.com/channel/UCkUGlFdhp5Ndk68j_QRS1kw",
     label: "YouTube",
   },
