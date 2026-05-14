@@ -112,7 +112,7 @@ export function MMFooter() {
             <img
               src={madmonkeyLogo}
               alt="Mad Monkey Hostels"
-              className="h-14 w-auto"
+              className="h-10 w-auto brightness-0 invert"
             />
             <h3 className="mt-4 text-xl font-bold text-white">Mad Monkey</h3>
             <div className="mt-5 flex flex-wrap gap-2">
