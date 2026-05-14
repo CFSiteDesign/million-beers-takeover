@@ -1,3 +1,5 @@
+import madmonkeyLogo from "@/assets/madmonkey_logo.webp";
+
 const COLS_LEFT: { title: string; links: { label: string; href: string }[] }[] = [
   {
     title: "Rules & Legal",
@@ -99,13 +101,16 @@ function LinkColumn({ title, links }: { title: string; links: { label: string; h
 
 export function MMFooter() {
   return (
-    <footer className="relative z-10 bg-black text-white">
+    <footer
+      className="relative z-10 bg-black text-white"
+      style={{ fontFamily: "'Montserrat', system-ui, sans-serif" }}
+    >
       <div className="mx-auto max-w-7xl px-5 py-16 lg:px-10 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           {/* Brand */}
           <div className="lg:col-span-3">
             <img
-              src="https://madmonkeyhostels.com/images/madmonkey_logo.svg"
+              src={madmonkeyLogo}
               alt="Mad Monkey Hostels"
               className="h-14 w-auto brightness-0 invert"
             />
