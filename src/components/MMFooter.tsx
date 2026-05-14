@@ -1,3 +1,4 @@
+import { Instagram, Facebook, Youtube, Twitter, Music2 } from "lucide-react";
 import madmonkeyLogo from "@/assets/madmonkey_logo.webp";
 
 const COLS_LEFT: { title: string; links: { label: string; href: string }[] }[] = [
@@ -49,29 +50,29 @@ const COLS_RIGHT: { title: string; links: { label: string; href: string }[] }[] 
   },
 ];
 
-const SOCIALS: { src: string; href: string; label: string }[] = [
+const SOCIALS: { Icon: typeof Instagram; href: string; label: string }[] = [
   {
-    src: "https://madmonkeyhostels.com/images/instagram.svg",
+    Icon: Instagram,
     href: "https://www.instagram.com/madmonkeyhostels/",
     label: "Instagram",
   },
   {
-    src: "https://madmonkeyhostels.com/images/tiktok.svg",
+    Icon: Music2,
     href: "https://www.tiktok.com/@madmonkeyhostels",
     label: "TikTok",
   },
   {
-    src: "https://madmonkeyhostels.com/images/x.png",
+    Icon: Twitter,
     href: "http://twitter.com/madmonkeyhostel",
     label: "X",
   },
   {
-    src: "https://madmonkeyhostels.com/images/facebook.svg",
+    Icon: Facebook,
     href: "https://www.facebook.com/MadMonkeyHostels",
     label: "Facebook",
   },
   {
-    src: "https://madmonkeyhostels.com/images/youtube.svg",
+    Icon: Youtube,
     href: "https://www.youtube.com/channel/UCkUGlFdhp5Ndk68j_QRS1kw",
     label: "YouTube",
   },
@@ -112,7 +113,7 @@ export function MMFooter() {
             <img
               src={madmonkeyLogo}
               alt="Mad Monkey Hostels"
-              className="h-10 w-auto brightness-0 invert"
+              className="h-14 w-auto"
             />
             <h3 className="mt-4 text-xl font-bold text-white">Mad Monkey</h3>
             <div className="mt-5 flex flex-wrap gap-2">
@@ -125,7 +126,7 @@ export function MMFooter() {
                   aria-label={s.label}
                   className="flex h-9 w-9 items-center justify-center rounded-md border border-white/20 bg-white/5 transition hover:border-[var(--mm-teal)] hover:bg-[var(--mm-teal)]"
                 >
-                  <img src={s.src} alt="" className="h-4 w-4 brightness-0 invert" />
+                  <s.Icon className="h-4 w-4 text-white" strokeWidth={1.75} />
                 </a>
               ))}
             </div>
