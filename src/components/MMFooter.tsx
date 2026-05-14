@@ -1,3 +1,5 @@
+import madmonkeyLogo from "@/assets/madmonkey_logo.webp";
+
 const COLS_LEFT: { title: string; links: { label: string; href: string }[] }[] = [
   {
     title: "Rules & Legal",
