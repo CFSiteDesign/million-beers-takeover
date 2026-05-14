@@ -1,3 +1,4 @@
+import { Instagram, Facebook, Youtube, Twitter, Music2 } from "lucide-react";
 import madmonkeyLogo from "@/assets/madmonkey_logo.webp";
 
 const COLS_LEFT: { title: string; links: { label: string; href: string }[] }[] = [
