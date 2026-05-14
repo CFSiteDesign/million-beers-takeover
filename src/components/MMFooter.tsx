@@ -1,6 +1,4 @@
-import { Instagram, Facebook, Youtube, Twitter } from "lucide-react";
-
-const COLS: { title: string; links: { label: string; href: string }[] }[] = [
+const COLS_LEFT: { title: string; links: { label: string; href: string }[] }[] = [
   {
     title: "Rules & Legal",
     links: [
@@ -21,6 +19,9 @@ const COLS: { title: string; links: { label: string; href: string }[] }[] = [
       { label: "Tour Operators & Suppliers", href: "https://madmonkeyhostels.com/partners/suppliers/" },
     ],
   },
+];
+
+const COLS_RIGHT: { title: string; links: { label: string; href: string }[] }[] = [
   {
     title: "Career",
     links: [{ label: "We're Hiring", href: "https://madmonkeyhostels.com/career/" }],
@@ -46,87 +47,121 @@ const COLS: { title: string; links: { label: string; href: string }[] }[] = [
   },
 ];
 
-const SOCIALS = [
-  { Icon: Instagram, href: "https://www.instagram.com/madmonkeyhostels/", label: "Instagram" },
-  { Icon: Facebook, href: "https://www.facebook.com/MadMonkeyHostels", label: "Facebook" },
-  { Icon: Youtube, href: "https://www.youtube.com/channel/UCkUGlFdhp5Ndk68j_QRS1kw", label: "YouTube" },
-  { Icon: Twitter, href: "http://twitter.com/madmonkeyhostel", label: "X" },
+const SOCIALS: { src: string; href: string; label: string }[] = [
+  {
+    src: "https://madmonkeyhostels.com/images/instagram.svg",
+    href: "https://www.instagram.com/madmonkeyhostels/",
+    label: "Instagram",
+  },
+  {
+    src: "https://madmonkeyhostels.com/images/tiktok.svg",
+    href: "https://www.tiktok.com/@madmonkeyhostels",
+    label: "TikTok",
+  },
+  {
+    src: "https://madmonkeyhostels.com/images/x.png",
+    href: "http://twitter.com/madmonkeyhostel",
+    label: "X",
+  },
+  {
+    src: "https://madmonkeyhostels.com/images/facebook.svg",
+    href: "https://www.facebook.com/MadMonkeyHostels",
+    label: "Facebook",
+  },
+  {
+    src: "https://madmonkeyhostels.com/images/youtube.svg",
+    href: "https://www.youtube.com/channel/UCkUGlFdhp5Ndk68j_QRS1kw",
+    label: "YouTube",
+  },
 ];
+
+function LinkColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
+  return (
+    <div>
+      <h4 className="mb-4 text-base font-bold text-white">{title}</h4>
+      <ul className="space-y-3 text-sm text-white/85">
+        {links.map((l) => (
+          <li key={l.label}>
+            <a
+              href={l.href}
+              target={l.href.startsWith("http") ? "_blank" : undefined}
+              rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="transition hover:text-[var(--mm-teal)]"
+            >
+              {l.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export function MMFooter() {
   return (
-    <footer className="relative z-10 bg-white text-[#0d2a3a]">
-      <div className="mx-auto max-w-7xl px-5 py-14 lg:px-10">
-        <div className="grid gap-10 lg:grid-cols-12">
-          {/* Brand block */}
+    <footer className="relative z-10 bg-black text-white">
+      <div className="mx-auto max-w-7xl px-5 py-16 lg:px-10 lg:py-20">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
+          {/* Brand */}
           <div className="lg:col-span-3">
             <img
               src="https://madmonkeyhostels.com/images/madmonkey_logo.svg"
               alt="Mad Monkey Hostels"
-              className="h-14 w-auto"
+              className="h-14 w-auto brightness-0 invert"
             />
-            <h3 className="mt-4 text-lg font-bold">Mad Monkey</h3>
-            <div className="mt-4 flex gap-3">
-              {SOCIALS.map(({ Icon, href, label }) => (
+            <h3 className="mt-4 text-xl font-bold text-white">Mad Monkey</h3>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {SOCIALS.map((s) => (
                 <a
-                  key={label}
-                  href={href}
+                  key={s.label}
+                  href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0d2a3a]/5 text-[#0d2a3a] transition hover:bg-[var(--mm-teal)] hover:text-white"
+                  aria-label={s.label}
+                  className="flex h-9 w-9 items-center justify-center rounded-md border border-white/20 bg-white/5 transition hover:border-[var(--mm-teal)] hover:bg-[var(--mm-teal)]"
                 >
-                  <Icon className="h-4 w-4" />
+                  <img src={s.src} alt="" className="h-4 w-4 brightness-0 invert" />
                 </a>
               ))}
             </div>
-            <p className="mt-6 text-xs text-[#0d2a3a]/70">
+            <p className="mt-6 text-xs uppercase tracking-wider text-white/60">
               All rights reserved © Mad Monkey. {new Date().getFullYear()}
             </p>
           </div>
 
-          {/* Link columns */}
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-6 lg:grid-cols-3">
-            {COLS.map((c) => (
-              <div key={c.title}>
-                <h4 className="mb-3 text-sm font-bold uppercase tracking-wider">{c.title}</h4>
-                <ul className="space-y-2 text-sm text-[#0d2a3a]/80">
-                  {c.links.map((l) => (
-                    <li key={l.label}>
-                      <a
-                        href={l.href}
-                        target={l.href.startsWith("http") ? "_blank" : undefined}
-                        rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                        className="hover:text-[var(--mm-teal)]"
-                      >
-                        {l.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          {/* Left columns */}
+          <div className="space-y-10 lg:col-span-3">
+            {COLS_LEFT.map((c) => (
+              <LinkColumn key={c.title} {...c} />
+            ))}
+          </div>
+
+          {/* Right columns */}
+          <div className="space-y-10 lg:col-span-3">
+            {COLS_RIGHT.map((c) => (
+              <LinkColumn key={c.title} {...c} />
             ))}
           </div>
 
           {/* Newsletter */}
           <div className="lg:col-span-3">
-            <h4 className="mb-3 text-base font-bold">Stay Updated with Us</h4>
+            <h4 className="mb-4 text-base font-bold text-white">Stay Updated with Us</h4>
             <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="text"
                 placeholder="Name *"
                 required
-                className="w-full rounded-md border border-[#0d2a3a]/20 bg-white px-3 py-2 text-sm placeholder:text-[#0d2a3a]/50 focus:border-[var(--mm-teal)] focus:outline-none"
+                className="w-full rounded-md border border-white/20 bg-transparent px-3 py-2.5 text-sm text-white placeholder:text-white/60 focus:border-[var(--mm-teal)] focus:outline-none"
               />
               <input
                 type="email"
                 placeholder="Email *"
                 required
-                className="w-full rounded-md border border-[#0d2a3a]/20 bg-white px-3 py-2 text-sm placeholder:text-[#0d2a3a]/50 focus:border-[var(--mm-teal)] focus:outline-none"
+                className="w-full rounded-md border border-white/20 bg-transparent px-3 py-2.5 text-sm text-white placeholder:text-white/60 focus:border-[var(--mm-teal)] focus:outline-none"
               />
               <button
                 type="submit"
-                className="w-full rounded-md bg-[var(--mm-teal)] px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
+                className="w-full rounded-md bg-white/10 px-4 py-2.5 text-sm font-semibold uppercase tracking-wider text-white transition hover:bg-[var(--mm-teal)]"
               >
                 Subscribe
               </button>
