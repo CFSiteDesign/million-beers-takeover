@@ -1,5 +1,9 @@
-import { Instagram, Facebook, Youtube, Twitter, Music2 } from "lucide-react";
 import madmonkeyLogo from "@/assets/madmonkey_logo.webp";
+import instagramIcon from "@/assets/social/instagram.svg";
+import tiktokIcon from "@/assets/social/tiktok.svg";
+import xIcon from "@/assets/social/x.webp";
+import facebookIcon from "@/assets/social/facebook.svg";
+import youtubeIcon from "@/assets/social/youtube.svg";
 
 const COLS_LEFT: { title: string; links: { label: string; href: string }[] }[] = [
   {
