@@ -1,5 +1,9 @@
-import { Instagram, Facebook, Youtube, Twitter, Music2 } from "lucide-react";
 import madmonkeyLogo from "@/assets/madmonkey_logo.webp";
+import instagramIcon from "@/assets/social/instagram.svg";
+import tiktokIcon from "@/assets/social/tiktok.svg";
+import xIcon from "@/assets/social/x.webp";
+import facebookIcon from "@/assets/social/facebook.svg";
+import youtubeIcon from "@/assets/social/youtube.svg";
 
 const COLS_LEFT: { title: string; links: { label: string; href: string }[] }[] = [
   {
@@ -50,32 +54,12 @@ const COLS_RIGHT: { title: string; links: { label: string; href: string }[] }[] 
   },
 ];
 
-const SOCIALS: { Icon: typeof Instagram; href: string; label: string }[] = [
-  {
-    Icon: Instagram,
-    href: "https://www.instagram.com/madmonkeyhostels/",
-    label: "Instagram",
-  },
-  {
-    Icon: Music2,
-    href: "https://www.tiktok.com/@madmonkeyhostels",
-    label: "TikTok",
-  },
-  {
-    Icon: Twitter,
-    href: "http://twitter.com/madmonkeyhostel",
-    label: "X",
-  },
-  {
-    Icon: Facebook,
-    href: "https://www.facebook.com/MadMonkeyHostels",
-    label: "Facebook",
-  },
-  {
-    Icon: Youtube,
-    href: "https://www.youtube.com/channel/UCkUGlFdhp5Ndk68j_QRS1kw",
-    label: "YouTube",
-  },
+const SOCIALS: { src: string; href: string; label: string }[] = [
+  { src: instagramIcon, href: "https://www.instagram.com/madmonkeyhostels/", label: "Instagram" },
+  { src: tiktokIcon, href: "https://www.tiktok.com/@madmonkeyhostels", label: "TikTok" },
+  { src: xIcon, href: "http://twitter.com/madmonkeyhostel", label: "X" },
+  { src: facebookIcon, href: "https://www.facebook.com/MadMonkeyHostels", label: "Facebook" },
+  { src: youtubeIcon, href: "https://www.youtube.com/channel/UCkUGlFdhp5Ndk68j_QRS1kw", label: "YouTube" },
 ];
 
 function LinkColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
@@ -124,9 +108,9 @@ export function MMFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-md border border-white/20 bg-white/5 transition hover:border-[var(--mm-teal)] hover:bg-[var(--mm-teal)]"
+                  className="block h-9 w-9 transition hover:opacity-80"
                 >
-                  <s.Icon className="h-4 w-4 text-white" strokeWidth={1.75} />
+                  <img src={s.src} alt={s.label} className="h-full w-full" />
                 </a>
               ))}
             </div>
