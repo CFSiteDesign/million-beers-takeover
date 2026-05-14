@@ -1,4 +1,4 @@
-import madmonkeyLogo from "@/assets/madmonkey_logo.webp";
+import madmonkeyLogo from "@/assets/mm-head.png";
 import instagramIcon from "@/assets/social/instagram.svg";
 import tiktokIcon from "@/assets/social/tiktok.svg";
 import xIcon from "@/assets/social/x.webp";
