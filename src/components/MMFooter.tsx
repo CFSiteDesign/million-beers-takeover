@@ -54,32 +54,12 @@ const COLS_RIGHT: { title: string; links: { label: string; href: string }[] }[] 
   },
 ];
 
-const SOCIALS: { Icon: typeof Instagram; href: string; label: string }[] = [
-  {
-    Icon: Instagram,
-    href: "https://www.instagram.com/madmonkeyhostels/",
-    label: "Instagram",
-  },
-  {
-    Icon: Music2,
-    href: "https://www.tiktok.com/@madmonkeyhostels",
-    label: "TikTok",
-  },
-  {
-    Icon: Twitter,
-    href: "http://twitter.com/madmonkeyhostel",
-    label: "X",
-  },
-  {
-    Icon: Facebook,
-    href: "https://www.facebook.com/MadMonkeyHostels",
-    label: "Facebook",
-  },
-  {
-    Icon: Youtube,
-    href: "https://www.youtube.com/channel/UCkUGlFdhp5Ndk68j_QRS1kw",
-    label: "YouTube",
-  },
+const SOCIALS: { src: string; href: string; label: string }[] = [
+  { src: instagramIcon, href: "https://www.instagram.com/madmonkeyhostels/", label: "Instagram" },
+  { src: tiktokIcon, href: "https://www.tiktok.com/@madmonkeyhostels", label: "TikTok" },
+  { src: xIcon, href: "http://twitter.com/madmonkeyhostel", label: "X" },
+  { src: facebookIcon, href: "https://www.facebook.com/MadMonkeyHostels", label: "Facebook" },
+  { src: youtubeIcon, href: "https://www.youtube.com/channel/UCkUGlFdhp5Ndk68j_QRS1kw", label: "YouTube" },
 ];
 
 function LinkColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
