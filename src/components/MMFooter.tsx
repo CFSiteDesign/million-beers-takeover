@@ -99,7 +99,7 @@ export function MMFooter() {
               alt="Mad Monkey Hostels"
               className="h-14 w-auto"
             />
-            <h3 className="mt-4 text-xl font-bold text-white">Mad Monkey</h3>
+            <h3 className="mt-4 text-xl font-bold text-white" style={{ fontFamily: "'Montserrat', system-ui, sans-serif" }}>Mad Monkey</h3>
             <div className="mt-5 flex flex-wrap gap-2">
               {SOCIALS.map((s) => (
                 <a
