@@ -98,10 +98,7 @@ export function MMFooter() {
               src={madmonkeyLogo}
               alt="Mad Monkey Hostels"
               className="h-14 w-auto"
-              style={{
-                filter:
-                  "drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff)",
-              }}
+              style={{ filter: "invert(1)" }}
             />
             <h3 className="mt-4 text-xl font-bold text-white" style={{ fontFamily: "'Montserrat', system-ui, sans-serif" }}>Mad Monkey</h3>
             <div className="mt-5 flex flex-wrap gap-2">
