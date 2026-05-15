@@ -26,6 +26,10 @@ export const Route = createFileRoute("/api/public/seed-admin")({
           });
           if (createErr) return new Response(createErr.message, { status: 500 });
           user = created.user!;
+        } else {
+          // Sync password to current ADMIN_PASSWORD secret
+          const { error: updErr } = await supabaseAdmin.auth.admin.updateUserById(user.id, { password });
+          if (updErr) return new Response(updErr.message, { status: 500 });
         }
 
         // Ensure admin role row exists
