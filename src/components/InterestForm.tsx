@@ -147,17 +147,14 @@ export function InterestForm() {
           )}
         </div>
 
-        <StampGroup
-          label="Pick your vibe"
-          options={VIBES}
-          value={form.vibe}
-          onChange={(v) => set("vibe", v)}
-          error={errors.vibe}
-          onCream
-        />
+        <div className="rounded-sm bg-[var(--ink)]/5 p-4" style={{ border: "2px dashed var(--ink)" }}>
+          <span className="zine-label">You're RSVPing for</span>
+          <p className="mt-1 font-display text-xl uppercase text-[var(--ink)]">{EVENT_NAME}</p>
+          <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[var(--ink)]/70">From 3pm · drink + bar snacks on us</p>
+        </div>
 
         <button type="submit" disabled={loading} className="btn-stamp btn-on-cream w-full text-2xl">
-          {loading ? "ADDING…" : "STAMP ME IN"}
+          {loading ? "ADDING…" : "COUNT ME IN"}
         </button>
       </div>
     </form>
