@@ -4,11 +4,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { COUNTRIES } from "@/lib/countries";
 
-const VIBES = [
-  "UK Summer Meet Up, August 2026",
-  "Island Hopping in Cambodia, November 2026",
-  "Ha Giang Loop + Vietnam, October 2026",
-];
+const EVENT_NAME = "BrewDog Manchester Meetup";
+
 
 const schema = z.object({
   name: z.string().trim().min(1, "What do we call you?").max(80),
@@ -24,10 +21,10 @@ const ROTS = [-3, 2, -2, 3, -4, 2, -3, 3, -2];
 export function InterestForm() {
   const [form, setForm] = useState({
     name: "",
-    dialCode: "+1",
+    dialCode: "+44",
     whatsapp: "",
     location: "",
-    vibe: "",
+    vibe: EVENT_NAME,
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
@@ -150,17 +147,14 @@ export function InterestForm() {
           )}
         </div>
 
-        <StampGroup
-          label="Pick your vibe"
-          options={VIBES}
-          value={form.vibe}
-          onChange={(v) => set("vibe", v)}
-          error={errors.vibe}
-          onCream
-        />
+        <div className="rounded-sm bg-[var(--ink)]/5 p-4" style={{ border: "2px dashed var(--ink)" }}>
+          <span className="zine-label">You're RSVPing for</span>
+          <p className="mt-1 font-display text-xl uppercase text-[var(--ink)]">{EVENT_NAME}</p>
+          <p className="mt-1 font-mono text-xs uppercase tracking-widest text-[var(--ink)]/70">From 3pm · drink + bar snacks on us</p>
+        </div>
 
         <button type="submit" disabled={loading} className="btn-stamp btn-on-cream w-full text-2xl">
-          {loading ? "ADDING…" : "STAMP ME IN"}
+          {loading ? "ADDING…" : "COUNT ME IN"}
         </button>
       </div>
     </form>
