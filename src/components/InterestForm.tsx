@@ -21,10 +21,10 @@ const ROTS = [-3, 2, -2, 3, -4, 2, -3, 3, -2];
 export function InterestForm() {
   const [form, setForm] = useState({
     name: "",
-    dialCode: "+1",
+    dialCode: "+44",
     whatsapp: "",
     location: "",
-    vibe: "",
+    vibe: EVENT_NAME,
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
