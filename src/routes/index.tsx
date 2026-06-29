@@ -47,9 +47,8 @@ function Index() {
         <section className="relative overflow-hidden pt-14 pb-16 text-[var(--ink)] lg:pt-24 lg:pb-24">
           <div aria-hidden className="absolute inset-0 z-0 bg-[var(--amber)]" />
           <Bubbles density={14} scope="section" />
-          <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-12 items-center gap-8 px-5 pr-8 sm:px-8 lg:gap-12 lg:px-10">
-            <div className="col-span-12 min-w-0 max-w-full lg:col-span-6">
-              <h1 className="font-display max-w-full text-[var(--ink)]" style={{ lineHeight: 0.9 }}>
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pr-8 sm:px-8 lg:px-10">
+            <h1 className="font-display max-w-full text-[var(--ink)]" style={{ lineHeight: 0.9 }}>
               <span
                 className="block uppercase"
                 style={{
@@ -69,21 +68,25 @@ function Index() {
                 THE MAD MONKEY MILLION BEER TAKEOVER IS ON.
               </span>
             </h1>
-            <div className="mt-6 space-y-4 font-mono text-base text-[var(--ink)] md:text-lg">
-              <p>
-                After hearing from the beer chat community, we're bringing everyone together for a UK meetup!
-              </p>
-              <p>
-                Join fellow beer lovers for an afternoon at <strong>BrewDog DogHouse Manchester</strong>. We'll kick things off from <strong>3pm</strong> with a complimentary drink and bar snacks on us before settling in for a great afternoon with the community.
-              </p>
-              <p className="font-bold uppercase">
-                Spaces are limited — register your interest so we've got enough beer waiting for everyone!
-              </p>
-            </div>
-            </div>
 
-            <div className="col-span-12 lg:col-span-6 lg:flex">
-              <InterestForm />
+            <div className="mt-8 grid grid-cols-12 items-start gap-8 lg:mt-12 lg:gap-12">
+              <div className="col-span-12 min-w-0 max-w-full lg:col-span-6">
+                <div className="space-y-4 font-mono text-base text-[var(--ink)] md:text-lg">
+                  <p>
+                    After hearing from the beer chat community, we're bringing everyone together for a UK meetup!
+                  </p>
+                  <p>
+                    Join fellow beer lovers for an afternoon at <strong>BrewDog DogHouse Manchester</strong>. We'll kick things off from <strong>3pm</strong> with a complimentary drink and bar snacks on us before settling in for a great afternoon with the community.
+                  </p>
+                  <p className="font-bold uppercase">
+                    Spaces are limited — register your interest so we've got enough beer waiting for everyone!
+                  </p>
+                </div>
+              </div>
+
+              <div className="col-span-12 lg:col-span-6 lg:flex">
+                <InterestForm />
+              </div>
             </div>
           </div>
         </section>
