@@ -50,36 +50,36 @@ function Index() {
           <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-12 items-center gap-8 px-5 pr-8 sm:px-8 lg:gap-12 lg:px-10">
             <div className="col-span-12 min-w-0 max-w-full lg:col-span-6">
               <h1 className="font-display max-w-full text-[var(--ink)]" style={{ lineHeight: 0.9 }}>
-                <span
-                  className="block uppercase"
-                  style={{
-                    fontSize: "clamp(36px, 5.2vw, 64px)",
-                    fontFamily: "'Bungee', Impact, sans-serif",
-                  }}
-                >
-                  YOU ASKED. WE DELIVERED 🍻
-                </span>
-                <span
-                  className="mt-3 block uppercase text-[var(--ink)]"
-                  style={{
-                    fontSize: "clamp(44px, 6.4vw, 76px)",
-                    fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
-                  }}
-                >
-                  THE MAD MONKEY MILLION BEER TAKEOVER IS ON.
-                </span>
-              </h1>
-              <div className="mt-6 space-y-4 font-mono text-base text-[var(--ink)] md:text-lg">
-                <p>
-                  After hearing from the beer chat community, we're bringing everyone together for a UK meetup!
-                </p>
-                <p>
-                  Join fellow beer lovers for an afternoon at <strong>BrewDog Manchester</strong>. We'll kick things off from <strong>3pm</strong> with a complimentary drink and bar snacks on us before settling in for a great afternoon with the community.
-                </p>
-                <p className="font-bold uppercase">
-                  Spaces are limited — register your interest below so we've got enough beer waiting for everyone!
-                </p>
-              </div>
+              <span
+                className="block uppercase"
+                style={{
+                  fontSize: "clamp(36px, 5.2vw, 64px)",
+                  fontFamily: "'Bungee', Impact, sans-serif",
+                }}
+              >
+                YOU ASKED. WE DELIVERED.
+              </span>
+              <span
+                className="mt-3 block uppercase text-[var(--ink)]"
+                style={{
+                  fontSize: "clamp(44px, 6.4vw, 76px)",
+                  fontFamily: "'Bungee Shade', 'Bungee', Impact, sans-serif",
+                }}
+              >
+                THE MAD MONKEY MILLION BEER TAKEOVER IS ON.
+              </span>
+            </h1>
+            <div className="mt-6 space-y-4 font-mono text-base text-[var(--ink)] md:text-lg">
+              <p>
+                After hearing from the beer chat community, we're bringing everyone together for a UK meetup!
+              </p>
+              <p>
+                Join fellow beer lovers for an afternoon at <strong>BrewDog DogHouse Manchester</strong>. We'll kick things off from <strong>3pm</strong> with a complimentary drink and bar snacks on us before settling in for a great afternoon with the community.
+              </p>
+              <p className="font-bold uppercase">
+                Spaces are limited — register your interest so we've got enough beer waiting for everyone!
+              </p>
+            </div>
             </div>
 
             <div className="col-span-12 lg:col-span-6 lg:flex">
