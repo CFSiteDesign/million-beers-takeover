@@ -70,11 +70,11 @@ function Index() {
             </h1>
 
             <div className="mt-5 flex flex-wrap items-center gap-3 lg:mt-7">
-              <div className="fun-bubble fun-bubble-amber" style={{ transform: "rotate(-2deg)" }}>
+              <div className="fun-bubble fun-bubble-amber" style={{ ["--rot" as never]: "-2deg" }}>
                 <span className="fun-bubble-icon" aria-hidden>🗓️</span>
                 <span className="fun-bubble-text">AUGUST 2026 · 3PM</span>
               </div>
-              <div className="fun-bubble fun-bubble-cream" style={{ transform: "rotate(2deg)" }}>
+              <div className="fun-bubble fun-bubble-cream" style={{ ["--rot" as never]: "2deg" }}>
                 <span className="fun-bubble-icon" aria-hidden>📍</span>
                 <span className="fun-bubble-text">BREWDOG DOGHOUSE MANCHESTER</span>
               </div>
