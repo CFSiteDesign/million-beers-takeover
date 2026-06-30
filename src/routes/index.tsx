@@ -69,6 +69,17 @@ function Index() {
               </span>
             </h1>
 
+            <div className="mt-5 flex flex-wrap items-center gap-3 lg:mt-7">
+              <div className="fun-bubble fun-bubble-amber" style={{ transform: "rotate(-2deg)" }}>
+                <span className="fun-bubble-icon" aria-hidden>🗓️</span>
+                <span className="fun-bubble-text">AUGUST 2026 · 3PM</span>
+              </div>
+              <div className="fun-bubble fun-bubble-cream" style={{ transform: "rotate(2deg)" }}>
+                <span className="fun-bubble-icon" aria-hidden>📍</span>
+                <span className="fun-bubble-text">BREWDOG DOGHOUSE MANCHESTER</span>
+              </div>
+            </div>
+
             <div className="mt-8 grid grid-cols-12 items-start gap-8 lg:mt-12 lg:gap-12">
               <div className="col-span-12 min-w-0 max-w-full lg:col-span-6">
                 <div className="space-y-4 font-mono text-base text-[var(--ink)] md:text-lg">
